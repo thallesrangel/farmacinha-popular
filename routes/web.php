@@ -36,5 +36,11 @@ Route::middleware([CollaboratorAutenticate::class])->group(function () {
                 'index' => 'unity.list'
             ]
         ]);
+
+
+        Route::prefix('colaborador')->group(function () {
+            Route::get('/', [App\Http\Controllers\CollaboratorController::class, 'index'])->name('collaborator.list');
+            Route::get('/registrar', [App\Http\Controllers\CollaboratorController::class, 'create'])->name('collaborator.registrar');
+        });
     });
 });

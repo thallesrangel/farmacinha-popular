@@ -38,14 +38,14 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link p-1" href="#">
+        <a class="nav-link p-1" href="{{ route('collaborator.list') }}">
             <i class="bi bi-briefcase"></i>
             <span>Colaboradores</span> 
         </a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link p-1" href="#">
+        <a class="nav-link p-1" href="{{ route('unity.list') }}">
             <i class="bi bi-building"></i>
             <span>Unidade</span> 
         </a>
