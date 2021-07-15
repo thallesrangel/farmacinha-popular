@@ -15,7 +15,7 @@ class Collaborator extends Migration
     {
         Schema::create('collaborator', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id_unity')->unsigned();
+            $table->bigInteger('id_unity')->unsigned()->nullable();
             $table->string('first_name');
             $table->string('last_name');
             $table->string('cpf')->unique();

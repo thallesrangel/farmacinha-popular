@@ -16,6 +16,19 @@ class Collaborator extends Seeder
     {
         DB::table('collaborator')->insert([
             [
+                'id_unity' => null,
+                'first_name' => 'Thalles',
+                'last_name' => 'Rangel Lopes',
+                'cpf' => '146.535.617-70',
+                'states' => 'es',
+                'role' => 'superadmin',
+                'email' => 'rangelthr@gmail.com',
+                'password' => '21232f297a57a5a743894a0e4a801fc3',
+                'professional_record' => '',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ],
+            [
                 'id_unity' => 1,
                 'first_name' => 'Fabrício',
                 'last_name' => 'Gustavo Carillho',

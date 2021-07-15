@@ -52,7 +52,6 @@
     </li>
 </ul>
 
-
 <ul class="flex-column nav pl-4 mt-5">
     <li class="nav-item">
         <a class="nav-link p-1" href="#">
