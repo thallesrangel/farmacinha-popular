@@ -8,9 +8,9 @@
         <h4 class="mt-4 mb-3 fw-bold">Atalhos Medicamentos</h4>
 
         <div class="d-grid gap-2 d-md-block">
-            <button type="button" class="btn btn-outline-success fw-bold">Receber</button>
-            <button type="button" class="btn btn-outline-warning fw-bold">Analisar</button>
-            <button type="button" class="btn btn-outline-primary fw-bold">Distribuir</button>
+            <button type="button" class="btn btn-outline-success">Receber</button>
+            <button type="button" class="btn btn-outline-warning">Analisar</button>
+            <button type="button" class="btn btn-outline-primary">Distribuir</button>
         </div>
 
         <h4 class="mt-4 mb-3 fw-bold">Medicamentos</h4>

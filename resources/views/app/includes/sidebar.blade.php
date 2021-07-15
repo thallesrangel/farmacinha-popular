@@ -3,7 +3,7 @@
 </div>
 <ul class="flex-column nav pl-4">
     <li class="nav-item">
-        <a class="nav-link p-1" href="#">
+        <a class="nav-link p-1" href="{{ route('dashboard') }}">
             <i class="bi bi-house"></i>
             <span>Dashboard</span>
         </a>
