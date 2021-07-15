@@ -23,20 +23,23 @@ Route::get('/login', function () {
 });
 
 
-Route::get('/app', function () {
-    return view('app.dashboard');
-});
+Route::prefix('app')->group(function () {
 
-Route::get('/app/pessoa', function () {
-    return view('app.pessoa.index');
-});
+    Route::get('/', function () {
+        return view('app.dashboard');
+    });
 
-Route::get('/app/pessoa/registrar', function () {
-    return view('app.pessoa.create');
-});
+    Route::get('pessoa', function () {
+        return view('app.pessoa.index');
+    });
+    
+    Route::get('pessoa/registrar', function () {
+        return view('app.pessoa.create');
+    });
 
-Route::resource('app/unidade', App\Http\Controllers\UnityController::class, [
-    'names' => [
-        'index' => 'unity.list'
-    ]
-]);
+    Route::resource('unidade', App\Http\Controllers\UnityController::class, [
+        'names' => [
+            'index' => 'unity.list'
+        ]
+    ]);
+});
