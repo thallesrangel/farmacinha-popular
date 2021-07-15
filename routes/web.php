@@ -34,3 +34,9 @@ Route::get('/app/pessoa', function () {
 Route::get('/app/pessoa/registrar', function () {
     return view('app.pessoa.create');
 });
+
+Route::resource('app/unidade', App\Http\Controllers\UnityController::class, [
+    'names' => [
+        'index' => 'unity.list'
+    ]
+]);
