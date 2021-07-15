@@ -73,11 +73,11 @@
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-role">Permissão *</label>
                                     <select class="form-control" id="input-role" name="role" required>
-                                        <option>Gestor Geral</option>
-                                        <option>Gestor Estadual</option>
-                                        <option>Gestor de Unidade</option>
-                                        <option>Analista</option>
-                                        <option>Assistente</option>
+                                        <option value="gestor_geral">Gestor Geral</option>
+                                        <option value="gestor_estadual">Gestor Estadual</option>
+                                        <option value="gestor_unidade">Gestor de Unidade</option>
+                                        <option value="analista">Analista</option>
+                                        <option value="assistente">Assistente</option>
                                     </select>
                                 </div>
                             </div>
