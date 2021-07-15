@@ -1,0 +1,33 @@
+h1,h2,h3,h4,h5,h6
+{
+    color: #2C3E50;
+}
+
+.btn.btn-success
+{
+    background: #00BC54;
+    border: 1px solid #00BC54;
+}
+
+.btn.btn-outline-success
+{
+    border: 1px solid #00BC54;
+    color: #00BC54;
+}
+.btn.btn-outline-success:hover
+{
+    background: #00BC54;
+    color: #FFF;
+}
+
+.dashboard
+{
+    background-color: #f5f6fa;
+    border-top-left-radius:  3rem;
+    border-bottom-left-radius:  3rem;
+}
+
+.txt-green
+{
+    color: #00BC54;
+}

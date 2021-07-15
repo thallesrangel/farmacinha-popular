@@ -1,0 +1,36 @@
+.logo
+{
+    max-width: 220px;
+    height: auto;
+    margin: 1% 3%;
+}
+
+.navbar-nav .nav-link 
+{
+    color: #2C3E50;
+    font-weight: 600;
+    margin: 0px 20px;
+}
+
+.bi 
+{
+    font-size: 24px;
+}
+
+.bi-yellow
+{
+    color: #f1c40f;
+}
+
+.bg-gray-search
+{
+    background: #F5F6FA;
+    padding: 20px 0px;
+    border-radius: 18px;
+}
+
+.container
+{
+    margin-top: 60px;
+    margin-bottom: 30px;
+}

@@ -1,0 +1,29 @@
+.logo-dashboard
+{   
+    margin: 8px 0px;
+    max-height: 55px;
+}
+
+.sidebar
+{
+    height: 100vh;
+}
+.sidebar ul li 
+{
+    padding-left: 10px;
+    padding-top: 12px;
+}
+
+.sidebar ul li i
+{
+    font-size: 1.4rem;
+    color: #00BC54;
+}
+
+.sidebar ul li span
+{
+    margin-left: 5px;
+    font-size: 1rem;
+    color: #2C3E50;
+    font-weight: 520;
+}

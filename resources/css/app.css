@@ -1,0 +1,8 @@
+@import "bootstrap";
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+@import './public/public.css';
+@import './crud.css';
+@import 'geral.css';
+@import 'sign/signIn.css';
+@import './forms.css';
+@import './sidebar.css';
