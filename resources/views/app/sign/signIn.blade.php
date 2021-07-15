@@ -8,7 +8,7 @@
                 <img class="img-fluid logo" src="{{ asset('img/logo.png')}}">
             </div>
     
-            <form class="p-3" action="#" method="POST" id="form" autocomplete="off">
+            <form class="p-3" action="{{ route('login.logar') }}" method="POST" id="form" autocomplete="off">
                 @csrf
                 <h4 class="mt-3 fw-bold">Login</h4>
                 <div class="form-group">
@@ -16,7 +16,7 @@
                 </div>
     
                 <div class="form-group">
-                    <input class="form-control" type="password" name="senha" autocomplete="off" placeholder="Senha" required/>
+                    <input class="form-control" type="password" name="password" autocomplete="off" placeholder="Senha" required/>
                 </div>
                 <div class="buttons text-center">
                     <button type="submit" class="btn btn-success btn-lg w-100 btn-block fw-bold">Entrar</button>

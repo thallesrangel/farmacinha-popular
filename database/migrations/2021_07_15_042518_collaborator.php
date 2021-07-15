@@ -24,7 +24,7 @@ class Collaborator extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('professional_record');
-            $table->integer('flag_excluido')->default('0');
+            $table->integer('flag_deleted')->default('0');
             $table->timestamps();
         });
 

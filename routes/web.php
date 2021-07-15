@@ -1,45 +1,40 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Middleware\CollaboratorAutenticate;
+use App\Http\Controllers\LoginController;
 
 Route::get('/', function () {
     return view('public.index');
 });
 
 
-Route::get('/login', function () {
-    return view('app.sign.signIn');
+Route::prefix('login')->group(function () {
+    Route::get('/', [LoginController::class, 'index'])->name('login.signin');
+    Route::post('/logar', [LoginController::class, 'login'])->name('login.logar');
+    Route::get('/logout', [LoginController::class, 'logout'])->name('login.logout');
 });
 
 
-Route::prefix('app')->group(function () {
+Route::middleware([CollaboratorAutenticate::class])->group(function () {
+    Route::prefix('app')->group(function () {
 
-    Route::get('/', function () {
-        return view('app.dashboard');
-    });
+        Route::get('/', function () {
+            return view('app.dashboard');
+        })->name('dashboard');
 
-    Route::get('pessoa', function () {
-        return view('app.pessoa.index');
-    });
-    
-    Route::get('pessoa/registrar', function () {
-        return view('app.pessoa.create');
-    });
+        Route::get('pessoa', function () {
+            return view('app.pessoa.index');
+        });
+        
+        Route::get('pessoa/registrar', function () {
+            return view('app.pessoa.create');
+        });
 
-    Route::resource('unidade', App\Http\Controllers\UnityController::class, [
-        'names' => [
-            'index' => 'unity.list'
-        ]
-    ]);
+        Route::resource('unidade', App\Http\Controllers\UnityController::class, [
+            'names' => [
+                'index' => 'unity.list'
+            ]
+        ]);
+    });
 });
