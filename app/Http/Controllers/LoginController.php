@@ -30,7 +30,7 @@ class LoginController extends Controller
     public function logout()
     {
         session()->flush();
-        return redirect()->route('signIn');
+        return redirect()->route('login.signIn');
     }
 
     private function logarUsuario($usuario)
@@ -42,7 +42,7 @@ class LoginController extends Controller
             # Mensagem
             session()->flash('alert', 'login_incorreto');
 
-            return redirect()->route('signIn');
+            return redirect()->route('login.signIn');
         }
     }
 }

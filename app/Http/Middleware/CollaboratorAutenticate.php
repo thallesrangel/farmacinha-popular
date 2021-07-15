@@ -11,7 +11,7 @@ class CollaboratorAutenticate
     {
         if (!session('collaborator')) {
    
-            return redirect()->route('signIn');
+            return redirect()->route('login.signIn');
         }
 
         return $next($request);
