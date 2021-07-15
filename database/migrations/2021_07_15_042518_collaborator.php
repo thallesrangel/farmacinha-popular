@@ -19,6 +19,7 @@ class Collaborator extends Migration
             $table->string('last_name');
             $table->string('cpf')->unique();
             $table->string('role');
+            $table->string('unity');
             $table->string('email')->unique();
             $table->string('password');
             $table->string('professional_record');
