@@ -15,15 +15,20 @@ class Collaborator extends Migration
     {
         Schema::create('collaborator', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('id_unity')->unsigned();
             $table->string('first_name');
             $table->string('last_name');
             $table->string('cpf')->unique();
             $table->string('role');
-            $table->string('unity');
             $table->string('email')->unique();
             $table->string('password');
             $table->string('professional_record');
+            $table->integer('flag_excluido')->default('0');
             $table->timestamps();
+        });
+
+        Schema::table('collaborator', function($table) {
+            $table->foreign('id_unity')->references('id')->on('unity');
         });
     }
 
