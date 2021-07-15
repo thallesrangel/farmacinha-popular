@@ -25,6 +25,7 @@
 }
 .table-body td
 {
+    padding-left: 20px;
     padding-top: 12px;
     padding-bottom: 12px;
 }
@@ -35,6 +36,7 @@ th, td {
 }
 
 .table-head th {
+    padding-left: 20px;
     font-size: 18px;
     line-height: 1.4;
     background-color: transparent;
