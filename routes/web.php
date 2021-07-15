@@ -41,6 +41,7 @@ Route::middleware([CollaboratorAutenticate::class])->group(function () {
         Route::prefix('colaborador')->group(function () {
             Route::get('/', [App\Http\Controllers\CollaboratorController::class, 'index'])->name('collaborator.list');
             Route::get('/registrar', [App\Http\Controllers\CollaboratorController::class, 'create'])->name('collaborator.registrar');
+            Route::post('/salvar', [App\Http\Controllers\CollaboratorController::class, 'store'])->name('collaborator.store');
         });
     });
 });

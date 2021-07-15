@@ -27,6 +27,6 @@ class CollaboratorController extends Controller
 
     public function store(Request $request)
     {
-
+        $this->collaboratorService->save($request);
     }
 }

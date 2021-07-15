@@ -7,22 +7,23 @@
            
             <div class="card-body m-0 p-0">
                 <h1>Colaborador</h1>
-                <form action="" method="POST">
+                <form action="{{ route('collaborator.store') }}" method="POST">
+                    @csrf
                     <h6 class="heading-small text-muted mt-3">Informações gerais</h6>
                     <div class="pl-lg-4">
                         <div class="row">
     
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label class="form-control-label" for="input-nome">Nome *</label>
-                                    <input type="text" id="input-nome" class="form-control" name="nome" required>
+                                    <label class="form-control-label" for="input-first-name">Nome *</label>
+                                    <input type="text" id="input-first-name" class="form-control" name="first_name" required>
                                 </div>
                             </div>
                             
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label class="form-control-label" for="input-sobrenome">Sobrenome *</label>
-                                    <input type="text" id="input-sobrenome" class="form-control" name="sobrenome" required>
+                                    <label class="form-control-label" for="input-last-name">Sobrenome *</label>
+                                    <input type="text" id="input-last-name" class="form-control" name="last_name" required>
                                 </div>
                             </div>
 
@@ -63,8 +64,8 @@
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label class="form-control-label" for="input-profissional-record">Registro Profissional</label>
-                                    <input type="password" id="input-profissional-record" class="form-control" name="profissional_record">
+                                    <label class="form-control-label" for="input-professional-record">Registro Profissional</label>
+                                    <input type="text" id="input-professional-record" class="form-control" name="professional_record">
                                 </div>
                             </div>
 
@@ -86,7 +87,7 @@
 
                     <div class="pl-lg-4">
                         <button class="btn btn-success" type="submit">Salvar</button>
-                        <a class="btn btn-outline-danger" href="#">Voltar</a>
+                        <a class="btn btn-outline-danger" href="{{ route('collaborator.list') }}">Voltar</a>
                     </div>
     
                 </form>

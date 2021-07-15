@@ -8,6 +8,7 @@
             <div class="card-body m-0 p-0">
                 <h1>Pessoas</h1>
                 <form action="" method="POST">
+                    @csrf
                     <h6 class="heading-small text-muted mt-3">Informações gerais</h6>
                     <div class="pl-lg-4">
                         <div class="row">
