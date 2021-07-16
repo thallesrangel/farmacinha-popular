@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="col-sm-12">
-        <button type="button" class="btn btn-outline-success">USB - Praia Grande - ES</button>
+        @include('app.includes.header')
         <h1>Colaboradores</h1>
 
         <div class="d-grid gap-2 d-md-block">

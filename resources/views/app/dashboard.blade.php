@@ -2,8 +2,9 @@
 
 @section('content')
     <div class="col-sm-12">
-        <h6 class="text-muted">Olá, {{ session('collaborator.first_name')}} - {{ $role }}</h6>
-        <button type="button" class="btn btn-outline-success">USB - Praia Grande - ES</button>
+        <h6 class="text-muted">Olá, {{ session('collaborator.first_name')}} </h6>
+        <h6 class="text-muted">{{ $role }}</h6>
+        @include('app.includes.header')
         <h1>Dashboard<h1>
         <h4 class="mt-4 mb-3 fw-bold">Atalhos Medicamentos</h4>
 
