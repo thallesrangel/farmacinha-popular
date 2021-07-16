@@ -73,11 +73,9 @@
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-role">Permissão *</label>
                                     <select class="form-control" id="input-role" name="role" required>
-                                        <option value="gestor_geral">Gestor Geral</option>
-                                        <option value="gestor_estadual">Gestor Estadual</option>
-                                        <option value="gestor_unidade">Gestor de Unidade</option>
-                                        <option value="analista">Analista</option>
-                                        <option value="assistente">Assistente</option>
+                                        @foreach($roles as $key =>  $value)
+                                            <option value="{{ $key }}">{{ $value }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>

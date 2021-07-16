@@ -24,15 +24,20 @@
                 <tbody class="table-body">
                     @foreach($data as $item)
                         <tr class="table-row">
-                            <td><input type="checkbox" name="ids[]" value="#" class="selectbox"></td>
+                            <td><input type="checkbox" name="ids[]" value="{{ $item->id }}" class="selectbox"></td>
                             <td> {{ $item->first_name }} </td>
                             <td> {{ $item->cpf }} </td>
                             <td> {{ $item->email }} </td>
                             <td> {{ $item->role }} </td>
-                            <td>
-                                <a class="table-info" href="#"><i class="bi bi-info-circle"></i></a>
-                                <a class="table-edit" href="#"><i class="bi bi-pencil"></i></a>
-                                <a class="table-trash" href="#"><i class="bi bi-trash2"></i></a>
+                            <td class="d-flex justify-content-center">
+                                <a class="btn btn-sm btn-default table-info" href="#"><i class="bi bi-info-circle"></i></a>
+                                <a class="btn btn-sm btn-default table-edit" href="#"><i class="bi bi-pencil"></i></a>
+                                
+                                <form action="{{ route('collaborator.destroy', $item->id)  }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-sm btn-default table-trash" type="submit"><i class="bi bi-trash2"></i></button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

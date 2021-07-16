@@ -26,8 +26,8 @@
 .table-body td
 {
     padding-left: 20px;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 8px;
+    padding-bottom: 2px;
 }
 
 th, td {
@@ -68,7 +68,7 @@ th, td {
 {
     color: #2C3E50;
     margin-left: 5px;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .table-trash
@@ -116,4 +116,10 @@ th, td {
 .txt-yellow
 {
     color: #F1C40F;
+}
+
+.btn.btn-sm.btn-default
+{
+    padding: 0px;
+    margin: 0px 3px;
 }

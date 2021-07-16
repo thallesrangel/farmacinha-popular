@@ -12340,8 +12340,8 @@ url(/fonts/vendor/bootstrap-icons/bootstrap-icons.woff?94eeade15e6b7fbed95b18ff3
 .table-body td
 {
     padding-left: 20px;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 8px;
+    padding-bottom: 2px;
 }
 
 th, td {
@@ -12382,7 +12382,7 @@ th, td {
 {
     color: #2C3E50;
     margin-left: 5px;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .table-trash
@@ -12432,6 +12432,11 @@ th, td {
     color: #F1C40F;
 }
 
+.btn.btn-sm.btn-default
+{
+    padding: 0px;
+    margin: 0px 3px;
+}
 h1,h2,h3,h4,h5,h6
 {
     color: #2C3E50;

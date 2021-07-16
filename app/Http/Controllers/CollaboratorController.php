@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Services\CollaboratorService; 
+use App\Models\Role;
 
 class CollaboratorController extends Controller
 {
@@ -22,11 +23,20 @@ class CollaboratorController extends Controller
 
     public function create()
     {
-        return view('app.collaborator.create');
+        $role = new Role();
+        $data = $role->filterRole();
+
+        return view('app.collaborator.create', [ 'roles' => $data]);
     }
 
     public function store(Request $request)
     {
         $this->collaboratorService->save($request);
+    }
+
+    public function destroy($id)
+    {
+        $this->collaboratorService->deleteById($id);
+        return redirect()->route('collaborator.list');
     }
 }

@@ -3,8 +3,10 @@
 namespace App\Services;
 
 use App\Repositories\collaboratorRepository;
-use Illuminate\Support\Facades\Validator;
 use InvalidArgumentException;
+use Illuminate\Support\Facades\DB;
+use Exception;
+
 
 class CollaboratorService
 {
@@ -25,5 +27,23 @@ class CollaboratorService
         $response = $this->collaboratorRepository->save($data);
 
         return $response;
+    }
+
+    public function deleteById($id)
+    {
+        DB::beginTransaction();
+
+        try {
+            $collaborator = $this->collaboratorRepository->delete($id);
+
+        } catch (Exception $e) {
+            DB::rollBack();
+
+            throw new InvalidArgumentException('Não foi possível deletar o registro');
+        }
+
+        DB::commit();
+
+        return $collaborator;
     }
 }

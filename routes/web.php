@@ -19,9 +19,7 @@ Route::prefix('login')->group(function () {
 Route::middleware([CollaboratorAutenticate::class])->group(function () {
     Route::prefix('app')->group(function () {
 
-        Route::get('/', function () {
-            return view('app.dashboard');
-        })->name('dashboard');
+        Route::get('/', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 
         Route::get('pessoa', function () {
             return view('app.pessoa.index');
@@ -37,11 +35,11 @@ Route::middleware([CollaboratorAutenticate::class])->group(function () {
             ]
         ]);
 
-
         Route::prefix('colaborador')->group(function () {
             Route::get('/', [App\Http\Controllers\CollaboratorController::class, 'index'])->name('collaborator.list');
             Route::get('/registrar', [App\Http\Controllers\CollaboratorController::class, 'create'])->name('collaborator.registrar');
             Route::post('/salvar', [App\Http\Controllers\CollaboratorController::class, 'store'])->name('collaborator.store');
+            Route::delete('/{id}', [App\Http\Controllers\CollaboratorController::class, 'destroy'])->name('collaborator.destroy');
         });
     });
 });

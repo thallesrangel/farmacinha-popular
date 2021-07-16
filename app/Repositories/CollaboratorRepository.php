@@ -36,4 +36,11 @@ class CollaboratorRepository
         return $collaborator->fresh();
     }
 
+    public function delete($id)
+    {
+        $collaborator = $this->collaborator->find($id);
+        $collaborator->update(['flag_deleted' => 1 ]);
+
+        return $collaborator;
+    }
 }
