@@ -25,4 +25,4 @@ Deve apenas registrar unidades em seu Estado.
 *Midlleware só acessa dashboard e outros caso tenha selecionado uma unidade*
 
 
-Remover sidebar - Unidade menu e seu list?
+Gestor Geral e Gestor de Estado -> não pode ter id_unity no registro(DB)

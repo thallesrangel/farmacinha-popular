@@ -1,1 +1,1 @@
-<button type="button" class="btn btn-outline-success">USB - Praia Grande - ES</button>
+<button type="button" class="btn btn-outline-success">{{ session('collaborator.corporate_name') }}</button>

@@ -18,12 +18,21 @@ class Unity extends Seeder
             [
                 'corporate_name' => 'FARMÁCIA BÁSICA DE FUNDÃO',
                 'cnes' => '12341234',
+                'states' => 'ES',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ],
             [
                 'corporate_name' => 'FARMÁCIA BÁSICA DE TIMBUÍ',
-                'cnes' => '12341524',
+                'cnes' => '92341524',
+                'states' => 'ES',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ],
+            [
+                'corporate_name' => 'FARMÁCIA BÁSICA DA TIJUCA',
+                'cnes' => '00041524',
+                'states' => 'RJ',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]

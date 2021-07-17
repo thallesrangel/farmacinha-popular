@@ -17,4 +17,14 @@ class UnityRepository
     {
         return $this->unity->get();
     }
+
+    public function getById($idUnity)
+    {
+        return $this->unity->where('id', $idUnity)->first();
+    }
+
+    public function getByStates($state)
+    {
+        return $this->unity->where('states', $state)->get();
+    }
 }

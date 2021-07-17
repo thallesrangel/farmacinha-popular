@@ -14,12 +14,16 @@
                 </a>
             </div>
         @endif
-        
+        @if(session('collaborator')->id_unity)
+            <h5 class="text-center">Unidade atual</h5>
+            <h6 class="text-muted text-center">{{ session('collaborator')->corporate_name }}</h6>
+        @endif        
+
         <h4 class="text-center mt-2">Selecione uma unidade</h4>
 
         <ul class="list-group list-unstyled opcoes-local">
             @foreach($data as $item)
-            <li class="nav-item"><a class="nav-link" href="{{ $item['id'] }}">{{ $item['corporate_name'] }}</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('unity.selected', $item['id']) }}">{{ $item['corporate_name'] }}</a></li>
             @endforeach
         </ul>
     </div>

@@ -17,6 +17,7 @@ class Unity extends Migration
             $table->id();
             $table->string('corporate_name');
             $table->string('cnes')->unique();
+            $table->string('states');
             $table->integer('flag_deleted')->default('0');
             $table->timestamps();
         });
