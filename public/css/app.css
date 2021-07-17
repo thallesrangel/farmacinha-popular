@@ -12560,4 +12560,27 @@ h1,h2,h3,h4,h5,h6
 {
     color: #2C3E50;
 }
+.div-cadastro
+{
+    max-width: 800px;
+    height: auto;
+    background: #FFF;
+    border-radius: 10px;
+}
+
+.div-cadastro .card
+{
+    padding: 20px;
+}
+
+.form-control-label {
+    font-weight: 520;
+    color: #34495e;
+}
+
+.card
+{
+    border: none;
+}
+
 

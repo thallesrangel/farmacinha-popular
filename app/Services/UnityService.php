@@ -27,6 +27,12 @@ class UnityService
     {
         return $this->unityRepository->getById(session('collaborator.id_unity'));
     }
+
+    public function store($data)
+    {
+        return $this->unityRepository->store($data);
+    }
+    
     public function selectUnity($idUnity)
     {   
         $data = $this->unityRepository->getById($idUnity);
@@ -36,4 +42,5 @@ class UnityService
 
         return redirect()->route('dashboard');
     }
+
 }

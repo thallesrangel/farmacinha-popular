@@ -22,7 +22,9 @@ Route::middleware([CollaboratorAutenticate::class])->group(function () {
 
         Route::prefix('unidade')->group(function () {
             Route::get('/', [App\Http\Controllers\UnityController::class, 'index'])->name('unity.list');
+            Route::get('/registrar', [App\Http\Controllers\UnityController::class, 'create'])->name('unity.create');
             Route::get('/{id}', [App\Http\Controllers\UnityController::class, 'selected'])->name('unity.selected');
+            Route::post('/salvar', [App\Http\Controllers\UnityController::class, 'store'])->name('unity.store');
         });
 
         Route::middleware([UnitySelected::class])->group(function () {

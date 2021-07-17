@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use Exception;
 use App\Services\UnityService; 
-use App\Models\Role;
 
 class UnityController extends Controller
 {
@@ -29,6 +30,30 @@ class UnityController extends Controller
         $permission = in_array(session('collaborator.role'), ['gestor_geral','gestor_estradual'], true );
 
         return view('app.unity.index', [ 'data' => $data, 'permission'  => $permission ]);
+    }
+
+    public function create()
+    {
+        return view('app.unity.create');
+    }
+
+    public function store(Request $request)
+    {
+        $data = $request->only([
+            'corporate_name',
+            'cnes',
+            'states'
+        ]);
+        
+
+        try {
+            $this->unityService->store($data);
+        } catch (Exception $e) {
+            dd($e);
+            return redirect()->route('unity.list');
+        }
+
+        return redirect()->route('unity.list');
     }
 
     public function selected($idUnity)

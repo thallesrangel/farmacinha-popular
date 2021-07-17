@@ -44,12 +44,14 @@
         </a>
     </li>
 
-    <li class="nav-item">
-        <a class="nav-link p-1" href="{{ route('unity.list') }}">
-            <i class="bi bi-building"></i>
-            <span>Unidade</span> 
-        </a>
-    </li>
+    @if(in_array(session('collaborator.role'), ['gestor_geral', 'gestor_estadual'], true))
+        <li class="nav-item">
+            <a class="nav-link p-1" href="{{ route('unity.list') }}">
+                <i class="bi bi-building"></i>
+                <span>Unidade</span> 
+            </a>
+        </li>
+    @endif
 </ul>
 
 <ul class="flex-column nav pl-4 mt-5">

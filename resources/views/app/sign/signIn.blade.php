@@ -10,7 +10,7 @@
     
             <form class="p-3" action="{{ route('login.logar') }}" method="POST" id="form" autocomplete="off">
                 @csrf
-                <h4 class="mt-3 fw-bold">Login</h4>
+                <h3 class="mt-3 fw-bold">Login</h3>
                 <div class="form-group">
                     <input class="form-control" type="email" name="email" autocomplete="off" id="campo" placeholder="Email" required autofocus/>
                 </div>
@@ -20,7 +20,7 @@
                 </div>
                 <div class="buttons text-center">
                     <button type="submit" class="btn btn-success btn-lg w-100 btn-block fw-bold">Entrar</button>
-                    <hr>
+                    <hr class="mt-4 mb-4">
                     <p><a class="btn btn-primary fw-bold" href="#">Criar conta</a></p>
                 </div>
             </form>
