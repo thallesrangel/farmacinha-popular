@@ -27,7 +27,7 @@ class UnityController extends Controller
                 break;
         }
 
-        $permission = in_array(session('collaborator.role'), ['gestor_geral','gestor_estradual'], true );
+        $permission = in_array(session('collaborator.role'), ['gestor_geral','gestor_estadual'], true );
 
         return view('app.unity.index', [ 'data' => $data, 'permission'  => $permission ]);
     }

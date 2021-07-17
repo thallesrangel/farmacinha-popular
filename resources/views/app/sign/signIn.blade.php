@@ -20,8 +20,6 @@
                 </div>
                 <div class="buttons text-center">
                     <button type="submit" class="btn btn-success btn-lg w-100 btn-block fw-bold">Entrar</button>
-                    <hr class="mt-4 mb-4">
-                    <p><a class="btn btn-primary fw-bold" href="#">Criar conta</a></p>
                 </div>
             </form>
         </div>
