@@ -16,6 +16,7 @@ class UnityController extends Controller
     public function index()
     {
         $data = $this->unityService->get();
-        return view('app.unity.index', [ 'data' => $data ]);
+        $permission = in_array(session('collaborator.role'), array('gestor_geral','gestor_estradual'), true );
+        return view('app.unity.index', [ 'data' => $data, 'permission'  => $permission ]);
     }
 }

@@ -7,11 +7,13 @@
             <img class="img-fluid logo" src="{{ asset('img/logo.png') }}">
         </div>
         <p class="text-center mt-2 p-0">Olá <b>{{ session('collaborator')->first_name}}</b></p>
-        <div class="d-flex justify-content-center">
-            <a href="#" class="btn btn-sm btn-success mb-2 mt-2" title="Crie unidades">
-                Criar Unidade
-            </a>
-        </div>
+        @if($permission)
+            <div class="d-flex justify-content-center">
+                <a href="#" class="btn btn-sm btn-success mb-2 mt-2" title="Crie unidades">
+                    Criar Unidade
+                </a>
+            </div>
+        @endif
         
         <h4 class="text-center mt-2">Selecione uma unidade</h4>
 
