@@ -1,36 +1,24 @@
-@extends('template-app')
+@extends('template-public')
 
 @section('content')
-    <div class="col-sm-12">
-        <button type="button" class="btn btn-outline-success">USB - Praia Grande - ES</button>
-        <h1>Unidade</h1>
 
-        <div class="d-grid gap-2 d-md-block">
-            <button type="button" class="btn btn-success">Registrar</button>
+    <div class="container div-local shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="d-flex justify-content-center">
+            <img class="img-fluid logo" src="{{ asset('img/logo.png') }}">
         </div>
+        <p class="text-center mt-2 p-0">Olá <b>{{ session('collaborator')->first_name}}</b></p>
+        <div class="d-flex justify-content-center">
+            <a href="#" class="btn btn-sm btn-success mb-2 mt-2" title="Crie unidades">
+                Criar Unidade
+            </a>
+        </div>
+        
+        <h4 class="text-center mt-2">Selecione uma unidade</h4>
 
-        <div class="div-table">
-            <table class="table">
-                <thead class="table-head">
-                <tr>
-                    <th>Nome Fantasia</th>
-                    <th>CNES</th>
-                </tr>
-                </thead>
-                <tbody class="table-body">
-                    @foreach($data as $item)
-                        <tr class="table-row">
-                            <td> {{ $item->corporate_name}} </td>
-                            <td> {{ $item->cnes}} </td>
-                            <td>
-                                <a class="table-info" href="#"><i class="bi bi-info-circle"></i></a>
-                                <a class="table-edit" href="#"><i class="bi bi-pencil"></i></a>
-                                <a class="table-trash" href="#"><i class="bi bi-trash2"></i></a>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
+        <ul class="list-group list-unstyled opcoes-local">
+            @foreach($data as $item)
+            <li class="nav-item"><a class="nav-link" href="{{ $item['id'] }}">{{ $item['corporate_name'] }}</a></li>
+            @endforeach
+        </ul>
     </div>
 @endsection
