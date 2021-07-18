@@ -56,7 +56,7 @@
 
 <ul class="flex-column nav pl-4 mt-5">
     <li class="nav-item">
-        <a class="nav-link p-1" href="#">
+        <a class="nav-link p-1" href="{{ route('profile.index') }}">
             <i class="bi bi-person"></i>
             <span>Perfil</span>
         </a>

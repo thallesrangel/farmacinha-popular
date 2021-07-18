@@ -38,6 +38,8 @@ Route::middleware([CollaboratorAutenticate::class])->group(function () {
                 return view('app.pessoa.create');
             });
 
+            Route::get('/perfil', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile.index');
+
             Route::prefix('colaborador')->group(function () {
                 Route::get('/', [App\Http\Controllers\CollaboratorController::class, 'index'])->name('collaborator.list');
                 Route::get('/registrar', [App\Http\Controllers\CollaboratorController::class, 'create'])->name('collaborator.registrar');

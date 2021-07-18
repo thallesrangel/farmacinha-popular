@@ -3,7 +3,7 @@
 @section('content')
 <div class="col-sm-12">
     @include('app.includes.header')
-    <h1>Relatório</h1>
+    <h2>Relatório</h2>
     <div class="row">
         <div class="col-md-3 mt-2">
             <a href="#" class="card card-link">

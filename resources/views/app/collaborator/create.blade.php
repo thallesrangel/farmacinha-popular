@@ -6,7 +6,7 @@
         <div class="col-12">
            
             <div class="card-body m-0 p-0">
-                <h1>Colaborador</h1>
+                <h2>Colaborador</h2>
                 <form action="{{ route('collaborator.store') }}" method="POST">
                     @csrf
                     <h6 class="heading-small text-muted mt-3">Informações gerais</h6>

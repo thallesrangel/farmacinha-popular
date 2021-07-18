@@ -3,7 +3,7 @@
 @section('content')
     <div class="col-sm-12">
         @include('app.includes.header')
-        <h1>Colaboradores</h1>
+        <h2>Colaboradores</h2>
 
         <div class="d-grid gap-2 d-md-block">
             <a href="{{ route('collaborator.registrar') }}" class="btn btn-success">Registrar</a>

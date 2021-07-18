@@ -5,7 +5,7 @@
         <h6 class="text-muted">Olá, {{ session('collaborator.first_name')}} </h6>
         <h6 class="text-muted">{{ $role }}</h6>
         @include('app.includes.header')
-        <h1>Dashboard<h1>
+        <h2>Dashboard<h2>
         <h4 class="mt-4 mb-3 fw-bold">Atalhos Medicamentos</h4>
 
         <div class="d-grid gap-2 d-md-block">
