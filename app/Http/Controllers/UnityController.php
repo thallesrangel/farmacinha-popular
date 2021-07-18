@@ -44,16 +44,14 @@ class UnityController extends Controller
             'cnes',
             'states'
         ]);
-        
 
         try {
             $this->unityService->store($data);
         } catch (Exception $e) {
-            dd($e);
-            return redirect()->route('unity.list');
+            return redirect()->route('unity.list')->with('error', 'Ocorreu um erro.');;
         }
 
-        return redirect()->route('unity.list');
+        return redirect()->route('unity.list')->with('success', 'Registrado com sucesso.');
     }
 
     public function selected($idUnity)

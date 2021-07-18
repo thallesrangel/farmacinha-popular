@@ -13,6 +13,7 @@
     <title>Farmacinha Popular</title>
 </head>
 <body>
+    @include('app.includes.alert')
     @yield('content')
 </body>
 </html>
