@@ -44,6 +44,10 @@ Route::middleware([CollaboratorAutenticate::class])->group(function () {
                 Route::post('/salvar', [App\Http\Controllers\CollaboratorController::class, 'store'])->name('collaborator.store');
                 Route::delete('/{id}', [App\Http\Controllers\CollaboratorController::class, 'destroy'])->name('collaborator.destroy');
             });
+
+            Route::prefix('relatorio')->group(function () {
+                Route::get('/', [App\Http\Controllers\ReportController::class, 'index'])->name('report.index');
+            });
         });
     });
 });

@@ -31,7 +31,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link p-1" href="#">
+        <a class="nav-link p-1" href="{{ route('report.index') }}">
             <i class="bi bi-clipboard"></i>
             <span>Relatórios</span> 
         </a>
