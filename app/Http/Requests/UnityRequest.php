@@ -14,8 +14,8 @@ class UnityRequest extends FormRequest
     public function rules()
     {
         return [
-            'corporate_name' => 'required|max:100|string',
-            'cnes' => 'required|max:50',
+            'corporate_name' => 'required|max:70|string',
+            'cnes' => 'required|max:20|string',
             'states' => 'required|max:2',
         ];
     }
