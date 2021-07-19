@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Collaborator;
-
+use App\Http\Requests\CollaboratorLoginRequest;
 
 class LoginController extends Controller
 {
@@ -17,7 +16,7 @@ class LoginController extends Controller
         return view('app.sign.signIn');
     }
 
-    public function login(Request $request)
+    public function login(CollaboratorLoginRequest $request)
     {
         $login = addslashes($request->email);
         $password = md5($request->password);
@@ -37,12 +36,9 @@ class LoginController extends Controller
     {
         if (!empty($usuario)) {
                 session()->put('collaborator', $usuario);
-                return redirect()->route('dashboard');
-        } else {
-            # Mensagem
-            session()->flash('alert', 'login_incorreto');
-
-            return redirect()->route('login.signIn');
+                return redirect()->route('dashboard')->with('login_success', 'Vamos fazer a diferença');
+        } else { 
+            return redirect()->route('login.signIn')->with('login_error', 'Usuário ou senha incorreto');
         }
     }
 }

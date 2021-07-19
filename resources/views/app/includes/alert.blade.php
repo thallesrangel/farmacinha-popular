@@ -43,3 +43,27 @@
     })
    </script>
 @endif
+
+@if (Session::has('login_error'))
+   <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Eitaaa',
+            text: '{{ session('login_error') }}',
+            showConfirmButton: false,
+            timer: 2000
+    })
+   </script>
+@endif
+
+@if (Session::has('login_success'))
+   <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Tudo certo!',
+            text: '{{ session('login_success') }}',
+            showConfirmButton: false,
+            timer: 2500
+    })
+   </script>
+@endif

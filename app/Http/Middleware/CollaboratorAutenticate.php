@@ -10,7 +10,6 @@ class CollaboratorAutenticate
     public function handle($request, Closure $next)
     {
         if (!session('collaborator')) {
-   
             return redirect()->route('login.signIn');
         }
 
