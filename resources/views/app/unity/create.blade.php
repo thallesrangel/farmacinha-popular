@@ -31,8 +31,9 @@
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-states">Estado *</label>
                                     <select class="form-control" id="input-states" name="states" required>
-                                        <option value="ES">ES</option>
-                                        <option value="RJ">RJ</option>
+                                        @foreach($states as $state)
+                                            <option value="{{ $state }}">{{ $state }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>

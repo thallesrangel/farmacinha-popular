@@ -19,7 +19,7 @@
     <div class="container">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-lg-6 col-md-6 col-sm-12">
-                <h1 class="fw-bold">A principal ferramenta <br>de doação de medicamentos <br> com qualidade</h1>
+                <h1 class="fw-bold"><span id="salve-vidas">Salve vidas.</span> <br> Doe e receber medicamentos<br> gratuito com qualidade</h1>
                 <a class="btn btn-success m-2 fw-bold" href="#">Doar</a>
                 <a class="btn btn-outline-success m-2 fw-bold" href="#">Receber</a>
             </div>

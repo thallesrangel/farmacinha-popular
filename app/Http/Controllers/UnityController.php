@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\StateService;
 use Illuminate\Http\Request;
 use Exception;
 use App\Services\UnityService; 
@@ -9,10 +10,12 @@ use App\Services\UnityService;
 class UnityController extends Controller
 {
     protected $unityService;
+    protected $stateService;
 
-    public function __construct(UnityService $unityService)
+    public function __construct(UnityService $unityService, StateService $stateService)
     {
         $this->unityService = $unityService;
+        $this->stateService = $stateService;
     }
 
     public function index()
@@ -34,7 +37,8 @@ class UnityController extends Controller
 
     public function create()
     {
-        return view('app.unity.create');
+        $states = $this->stateService->get();
+        return view('app.unity.create',  [ 'states' => $states ]);
     }
 
     public function store(Request $request)
