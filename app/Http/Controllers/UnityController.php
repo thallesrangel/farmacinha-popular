@@ -6,6 +6,7 @@ use App\Services\StateService;
 use Illuminate\Http\Request;
 use Exception;
 use App\Services\UnityService; 
+use App\Http\Requests\UnityRequest;
 
 class UnityController extends Controller
 {
@@ -43,18 +44,12 @@ class UnityController extends Controller
         return view('app.unity.create',  [ 'states' => $states ]);
     }
 
-    public function store(Request $request)
+    public function store(UnityRequest $request)
     {
-        $data = $request->only([
-            'corporate_name',
-            'cnes',
-            'states'
-        ]);
-
         try {
-            $this->unityService->store($data);
+            $this->unityService->store($request);
         } catch (Exception $e) {
-            return redirect()->route('unity.list')->with('error', 'Ocorreu um erro.');
+            return redirect()->route('unity.list')->with('error', 'Ocorreu um erro. Verifique os campos.');
         }
 
         return redirect()->route('unity.list')->with('success', 'Registrado com sucesso.');
