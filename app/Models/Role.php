@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Role extends Model
 {
-
     private $gestor_geral = ['gestor_geral' => 'Gestor Geral'];
     private $gestor_estadual = ['gestor_estadual' => 'Gestor Estadual'];
     private $gestor_unidade = ['gestor_unidade' => 'Gestor de Unidade'];

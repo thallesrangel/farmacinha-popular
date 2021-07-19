@@ -38,13 +38,12 @@ Route::middleware([CollaboratorAutenticate::class])->group(function () {
                 return view('app.pessoa.create');
             });
 
-            Route::get('/perfil', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile.index');
-
             Route::prefix('colaborador')->group(function () {
                 Route::get('/', [App\Http\Controllers\CollaboratorController::class, 'index'])->name('collaborator.list');
                 Route::get('/registrar', [App\Http\Controllers\CollaboratorController::class, 'create'])->name('collaborator.registrar');
                 Route::post('/salvar', [App\Http\Controllers\CollaboratorController::class, 'store'])->name('collaborator.store');
                 Route::delete('/{id}', [App\Http\Controllers\CollaboratorController::class, 'destroy'])->name('collaborator.destroy');
+                Route::get('/perfil/{id}', [App\Http\Controllers\CollaboratorController::class, 'profile'])->name('collaborator.profile');
             });
 
             Route::prefix('relatorio')->group(function () {

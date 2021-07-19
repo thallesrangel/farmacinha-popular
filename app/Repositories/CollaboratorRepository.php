@@ -18,6 +18,11 @@ class CollaboratorRepository
         return $this->collaborator->where('flag_deleted', 0)->get();
     }
 
+    public function getById($id)
+    {
+        return $this->collaborator->whereId($id)->first();
+    }
+
     public function save($data)
     {
         $collaborator = new $this->collaborator;

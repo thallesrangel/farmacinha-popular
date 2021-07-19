@@ -30,7 +30,7 @@
                             <td> {{ $item->email }} </td>
                             <td> {{ $item->role }} </td>
                             <td class="d-flex justify-content-center">
-                                <a class="btn btn-sm btn-default table-info" href="#"><i class="bi bi-info-circle"></i></a>
+                                <a class="btn btn-sm btn-default table-info" href="{{ route('collaborator.profile', $item->id) }}"><i class="bi bi-info-circle"></i></a>
                                 <a class="btn btn-sm btn-default table-edit" href="#"><i class="bi bi-pencil"></i></a>
                                 
                                 <form action="{{ route('collaborator.destroy', $item->id)  }}" method="POST">

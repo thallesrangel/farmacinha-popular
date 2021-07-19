@@ -22,6 +22,7 @@
             <div class="col-10 dashboard">
                 <div class="container">
                     <div class="row">
+                        @include('app.includes.alert')
                         @yield('content')
                     </div>
                 </div>

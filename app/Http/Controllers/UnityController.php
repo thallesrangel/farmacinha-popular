@@ -14,6 +14,8 @@ class UnityController extends Controller
 
     public function __construct(UnityService $unityService, StateService $stateService)
     {
+        $this->middleware('roleslower');
+
         $this->unityService = $unityService;
         $this->stateService = $stateService;
     }
@@ -52,7 +54,7 @@ class UnityController extends Controller
         try {
             $this->unityService->store($data);
         } catch (Exception $e) {
-            return redirect()->route('unity.list')->with('error', 'Ocorreu um erro.');;
+            return redirect()->route('unity.list')->with('error', 'Ocorreu um erro.');
         }
 
         return redirect()->route('unity.list')->with('success', 'Registrado com sucesso.');
@@ -61,5 +63,13 @@ class UnityController extends Controller
     public function selected($idUnity)
     {
         return $this->unityService->selectUnity($idUnity);
+    }
+
+    public function update(Request $request)
+    {
+    }
+
+    public function destroy($id)
+    {
     }
 }

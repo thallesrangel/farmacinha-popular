@@ -17,8 +17,8 @@ class CollaboratorController extends Controller
 
     public function index()
     {
-        $data = $this->collaboratorService->get();
-        return view('app.collaborator.index', [ 'data' => $data ]);
+        $collaborator = $this->collaboratorService->get();
+        return view('app.collaborator.index', [ 'data' => $collaborator ]);
     }
 
     public function create()
@@ -38,5 +38,16 @@ class CollaboratorController extends Controller
     {
         $this->collaboratorService->deleteById($id);
         return redirect()->route('collaborator.list');
+    }
+
+    public function profile($id)
+    {
+        $response = $this->collaboratorService->getById($id);
+        
+        if (!$response) {
+            return redirect()->route('collaborator.list')->with('not_found', 'Registro não encontrado.');
+        }
+
+        return view('app.profile.index', [ 'collaborator' => $response ]);
     }
 }

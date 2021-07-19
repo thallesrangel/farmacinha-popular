@@ -7,7 +7,6 @@ use InvalidArgumentException;
 use Illuminate\Support\Facades\DB;
 use Exception;
 
-
 class CollaboratorService
 {
     protected $CollaboratorRepository;
@@ -20,6 +19,11 @@ class CollaboratorService
     public function get()
     {
         return $this->collaboratorRepository->get();
+    }
+
+    public function getById($id)
+    {
+        return $this->collaboratorRepository->getById($id);
     }
 
     public function save($data)

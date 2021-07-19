@@ -17,6 +17,8 @@
     },
     "dependencies": {
         "bootstrap": "^5.0.2",
-        "bootstrap-icons": "^1.5.0"
+        "bootstrap-icons": "^1.5.0",
+        "css-loader": "^5.2.7",
+        "sweetalert2": "^11.0.19"
     }
 }
