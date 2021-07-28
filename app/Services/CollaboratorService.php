@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Repositories\collaboratorRepository;
+use App\Repositories\Contracts\CollaboratorRepositoryInterface;
 use InvalidArgumentException;
 use Illuminate\Support\Facades\DB;
 use Exception;
@@ -11,7 +11,7 @@ class CollaboratorService
 {
     protected $CollaboratorRepository;
 
-    public function __construct(CollaboratorRepository $collaboratorRepository)
+    public function __construct(CollaboratorRepositoryInterface $collaboratorRepository)
     {
         $this->collaboratorRepository = $collaboratorRepository;
     }
