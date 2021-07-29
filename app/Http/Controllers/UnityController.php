@@ -55,6 +55,13 @@ class UnityController extends Controller
         return redirect()->route('unity.list')->with('success', 'Registrado com sucesso.');
     }
 
+    public function edit($id)
+    {
+        $states = $this->stateService->get();
+        $data = $this->unityService->getById($id);
+        return view('app.unity.edit',  [ 'data' => $data, 'states' => $states ]);
+    }
+
     public function selected($idUnity)
     {
         return $this->unityService->selectUnity($idUnity);
