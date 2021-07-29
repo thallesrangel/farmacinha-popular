@@ -54,4 +54,8 @@ class UnityService
         return redirect()->route('dashboard');
     }
 
+    public function disabled($idUnity)
+    {
+        return $this->unityRepository->disabled($idUnity);
+    }
 }

@@ -15,12 +15,12 @@ class UnityRepository
 
     public function get()
     {
-        return $this->unity->get();
+        return $this->unity->where('flag_status', 'enabled')->get();
     }
 
     public function getPaginate()
     {   
-        return $this->unity->paginate(10);
+        return $this->unity->where('flag_status', 'enabled')->paginate(10);
     }
 
     public function getById($idUnity)
@@ -30,12 +30,12 @@ class UnityRepository
 
     public function getByStates($state)
     {
-        return $this->unity->where('states', $state)->get();
+        return $this->unity->where('states', $state)->where('flag_status', 'enabled')->get();
     }
 
     public function getByStatesPaginate($state)
     {
-        return $this->unity->where('states', $state)->paginate(10);
+        return $this->unity->where('states', $state)->where('flag_status', 'enabled')->paginate(10);
     }
 
     public function store($data)
@@ -52,6 +52,10 @@ class UnityRepository
 
     public function disabled($idUnity)
     {
-        $data = $this->unity->whereId($idUnity)->update(['flag_status' => "disabled"]);
+        $unity = $this->unity->find($idUnity);
+        $unity->flag_status = "disabled";
+        $unity->save();
+
+        return $unity->fresh();
     }
 }

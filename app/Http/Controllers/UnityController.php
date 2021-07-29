@@ -64,7 +64,8 @@ class UnityController extends Controller
     {
     }
 
-    public function destroy($id)
+    public function disabled($idUnity)
     {
+        return $this->unityService->disabled($idUnity);
     }
 }

@@ -24,6 +24,7 @@ Route::middleware([CollaboratorAutenticate::class])->group(function () {
             Route::get('/', [App\Http\Controllers\UnityController::class, 'index'])->name('unity.list');
             Route::get('/registrar', [App\Http\Controllers\UnityController::class, 'create'])->name('unity.create');
             Route::get('/{id}', [App\Http\Controllers\UnityController::class, 'selected'])->name('unity.selected');
+            Route::delete('/{id}', [App\Http\Controllers\UnityController::class, 'disabled'])->name('unity.disabled');
             Route::post('/salvar', [App\Http\Controllers\UnityController::class, 'store'])->name('unity.store');
         });
 

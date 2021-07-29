@@ -40,7 +40,12 @@
                             <td class="d-flex">
                                 <a class="text-green" title="Selecionar Unidade" href="{{ route('unity.selected', $item['id']) }}"><i class="bi bi-check-square-fill"></i></a>
                                 <a class="text-yellow" title="Detalhes" href="#"><i class="bi bi-exclamation-square-fill"></i></a>
-                                <a class="table-trash" title="Desativar" href="#"><i class="bi bi-stop-circle-fill"></i></a>
+                                
+                                <form action="{{ route('unity.disabled', $item->id)  }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-sm btn-default table-trash" title="Desativar" type="submit"><i class="bi bi-stop-circle-fill"></i></button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
