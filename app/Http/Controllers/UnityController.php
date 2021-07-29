@@ -29,7 +29,7 @@ class UnityController extends Controller
                 $data = $this->unityService->getPaginate();
                 break;
             case 'gestor_estadual':
-                $data = $this->unityService->getByStates();
+                $data = $this->unityService->getByStatesPaginate();
                 break;
         }
 

@@ -44,5 +44,6 @@
                 </tbody>
             </table>
         </div>
+        @include('app.includes.pagination')
     </div>
 @endsection

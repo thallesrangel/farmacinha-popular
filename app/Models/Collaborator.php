@@ -18,7 +18,7 @@ class Collaborator extends Model
         'role',
         'email',
         'professional_record',
-        'flag_deleted'
+        'flag_status'
     ];
 
     protected $hidden = [

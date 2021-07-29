@@ -17,7 +17,7 @@ class CollaboratorController extends Controller
 
     public function index()
     {
-        $collaborator = $this->collaboratorService->get();
+        $collaborator = $this->collaboratorService->getPaginate();
         return view('app.collaborator.index', [ 'data' => $collaborator ]);
     }
 

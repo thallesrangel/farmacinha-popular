@@ -33,6 +33,11 @@ class UnityRepository
         return $this->unity->where('states', $state)->get();
     }
 
+    public function getByStatesPaginate($state)
+    {
+        return $this->unity->where('states', $state)->paginate(10);
+    }
+
     public function store($data)
     {
         $unity = new $this->unity;
@@ -43,5 +48,10 @@ class UnityRepository
         $unity->save();
 
         return $unity->fresh();
+    }
+
+    public function disabled($idUnity)
+    {
+        $data = $this->unity->whereId($idUnity)->update(['flag_status' => "disabled"]);
     }
 }

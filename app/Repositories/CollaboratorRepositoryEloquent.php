@@ -16,7 +16,12 @@ class CollaboratorRepositoryEloquent implements CollaboratorRepositoryInterface
 
     public function get()
     {
-        return $this->collaborator->where('flag_deleted', 0)->get();
+        return $this->collaborator->where('flag_status', "enabled")->get();
+    }
+
+    public function getPaginate()
+    {   
+        return $this->collaborator->paginate(8);
     }
 
     public function getById($id)
@@ -45,7 +50,7 @@ class CollaboratorRepositoryEloquent implements CollaboratorRepositoryInterface
     public function delete($id)
     {
         $collaborator = $this->collaborator->find($id);
-        $collaborator->update(['flag_deleted' => 1 ]);
+        $collaborator->update(['flag_status' => "disabled" ]);
 
         return $collaborator;
     }

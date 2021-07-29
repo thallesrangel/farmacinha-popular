@@ -28,6 +28,12 @@ class UnityService
         return $this->unityRepository->getByStates(session('collaborator.states'));
     }
 
+    public function getByStatesPaginate()
+    {
+        return $this->unityRepository->getByStatesPaginate(session('collaborator.states'));
+    }
+    
+
     public function getById()
     {
         return $this->unityRepository->getById(session('collaborator.id_unity'));
