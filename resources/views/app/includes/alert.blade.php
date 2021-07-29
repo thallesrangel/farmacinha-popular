@@ -67,3 +67,15 @@
     })
    </script>
 @endif
+
+@if (Session::has('success_destroy'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Excluído',
+            text: '{{ session('success_destroy') }}',
+            showConfirmButton: false,
+            timer: 2000
+        })
+    </script>
+@endif

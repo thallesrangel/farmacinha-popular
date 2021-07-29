@@ -56,6 +56,12 @@ class UnityService
 
     public function disabled($idUnity)
     {
-        return $this->unityRepository->disabled($idUnity);
+        try{
+            $this->unityRepository->disabled($idUnity);
+        } catch(\Exception $e) {
+            dd("error");
+        }
+
+        return redirect()->route('unity.list')->with("success_destroy", "Registro excluído com sucesso");
     }
 }
