@@ -26,7 +26,7 @@ class UnityController extends Controller
 
         switch (session('collaborator.role')) {
             case 'gestor_geral':
-                $data = $this->unityService->get();
+                $data = $this->unityService->getPaginate();
                 break;
             case 'gestor_estadual':
                 $data = $this->unityService->getByStates();

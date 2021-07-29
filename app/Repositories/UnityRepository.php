@@ -18,6 +18,11 @@ class UnityRepository
         return $this->unity->get();
     }
 
+    public function getPaginate()
+    {   
+        return $this->unity->paginate(10);
+    }
+
     public function getById($idUnity)
     {
         return $this->unity->where('id', $idUnity)->first();

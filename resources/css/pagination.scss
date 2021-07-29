@@ -1,0 +1,9 @@
+.pagination > li > a,
+.pagination > li > span {
+    color: #00BC54;
+}
+
+.page-item.active .page-link{
+    background-color: #00BC54;
+    border-color: #00BC54;
+}

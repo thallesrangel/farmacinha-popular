@@ -12426,6 +12426,8 @@ th, td {
 .text-yellow
 {
     color: #f1c40f;
+    margin-left: 5px;
+    font-size: 16px;
 }
 
 .txt-red
@@ -12554,15 +12556,6 @@ h1,h2,h3,h4,h5,h6
     border-radius: 10px;
 }
 
-.opcoes-local li {
-    margin-top: 10px;
-    border-radius: 9px;
-    border: 1px solid #DFE6E9;
-}
-
-.opcoes-local li:hover {
-    background-color: #00BC54;
-}
 .nav-link
 {
     color: #2C3E50;
@@ -12593,5 +12586,13 @@ h1,h2,h3,h4,h5,h6
 {
     border: none;
 }
+.pagination > li > a,
+.pagination > li > span {
+    color: #00BC54;
+}
 
+.page-item.active .page-link{
+    background-color: #00BC54;
+    border-color: #00BC54;
+}
 

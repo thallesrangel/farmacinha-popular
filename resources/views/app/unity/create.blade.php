@@ -7,7 +7,7 @@
     
             <div class="card-body">
                 <img class="img-fluid logo-dashboard" src="{{ asset('img/logo.png')}}">
-                <h4 class="mt-3 mb-2">Cadastre-se</h4>
+                <h4 class="mt-3 mb-2">Cadastro de Unidade</h4>
                 <form action="{{ route('unity.store') }}" method="POST">
                     @csrf
                     <div>
@@ -15,8 +15,8 @@
 
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <label class="form-control-label" for="input-corporate-name">Nome Fantasia *</label>
-                                    <input type="text" id="input-corporate-name" class="form-control" name="corporate_name" required>
+                                    <label class="form-control-label" for="input-corporate-name">Nome da Unidade *</label>
+                                    <input type="text" id="input-corporate-name" class="form-control" name="corporate_name" placeholder="Ex: UBS Praia Grande" required>
                                 </div>
                             </div>
                             

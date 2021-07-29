@@ -107,6 +107,8 @@ th, td {
 .text-yellow
 {
     color: #f1c40f;
+    margin-left: 5px;
+    font-size: 16px;
 }
 
 .txt-red
