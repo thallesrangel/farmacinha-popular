@@ -29,7 +29,7 @@ class LoginController extends Controller
     public function logout()
     {
         session()->flush();
-        return redirect()->route('login.signIn');
+        return redirect()->route('login.signIn')->with('logout_success', 'Ótimo trabalho, até logo!');;
     }
 
     private function logarUsuario($usuario)

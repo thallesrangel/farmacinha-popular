@@ -79,3 +79,15 @@
         })
     </script>
 @endif
+
+@if (Session::has('logout_success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Logout',
+            text: '{{ session('logout_success') }}',
+            showConfirmButton: false,
+            timer: 2000
+        })
+    </script>
+@endif

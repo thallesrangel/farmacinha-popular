@@ -39,8 +39,8 @@
                             </div>
 
                             <div class="col-12 mt-3 text-center">
-                                <button type="submit" class="btn btn-success">Tudo pronto!</button>
-                                <a href="{{ route('unity.list') }}" class="btn btn-outline-success">Voltar</a>
+                                <button type="submit" class="btn btn-success">Salvar</button>
+                                <a href="{{ route('unity.list') }}" class="btn btn-outline-danger">Voltar</a>
                             </div>
                             
                         </div>
