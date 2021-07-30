@@ -19,4 +19,14 @@ class UnityRequest extends FormRequest
             'states' => 'required|max:2',
         ];
     }
+    
+    public function messages()
+    {
+        return [
+            'required' => 'Campo obrigatório',
+            'corporate_name.max' => 'Tamanho máximo de 70 caracteres',
+            'cnes.max' => 'Tamanho máximo de 20 caracteres',
+            'states.max' => 'Tamanho máximo de 2 caracteres'
+        ];
+    }
 }

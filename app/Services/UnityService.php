@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Http\Requests\UnityRequest;
 use App\Repositories\Contracts\UnityRepositoryInterface;
 use Exception;
 
@@ -56,7 +57,7 @@ class UnityService
         return redirect()->route('dashboard');
     }
 
-    public function update($idUnity, $request)
+    public function update($idUnity, UnityRequest $request)
     {
         try {
             $this->unityRepository->update($idUnity, $request);
