@@ -51,6 +51,12 @@ class UnityRepositoryEloquent implements UnityRepositoryInterface
         return $unity->fresh();
     }
 
+    public function update($idUnity, $request)
+    {
+        $unity = $this->getById($idUnity);
+        return $unity->update($request->all());
+    }
+
     public function disabled($idUnity)
     {
         $unity = $this->unity->find($idUnity);

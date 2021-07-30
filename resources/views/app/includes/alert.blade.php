@@ -2,7 +2,7 @@
     <script>
         Swal.fire({
             icon: 'success',
-            title: 'Registrado com sucesso',
+            title: 'Sucesso',
             text: '{{ session('success') }}',
             showConfirmButton: false,
             timer: 2000

@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Repositories\Contracts\UnityRepositoryInterface;
+use Exception;
 
 class UnityService
 {
@@ -53,6 +54,17 @@ class UnityService
         session('collaborator')->cnes = $data->cnes;
 
         return redirect()->route('dashboard');
+    }
+
+    public function update($idUnity, $request)
+    {
+        try {
+            $this->unityRepository->update($idUnity, $request);
+        } catch(Exception $e) {
+            return redirect()->route('unity.list')->with("error", "Não foi possível alterar o registro");
+        }
+
+        return redirect()->route('unity.list')->with("success", "Alterado com sucesso");
     }
 
     public function disabled($idUnity)

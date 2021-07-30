@@ -27,7 +27,7 @@ Route::middleware([CollaboratorAutenticate::class])->group(function () {
             Route::delete('/{id}', [App\Http\Controllers\UnityController::class, 'disabled'])->name('unity.disabled');
             Route::post('/salvar', [App\Http\Controllers\UnityController::class, 'store'])->name('unity.store');
             Route::get('/{id}/editar', [App\Http\Controllers\UnityController::class, 'edit'])->name('unity.edit');
-            Route::put('/atualizar', [App\Http\Controllers\UnityController::class, 'update'])->name('unity.update');
+            Route::put('/{id}/atualizar', [App\Http\Controllers\UnityController::class, 'update'])->name('unity.update');
         });
 
         Route::middleware([UnitySelected::class])->group(function () {

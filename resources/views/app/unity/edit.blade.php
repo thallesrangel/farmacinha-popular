@@ -8,7 +8,8 @@
             <div class="card-body">
                 <img class="img-fluid logo-dashboard" src="{{ asset('img/logo.png')}}">
                 <h4 class="mt-3 mb-2">Editar Unidade</h4>
-                <form action="{{ route('unity.update') }}" method="POST">
+                <form action="{{ route('unity.update', [ 'id' => $data->id ]) }}" method="POST">
+                    {{ method_field('PUT') }}
                     @csrf
                     <div>
                         <div class="row">

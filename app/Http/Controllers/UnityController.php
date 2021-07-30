@@ -67,8 +67,17 @@ class UnityController extends Controller
         return $this->unityService->selectUnity($idUnity);
     }
 
-    public function update(Request $request)
+    public function update($idUnity, Request $request)
     {
+        //$unity = $this->unityService->getById($idUnity);
+
+        $this->validate($request, [
+            'corporate_name' => 'required',
+            'states' => 'required',
+            'cnes' => 'required'
+        ]);
+
+        return $this->unityService->update($idUnity, $request);
     }
 
     public function disabled($idUnity)
