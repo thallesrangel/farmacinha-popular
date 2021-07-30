@@ -13,11 +13,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(
-        //Abastract Class and Concrete class
-        //Abastração e implementação - Inversão de dependência
-        'App\Repositories\Contracts\CollaboratorRepositoryInterface', 'App\Repositories\CollaboratorRepositoryEloquent'
-        );
+        $this->app->bind('App\Repositories\Contracts\CollaboratorRepositoryInterface', 'App\Repositories\CollaboratorRepositoryEloquent',);
+        $this->app->bind('App\Repositories\Contracts\UnityRepositoryInterface', 'App\Repositories\UnityRepositoryEloquent');
     }
 
     /**
