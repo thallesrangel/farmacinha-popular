@@ -33,13 +33,16 @@
                                 <td> {{ $item->role }} </td>
                                 <td class="d-flex justify-content-center">
                                     <a class="btn btn-sm btn-default table-info" href="{{ route('collaborator.profile', $item->id) }}"><i class="bi bi-info-circle"></i></a>
-                                    <a class="btn btn-sm btn-default table-edit" href="#"><i class="bi bi-pencil"></i></a>
                                     
-                                    <form action="{{ route('collaborator.destroy', $item->id)  }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-sm btn-default table-trash" type="submit"><i class="bi bi-trash2"></i></button>
-                                    </form>
+                                    @if (in_array(session('collaborator.role'), ['gestor_geral', 'gestor_estadual', 'gestor_unidade' ]))
+                                        <a class="btn btn-sm btn-default table-edit" href="#"><i class="bi bi-pencil"></i></a>
+                                        
+                                        <form action="{{ route('collaborator.destroy', $item->id)  }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-sm btn-default table-trash" type="submit"><i class="bi bi-trash2"></i></button>
+                                        </form>
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach
