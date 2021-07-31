@@ -1,5 +1,9 @@
 # TCC - Bacharel em Sistemas de Informação
 
+## Contexto do problema
+Medicamentos tem a finalidade de diagnosticar, prevenir, curar doenças ou então aliviar os seus sintomas, em nosso pais, o acesso a medicamentos se dá por aquisição ou por meio das Farmácias Básica de Saúde - UBS, como complemento, o sistema visa ser uma alternativa, para contornar o desperdício, tanto por data de validade de validade ou finalização de tratamento.
+
+
 ## Descrição Geral
 O objetivo do software é gerenciar, analisar e disponibilizar medicamentos doados, respeitando todo fluxo da aplicação proporcionando rastreabilidade.
 
@@ -30,7 +34,7 @@ O software possui entrada, estoque e saída de medicamentos:
  - Assistente: Recebe, distribui medicamentos, registra pessoas em sua unidade
 
 
-## Requisitos
+## Requisitos Funcionais
 
 *Tela Selecionar Unidade*:
 Exibir apenas todos, pois podem mudar de unidade...
