@@ -72,8 +72,8 @@ class UnityController extends Controller
         return $this->unityService->update($idUnity, $request);
     }
 
-    public function disabled($idUnity)
+    public function disable($idUnity)
     {
-        return $this->unityService->disabled($idUnity);
+        return $this->unityService->disable($idUnity);
     }
 }

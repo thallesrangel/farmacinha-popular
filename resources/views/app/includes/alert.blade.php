@@ -91,3 +91,15 @@
         })
     </script>
 @endif
+
+@if (Session::has('no_selected'))
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Nenhum campo selecionado',
+            text: '{{ session('no_selected') }}',
+            showConfirmButton: false,
+            timer: 2000
+    })
+   </script>
+@endif

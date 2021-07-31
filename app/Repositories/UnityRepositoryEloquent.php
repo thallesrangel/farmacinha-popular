@@ -57,7 +57,7 @@ class UnityRepositoryEloquent implements UnityRepositoryInterface
         return $unity->update($request->all());
     }
 
-    public function disabled($idUnity)
+    public function disable($idUnity)
     {
         $unity = $this->unity->find($idUnity);
         $unity->flag_status = "disabled";

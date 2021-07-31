@@ -21,7 +21,7 @@ class CollaboratorRepositoryEloquent implements CollaboratorRepositoryInterface
 
     public function getPaginate()
     {   
-        return $this->collaborator->paginate(8);
+        return $this->collaborator->where('flag_status', "enabled")->orderBy('id', 'DESC')->paginate(8);
     }
 
     public function getById($id)

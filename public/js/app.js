@@ -4952,6 +4952,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
 
+__webpack_require__(/*! ./disable_selected */ "./resources/js/disable_selected.js");
+
 
 window.Swal = (sweetalert2__WEBPACK_IMPORTED_MODULE_0___default());
 
@@ -4985,6 +4987,37 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/disable_selected.js":
+/*!******************************************!*\
+  !*** ./resources/js/disable_selected.js ***!
+  \******************************************/
+/***/ (() => {
+
+$(function () {
+  $('.selectall').click(function () {
+    $('.selectbox').prop('checked', $(this).prop('checked'));
+    $('.selectall2').prop('checked', $(this).prop('checked'));
+  });
+  $('.selectall2').click(function () {
+    $('.selectbox').prop('checked', $(this).prop('checked'));
+    $('.selectall').prop('checked', $(this).prop('checked'));
+  });
+  $('.selectbox').change(function () {
+    var total = $('.selectbox').length;
+    var number = $('.selectbox:checked').length;
+
+    if (total == number) {
+      $('.selectall').prop('checked', true);
+      $('.selectall2').prop('checked', true);
+    } else {
+      $('.selectall').prop('checked', false);
+      $('.selectall2').prop('checked', false);
+    }
+  });
+});
 
 /***/ }),
 

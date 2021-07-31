@@ -13,5 +13,5 @@ interface UnityRepositoryInterface
     public function getByStatesPaginate($state);
     public function store(Request $request);
     public function update($idUnity, $request);
-    public function disabled($id);
+    public function disable($id);
 }

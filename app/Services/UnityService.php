@@ -68,10 +68,10 @@ class UnityService
         return redirect()->route('unity.list')->with("success", "Alterado com sucesso");
     }
 
-    public function disabled($idUnity)
+    public function disable($idUnity)
     {
         try{
-            $this->unityRepository->disabled($idUnity);
+            $this->unityRepository->disable($idUnity);
         } catch(\Exception $e) {
             dd("error");
         }
