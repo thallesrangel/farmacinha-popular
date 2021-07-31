@@ -39,12 +39,12 @@ class CollaboratorService
         return $response;
     }
 
-    public function deleteById($id)
+    public function disable($id)
     {
         DB::beginTransaction();
 
         try {
-            $collaborator = $this->collaboratorRepository->delete($id);
+            $collaborator = $this->collaboratorRepository->disable($id);
 
         } catch (Exception $e) {
             DB::rollBack();
@@ -55,5 +55,11 @@ class CollaboratorService
         DB::commit();
 
         return $collaborator;
+    }
+
+    public function disableSelected(array $ids)
+    {
+        $all = implode(',', $ids);
+        return $this->collaboratorRepository->disableSelected($all);
     }
 }

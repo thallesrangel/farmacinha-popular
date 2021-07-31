@@ -10,8 +10,9 @@
             @csrf
 
             <a href="{{ route('collaborator.registrar') }}" class="btn btn-success">Registrar</a>
-            <button formaction="{{ route('collaborator.disable.selected') }}" class="btn btn-outline-danger" type="submit">Excluir selecionados</button>
-    
+            @if (in_array(session('collaborator.role'), ['gestor_geral', 'gestor_estadual', 'gestor_unidade' ]))
+                <button formaction="{{ route('collaborator.disable.selected') }}" class="btn btn-outline-danger" type="submit">Excluir selecionados</button>
+            @endif
             <div class="div-table">
                 <table class="table">
                     <thead class="table-head">
@@ -37,7 +38,7 @@
                                     @if (in_array(session('collaborator.role'), ['gestor_geral', 'gestor_estadual', 'gestor_unidade' ]))
                                         <a class="btn btn-sm btn-default table-edit" href="#"><i class="bi bi-pencil"></i></a>
                                         
-                                        <form action="{{ route('collaborator.destroy', $item->id)  }}" method="POST">
+                                        <form action="{{ route('collaborator.disable', $item->id)  }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-sm btn-default table-trash" type="submit"><i class="bi bi-trash2"></i></button>

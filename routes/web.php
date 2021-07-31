@@ -46,7 +46,7 @@ Route::middleware([CollaboratorAutenticate::class])->group(function () {
                 Route::get('/registrar', [App\Http\Controllers\CollaboratorController::class, 'create'])->name('collaborator.registrar');
                 Route::post('/salvar', [App\Http\Controllers\CollaboratorController::class, 'store'])->name('collaborator.store');
                 Route::delete('/disable-selected', [App\Http\Controllers\CollaboratorController::class, 'disableSelected'])->name('collaborator.disable.selected');
-                Route::delete('/{id}', [App\Http\Controllers\CollaboratorController::class, 'destroy'])->name('collaborator.destroy');
+                Route::delete('/{id}', [App\Http\Controllers\CollaboratorController::class, 'disable'])->name('collaborator.disable');
                 Route::get('/perfil/{id}', [App\Http\Controllers\CollaboratorController::class, 'profile'])->name('collaborator.profile');
             });
 

@@ -47,11 +47,16 @@ class CollaboratorRepositoryEloquent implements CollaboratorRepositoryInterface
         return $collaborator->fresh();
     }
 
-    public function delete($id)
+    public function disable($id)
     {
         $collaborator = $this->collaborator->find($id);
         $collaborator->update(['flag_status' => "disabled" ]);
 
         return $collaborator;
+    }
+
+    public function disableSelected($ids)
+    {
+        return $this->collaborator->whereIn('id', explode(',', $ids))->update(['flag_status' => "disabled"]);
     }
 }
