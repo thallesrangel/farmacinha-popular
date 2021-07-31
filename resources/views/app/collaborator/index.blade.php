@@ -8,9 +8,8 @@
         <form method="post" class="d-grid gap-2 d-md-block">
             @method('DELETE')
             @csrf
-
-            <a href="{{ route('collaborator.registrar') }}" class="btn btn-success">Registrar</a>
             @if (in_array(session('collaborator.role'), ['gestor_geral', 'gestor_estadual', 'gestor_unidade' ]))
+                <a href="{{ route('collaborator.registrar') }}" class="btn btn-success">Registrar</a>
                 <button formaction="{{ route('collaborator.disable.selected') }}" class="btn btn-outline-danger" type="submit">Excluir selecionados</button>
             @endif
             <div class="div-table">
