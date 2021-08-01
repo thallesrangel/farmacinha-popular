@@ -72,7 +72,6 @@ class CollaboratorController extends Controller
         
         $this->collaboratorService->disableSelected($ids);
         return redirect()->route('collaborator.list')->with('success', 'Excluído com sucesso.');
-
     }
 
     public function profile($id)

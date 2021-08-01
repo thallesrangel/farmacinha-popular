@@ -47,9 +47,13 @@ Route::middleware([CollaboratorAutenticate::class])->group(function () {
                 Route::put('/{id}/atualizar', [CollaboratorController::class, 'update'])->name('collaborator.update');
             });
     
-            Route::prefix('people')->group(function () {
+            Route::prefix('pessoa')->group(function () {
                 Route::get('/', [PeopleController::class, 'index'])->name('people.list');
                 Route::get('/registrar', [PeopleController::class, 'create'])->name('people.create');
+                Route::post('/salvar', [PeopleController::class, 'store'])->name('people.store');
+                Route::delete('/disable-selected', [PeopleController::class, 'disableSelected'])->name('people.disable.selected');
+                Route::delete('/{id}', [PeopleController::class, 'disable'])->name('people.disable');
+                Route::get('/perfil/{id}', [PeopleController::class, 'profile'])->name('people.profile');
             });
 
             Route::prefix('relatorio')->group(function () {

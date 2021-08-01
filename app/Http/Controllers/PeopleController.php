@@ -2,23 +2,42 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PeopleRequest;
+use App\Services\PeopleService;
+use App\Services\StateService;
 use Illuminate\Http\Request;
 
 class PeopleController extends Controller
 {
+    protected $peopleService;
+    protected $stateService;
+
+    public function __construct(PeopleService $peopleService, StateService $stateService)
+    {
+        $this->peopleService = $peopleService;
+        $this->stateService = $stateService;
+    }
+
     public function index()
     {
-        return view('app.people.index');
+        $people = $this->peopleService->getPaginate();
+        return view('app.people.index', [ 'data' => $people ]);
     }
 
     public function create()
     {
-    
+        $states = $this->stateService->get();
+        return view('app.people.create', [ 'states' => $states ]);
     }
 
-    public function store(Request $request)
+    public function store(PeopleRequest $request)
     {
-    
+        try {
+            $this->peopleService->save($request);
+        } catch (\Exception $e) {
+            return redirect()->route('people.create')->with('error', 'Ocorreu um erro. Verifique os campos.');
+        }
+        return redirect()->route('people.list')->with('success', 'Registrado com sucesso.');
     }
 
     public function show($id)
@@ -31,13 +50,27 @@ class PeopleController extends Controller
     
     }
 
-    public function update(Request $request, $id)
+    public function update($id, PeopleRequest $request)
     {
     
     }
 
-    public function destroy($id)
+    public function disable($id)
     {
-    
+        $this->peopleService->disable($id);
+        return redirect()->route('people.list');
+    }
+
+    public function disableSelected(Request $request)
+    {
+        $ids = $request->get('ids');
+        
+        if(empty($ids))
+        {
+            return redirect()->route('people.list')->with('no_selected', 'Selecione um ou mais campos.');
+        }
+        
+        $this->peopleService->disableSelected($ids);
+        return redirect()->route('people.list')->with('success', 'Excluído com sucesso.');
     }
 }

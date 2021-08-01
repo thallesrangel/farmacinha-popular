@@ -7,7 +7,7 @@
            
             <div class="card-body m-0 p-0">
                 <h1>Pessoas</h1>
-                <form action="" method="POST">
+                <form action="{{ route('people.store') }}" method="POST">
                     @csrf
                     <h6 class="heading-small text-muted mt-3">Informações gerais</h6>
                     <div class="pl-lg-4">
@@ -16,31 +16,33 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-nome">Nome *</label>
-                                    <input type="text" id="input-nome" class="form-control" name="nome" required>
+                                    <input type="text" id="input-nome" class="form-control" name="first_name" required>
+                                    <p class="text-red">{{ $errors->first('first_name') }}</p>
                                 </div>
                             </div>
                             
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-sobrenome">Sobrenome *</label>
-                                    <input type="text" id="input-sobrenome" class="form-control" name="sobrenome" required>
+                                    <input type="text" id="input-sobrenome" class="form-control" name="last_name" required>
+                                    <p class="text-red">{{ $errors->first('last_name') }}</p>
                                 </div>
                             </div>
                             
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-nome-social">Nome Social</label>
-                                    <input type="text" id="input-nome-social" class="form-control" name="nome_social">
+                                    <input type="text" id="input-nome-social" class="form-control" name="social_name">
                                 </div>
                             </div>
 
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <label class="form-control-label" for="input-sexo">Sexo *</label>
-                                    <select class="form-control" id="input-sexo" name="sexo" required>
-                                        <option>Masculino</option>
-                                        <option>Feminino</option>
-                                        <option>Não informado</option>
+                                    <label class="form-control-label" for="input-sex">Sexo *</label>
+                                    <select class="form-control" id="input-sex" name="sex" required>
+                                        <option value="m">Masculino</option>
+                                        <option value="f">Feminino</option>
+                                        <option value="nda">Não informado</option>
                                     </select>
                                 </div>
                             </div>
@@ -51,8 +53,8 @@
 
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <label class="form-control-label" for="input-nascimento">Data de Nascimento *</label>
-                                    <input type="date" id="input-nascimento" class="form-control" name="data_nascimento" required>
+                                    <label class="form-control-label" for="input-birth-date">Data de Nascimento *</label>
+                                    <input type="date" id="input-birth-date" class="form-control" name="birth_date" required>
                                 </div>
                             </div>
 
@@ -60,13 +62,15 @@
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-cpf">CPF *</label>
                                     <input type="text" id="input-cpf" class="form-control" name="cpf" required>
+                                    <p class="text-red">{{ $errors->first('cpf') }}</p>
                                 </div>
                             </div>
 
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-sus">SUS</label>
-                                    <input type="text" id="input-sus" class="form-control" name="sus" required>
+                                    <input type="text" id="input-sus" class="form-control" name="sus">
+                                    <p class="text-red">{{ $errors->first('sus') }}</p>
                                 </div>
                             </div>
 
@@ -80,35 +84,26 @@
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label class="form-control-label" for="input-estado">Estado *</label>
-                                    <select class="form-control" id="input-estado" name="estado" required>
-                                        <option>ES</option>
-                                        <option>RJ</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="col-md-2">
-                                <div class="form-group">
-                                    <label class="form-control-label" for="input-cidade">Cidade *</label>
-                                    <select class="form-control" id="input-cidade" name="cidade" required>
-                                        <option>Fundão</option>
-                                        <option>Serra</option>
+                                    <label class="form-control-label" for="input-states">Estado *</label>
+                                    <select class="form-control" id="input-states" name="states" required>
+                                        @foreach($states as $state)
+                                            <option value="{{ $state }}">{{ $state }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label class="form-control-label" for="input-bairro">Bairro</label>
-                                    <input type="text" id="input-bairro" class="form-control" name="bairro">
+                                    <label class="form-control-label" for="input-district">Bairro</label>
+                                    <input type="text" id="input-district" class="form-control" name="district">
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label class="form-control-label" for="input-logradouro">Logradouro</label>
-                                    <input type="text" id="input-logradouro" class="form-control" name="logradouro" required>
+                                    <label class="form-control-label" for="input-address-place">Logradouro</label>
+                                    <input type="text" id="input-address-place" class="form-control" name="address_place">
                                 </div>
                             </div>
 
@@ -117,20 +112,20 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label class="form-control-label" for="input-complemento">Complemento</label>
-                                    <input type="text" id="input-complemento" class="form-control" name="complemento">
+                                    <label class="form-control-label" for="input-complement">Complemento</label>
+                                    <input type="text" id="input-complement" class="form-control" name="complement">
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <label class="form-control-label" for="input-numero">Número</label>
-                                    <input type="text" id="input-numero" class="form-control" name="numero">
+                                    <label class="form-control-label" for="input-number">Número</label>
+                                    <input type="text" id="input-number" class="form-control" name="number">
                                 </div>
                             </div>
                         </div>
 
                         <button class="btn btn-success" type="submit">Salvar</button>
-                        <a class="btn btn-outline-danger" href="">Voltar</a>
+                        <a class="btn btn-outline-danger" href="{{ route('people.list') }}">Voltar</a>
                     </div>
     
                 </form>
