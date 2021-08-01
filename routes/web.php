@@ -4,11 +4,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\CollaboratorAutenticate;
 use App\Http\Middleware\UnitySelected;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PeopleController;
+use App\Http\Controllers\UnityController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CollaboratorController;
+use App\Http\Controllers\ReportController;
 
 Route::get('/', function () {
     return view('public.index');
 });
-
 
 Route::prefix('login')->group(function () {
     Route::get('/', [LoginController::class, 'index'])->name('login.signIn');
@@ -16,44 +20,40 @@ Route::prefix('login')->group(function () {
     Route::get('/logout', [LoginController::class, 'logout'])->name('login.logout');
 });
 
-
 Route::middleware([CollaboratorAutenticate::class])->group(function () {
     Route::prefix('app')->group(function () {
 
         Route::prefix('unidade')->group(function () {
-            Route::get('/', [App\Http\Controllers\UnityController::class, 'index'])->name('unity.list');
-            Route::get('/registrar', [App\Http\Controllers\UnityController::class, 'create'])->name('unity.create');
-            Route::get('/{id}', [App\Http\Controllers\UnityController::class, 'selected'])->name('unity.selected');
-            Route::delete('/{id}', [App\Http\Controllers\UnityController::class, 'disable'])->name('unity.disable');
-            Route::post('/salvar', [App\Http\Controllers\UnityController::class, 'store'])->name('unity.store');
-            Route::get('/{id}/editar', [App\Http\Controllers\UnityController::class, 'edit'])->name('unity.edit');
-            Route::put('/{id}/atualizar', [App\Http\Controllers\UnityController::class, 'update'])->name('unity.update');
+            Route::get('/', [UnityController::class, 'index'])->name('unity.list');
+            Route::get('/registrar', [UnityController::class, 'create'])->name('unity.create');
+            Route::get('/{id}', [UnityController::class, 'selected'])->name('unity.selected');
+            Route::delete('/{id}', [UnityController::class, 'disable'])->name('unity.disable');
+            Route::post('/salvar', [UnityController::class, 'store'])->name('unity.store');
+            Route::get('/{id}/editar', [UnityController::class, 'edit'])->name('unity.edit');
+            Route::put('/{id}/atualizar', [UnityController::class, 'update'])->name('unity.update');
         });
 
         Route::middleware([UnitySelected::class])->group(function () {
-            Route::get('/', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
-
-            Route::get('pessoa', function () {
-                return view('app.pessoa.index');
-            });
-            
-            Route::get('pessoa/registrar', function () {
-                return view('app.pessoa.create');
-            });
+            Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
             Route::prefix('colaborador')->group(function () {
-                Route::get('/', [App\Http\Controllers\CollaboratorController::class, 'index'])->name('collaborator.list');
-                Route::get('/registrar', [App\Http\Controllers\CollaboratorController::class, 'create'])->name('collaborator.registrar');
-                Route::post('/salvar', [App\Http\Controllers\CollaboratorController::class, 'store'])->name('collaborator.store');
-                Route::delete('/disable-selected', [App\Http\Controllers\CollaboratorController::class, 'disableSelected'])->name('collaborator.disable.selected');
-                Route::delete('/{id}', [App\Http\Controllers\CollaboratorController::class, 'disable'])->name('collaborator.disable');
-                Route::get('/perfil/{id}', [App\Http\Controllers\CollaboratorController::class, 'profile'])->name('collaborator.profile');
-                Route::get('/{id}/editar', [App\Http\Controllers\CollaboratorController::class, 'edit'])->name('collaborator.edit');
-                Route::put('/{id}/atualizar', [App\Http\Controllers\CollaboratorController::class, 'update'])->name('collaborator.update');
+                Route::get('/', [CollaboratorController::class, 'index'])->name('collaborator.list');
+                Route::get('/registrar', [CollaboratorController::class, 'create'])->name('collaborator.create');
+                Route::post('/salvar', [CollaboratorController::class, 'store'])->name('collaborator.store');
+                Route::delete('/disable-selected', [CollaboratorController::class, 'disableSelected'])->name('collaborator.disable.selected');
+                Route::delete('/{id}', [CollaboratorController::class, 'disable'])->name('collaborator.disable');
+                Route::get('/perfil/{id}', [CollaboratorController::class, 'profile'])->name('collaborator.profile');
+                Route::get('/{id}/editar', [CollaboratorController::class, 'edit'])->name('collaborator.edit');
+                Route::put('/{id}/atualizar', [CollaboratorController::class, 'update'])->name('collaborator.update');
+            });
+    
+            Route::prefix('people')->group(function () {
+                Route::get('/', [PeopleController::class, 'index'])->name('people.list');
+                Route::get('/registrar', [PeopleController::class, 'create'])->name('people.create');
             });
 
             Route::prefix('relatorio')->group(function () {
-                Route::get('/', [App\Http\Controllers\ReportController::class, 'index'])->name('report.index');
+                Route::get('/', [ReportController::class, 'index'])->name('report.index');
             });
         });
     });

@@ -8,7 +8,7 @@ class PeopleController extends Controller
 {
     public function index()
     {
-    
+        return view('app.people.index');
     }
 
     public function create()

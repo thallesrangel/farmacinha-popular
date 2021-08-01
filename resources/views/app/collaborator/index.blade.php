@@ -9,7 +9,7 @@
             @method('DELETE')
             @csrf
             @if (in_array(session('collaborator.role'), ['gestor_geral', 'gestor_estadual', 'gestor_unidade' ]))
-                <a href="{{ route('collaborator.registrar') }}" class="btn btn-success">Registrar</a>
+                <a href="{{ route('collaborator.create') }}" class="btn btn-success">Registrar</a>
                 <button formaction="{{ route('collaborator.disable.selected') }}" class="btn btn-outline-danger" type="submit">Excluir selecionados</button>
             @endif
             <div class="div-table">
