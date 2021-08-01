@@ -2,10 +2,10 @@
 
 namespace App\Services;
 
+use App\Http\Requests\CollaboratorRequest;
 use App\Repositories\Contracts\CollaboratorRepositoryInterface;
 use InvalidArgumentException;
 use Illuminate\Support\Facades\DB;
-use Exception;
 
 class CollaboratorService
 {
@@ -39,6 +39,17 @@ class CollaboratorService
         return $response;
     }
 
+    public function update($idCollaborator, CollaboratorRequest $request)
+    {
+        try {
+            $this->collaboratorRepository->update($idCollaborator, $request);
+        } catch(\Exception $e) {
+            return redirect()->route('collaborator.list')->with("error", "Não foi possível alterar o registro");
+        }
+
+        return redirect()->route('collaborator.list')->with("success", "Alterado com sucesso");
+    }
+
     public function disable($id)
     {
         DB::beginTransaction();
@@ -46,7 +57,7 @@ class CollaboratorService
         try {
             $collaborator = $this->collaboratorRepository->disable($id);
 
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             DB::rollBack();
 
             throw new InvalidArgumentException('Não foi possível deletar o registro');

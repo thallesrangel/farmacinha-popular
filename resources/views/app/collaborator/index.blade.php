@@ -35,7 +35,7 @@
                                     <a class="btn btn-sm btn-default table-info" href="{{ route('collaborator.profile', $item->id) }}"><i class="bi bi-info-circle"></i></a>
                                     
                                     @if (in_array(session('collaborator.role'), ['gestor_geral', 'gestor_estadual', 'gestor_unidade' ]))
-                                        <a class="btn btn-sm btn-default table-edit" href="#"><i class="bi bi-pencil"></i></a>
+                                        <a class="btn btn-sm btn-default table-edit" href="{{ route('collaborator.edit', $item->id) }}"><i class="bi bi-pencil"></i></a>
                                         
                                         <form action="{{ route('collaborator.disable', $item->id)  }}" method="POST">
                                             @csrf

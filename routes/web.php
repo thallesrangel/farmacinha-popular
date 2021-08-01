@@ -48,6 +48,8 @@ Route::middleware([CollaboratorAutenticate::class])->group(function () {
                 Route::delete('/disable-selected', [App\Http\Controllers\CollaboratorController::class, 'disableSelected'])->name('collaborator.disable.selected');
                 Route::delete('/{id}', [App\Http\Controllers\CollaboratorController::class, 'disable'])->name('collaborator.disable');
                 Route::get('/perfil/{id}', [App\Http\Controllers\CollaboratorController::class, 'profile'])->name('collaborator.profile');
+                Route::get('/{id}/editar', [App\Http\Controllers\CollaboratorController::class, 'edit'])->name('collaborator.edit');
+                Route::put('/{id}/atualizar', [App\Http\Controllers\CollaboratorController::class, 'update'])->name('collaborator.update');
             });
 
             Route::prefix('relatorio')->group(function () {

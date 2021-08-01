@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Services\CollaboratorService; 
 use App\Models\Role;
+use App\Http\Requests\CollaboratorRequest;
 
 class CollaboratorController extends Controller
 {
@@ -40,6 +41,20 @@ class CollaboratorController extends Controller
         return redirect()->route('collaborator.list')->with('success', 'Registrado com sucesso.');
     }
 
+    public function edit($id)
+    {
+        $role = new Role();
+        $roles = $role->filterRole();
+
+        $data = $this->collaboratorService->getById($id);
+        return view('app.collaborator.edit',  [ 'data' => $data, 'roles' => $roles]);
+    }
+
+    public function update($idCollaborator, CollaboratorRequest $request)
+    {
+        return $this->collaboratorService->update($idCollaborator, $request);
+    }
+    
     public function disable($id)
     {
         $this->collaboratorService->disable($id);

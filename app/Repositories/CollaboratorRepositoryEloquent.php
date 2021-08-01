@@ -47,6 +47,12 @@ class CollaboratorRepositoryEloquent implements CollaboratorRepositoryInterface
         return $collaborator->fresh();
     }
 
+    public function update($idCollaborator, $request)
+    {
+        $collaborator = $this->getById($idCollaborator);
+        return $collaborator->update($request->all());
+    }
+
     public function disable($id)
     {
         $collaborator = $this->collaborator->find($id);
