@@ -58,6 +58,11 @@ class PeopleRepositoryEloquent implements PeopleRepositoryInterface
         return $people->update($request->all());
     }
 
+    public function count()
+    {
+        return $this->people->where('flag_status', "enabled")->count();
+    }
+
     public function disable($id)
     {
         $people = $this->people->find($id);

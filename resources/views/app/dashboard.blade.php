@@ -56,7 +56,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5>Registrados</h5>
-                        <h4 class="card-title txt-green">1239</h4>
+                        <h4 class="card-title txt-green">{{ $peopleCount }}</h4>
                     </div>
                 </div>
             </div>

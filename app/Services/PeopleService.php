@@ -26,7 +26,6 @@ class PeopleService
         return $this->peopleRepository->getPaginate();
     }
 
-
     public function getById($id)
     {
         return $this->peopleRepository->getById($id);
@@ -34,9 +33,7 @@ class PeopleService
 
     public function save($data)
     {
-        $response = $this->peopleRepository->save($data);
-
-        return $response;
+        return $this->peopleRepository->save($data);
     }
 
     public function update($id, PeopleRequest $request)
@@ -48,6 +45,11 @@ class PeopleService
         }
 
         return redirect()->route('people.list')->with("success", "Alterado com sucesso");
+    }
+
+    public function count()
+    {
+        return $this->peopleRepository->count();
     }
 
     public function disable($id)
