@@ -29,12 +29,16 @@
                                 </div>
                             </div>
                             
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-nome-social">Nome Social</label>
-                                    <input type="text" id="input-nome-social" class="form-control" name="social_name">
+                                    <input type="text" id="input-nome-social" class="form-control" name="social_name" placeholder="Se preenchido, será exibido ao invés do nome">
                                 </div>
                             </div>
+  
+                        </div>
+
+                        <div class="row">
 
                             <div class="col-md-2">
                                 <div class="form-group">
@@ -46,10 +50,6 @@
                                     </select>
                                 </div>
                             </div>
-  
-                        </div>
-
-                        <div class="row">
 
                             <div class="col-md-2">
                                 <div class="form-group">
@@ -61,7 +61,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-cpf">CPF *</label>
-                                    <input type="text" id="input-cpf" class="form-control" name="cpf" required>
+                                    <input type="text" id="input-cpf" class="form-control cpf" name="cpf" required>
                                     <p class="text-red">{{ $errors->first('cpf') }}</p>
                                 </div>
                             </div>
@@ -82,7 +82,7 @@
                        
                         <div class="row">
 
-                            <div class="col-md-3">
+                            <div class="col-md-1">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-states">Estado *</label>
                                     <select class="form-control" id="input-states" name="states" required>
@@ -90,6 +90,13 @@
                                             <option value="{{ $state }}">{{ $state }}</option>
                                         @endforeach
                                     </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-city">Cidade *</label>
+                                    <input type="text" id="input-city" class="form-control" name="city" required>
                                 </div>
                             </div>
 
@@ -110,7 +117,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-complement">Complemento</label>
                                     <input type="text" id="input-complement" class="form-control" name="complement">
