@@ -9,7 +9,6 @@ use App\Services\RoleService;
 
 class DashboardController extends Controller
 {
-
     protected $peopleService;
     protected $roleService;
 

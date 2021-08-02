@@ -7,12 +7,12 @@
     </div>
     <div class="col-sm-12 card">
         <h3 class="mt-3 text-center">{{ $collaborator->first_name }} {{ $collaborator->last_name }}</h3>
-        <p class="text-center">{{ $collaborator->role }}</p>
+        <p class="text-center">{{ $role }}</p>
         <h6 class="heading-small text-muted m-3">Informações pessoais</h6>
         <div class="row p-3">
             <div class="col-md-3">
                 <h6 class="fw-bold">CPF</h6>
-                <p>{{ $collaborator->cpf }}</p>
+                <p class="cpf">{{ $collaborator->cpf }}</p>
             </div>
             <div class="col-md-3">
                 <h6 class="fw-bold">Estado</h6>

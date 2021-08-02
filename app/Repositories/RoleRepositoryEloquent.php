@@ -23,4 +23,9 @@ class RoleRepositoryEloquent implements RoleRepositoryInterface
     {
         return $this->role->roleName();
     }
+
+    public function roleByName($name)
+    {
+        return $this->role->roleByName($name);
+    }
 }

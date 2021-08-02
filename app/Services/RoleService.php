@@ -23,4 +23,10 @@ class RoleService
         $role = $this->roleRepository->roleName();
         return array_values($role)[0];
     }
+
+    public function roleByName($name)
+    {
+        $role = $this->roleRepository->roleByName($name);
+        return array_values($role)[0];
+    }
 }

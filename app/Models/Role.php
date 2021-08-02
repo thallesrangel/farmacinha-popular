@@ -36,4 +36,9 @@ class Role extends Model
         $data = session('collaborator.role');
         return $this->$data;
     }
+
+    public function roleByName($name)
+    {
+        return $this->$name;
+    }
 }

@@ -6,14 +6,17 @@ use Illuminate\Http\Request;
 use App\Services\CollaboratorService; 
 use App\Models\Role;
 use App\Http\Requests\CollaboratorRequest;
+use App\Services\RoleService;
 
 class CollaboratorController extends Controller
 {
     protected $collaboratorService;
+    protected $roleService;
 
-    public function __construct(CollaboratorService $collaboratorService)
+    public function __construct(CollaboratorService $collaboratorService, RoleService $roleService)
     {
         $this->collaboratorService = $collaboratorService;
+        $this->roleService = $roleService;
     }
 
     public function index()
@@ -32,7 +35,6 @@ class CollaboratorController extends Controller
 
     public function store(Request $request)
     {
-
         try {
             $this->collaboratorService->save($request);
         } catch (\Exception $e) {
@@ -65,7 +67,7 @@ class CollaboratorController extends Controller
     {
         $ids = $request->get('ids');
 
-        if(empty($ids))
+        if (empty($ids))
         {
             return redirect()->route('collaborator.list')->with('no_selected', 'Selecione um ou mais campos.');
         }
@@ -82,6 +84,8 @@ class CollaboratorController extends Controller
             return redirect()->route('collaborator.list')->with('not_found', 'Registro não encontrado.');
         }
 
-        return view('app.profile.index', [ 'collaborator' => $response ]);
+        $role = $this->roleService->roleByName($response->role);
+
+        return view('app.profile.index', [ 'collaborator' => $response, 'role' => $role ]);
     }
 }
