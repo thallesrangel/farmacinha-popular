@@ -7,7 +7,7 @@
            
             <div class="card-body m-0 p-0">
                 <h2>Colaborador</h2>
-                <form action="{{ route('collaborator.store') }}" method="POST">
+                <form action="{{ route('collaborator.store') }}" method="POST" autocomplete="off">
                     @csrf
                     <h6 class="heading-small text-muted mt-3">Informações gerais</h6>
                     <div class="pl-lg-4">

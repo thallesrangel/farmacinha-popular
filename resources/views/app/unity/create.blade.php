@@ -8,7 +8,7 @@
             <div class="card-body">
                 <img class="img-fluid logo-dashboard" src="{{ asset('img/logo.png')}}">
                 <h4 class="mt-3 mb-2">Cadastro de Unidade</h4>
-                <form action="{{ route('unity.store') }}" method="POST">
+                <form action="{{ route('unity.store') }}" method="POST" autocomplete="off">
                     @csrf
                     <div>
                         <div class="row">
