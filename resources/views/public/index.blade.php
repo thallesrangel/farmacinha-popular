@@ -1,25 +1,13 @@
 @extends('template-public')
 
 @section('content')
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <img class="img-fluid logo" src="{{ asset('img/logo.png')}}">
 
-            <div class="navbar-nav">
-                <a class="nav-link" href="#">DOAR</a>
-                <a class="nav-link" href="#">RECEBER</a>
-                <a class="nav-link" href="#">UNIDADES</a>
-                <a class="nav-link" href="#">CONSULTAR</a>
-                <a class="nav-link" href="#">FAQ</a>
-                <a href="{{ route('login.signIn') }}" type="button" class="btn btn-success fw-bold">Área do Colaborador</a>
-              </div>
-        </div>
-    </nav>
+    @include('public.includes.navbar')
 
     <div class="container">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-lg-6 col-md-6 col-sm-12">
-                <h1 class="fw-bold"><span id="salve-vidas">Salve vidas.</span> <br> Doe e receber medicamentos<br> gratuito com qualidade</h1>
+                <h1 class="fw-bold"><span id="salve-vidas">Salve vidas.</span> <br> Doe e receber medicamentos<br> gratuitamente com qualidade</h1>
                 <a class="btn btn-success m-2 fw-bold" href="#">Doar</a>
                 <a class="btn btn-outline-success m-2 fw-bold" href="#">Receber</a>
             </div>
@@ -72,7 +60,7 @@
         <div class="d-flex justify-content-center bg-gray-search">
             <form class="d-flex col-md-4 col-sm-10">
                 <input class="form-control me-2" type="search" placeholder="Localização">
-                <button class="btn btn-success" type="submit"><i class="bi bi-search"></i></button>
+                <button class="btn btn btn-default" type="submit"><i class="bi bi-search"></i></button>
             </form>
         </div>
     </div>
@@ -83,7 +71,7 @@
         <div class="d-flex justify-content-center bg-gray-search">
             <form class="d-flex col-md-4 col-sm-10">
                 <input class="form-control me-2" type="search" placeholder="Número de protocolo" >
-                <button class="btn btn-success" type="submit"><i class="bi bi-search"></i></button>
+                <button class="btn btn btn-default" type="submit"><i class="bi bi-search"></i></button>
             </form>
         </div>
     </div>

@@ -16,6 +16,8 @@ class DatabaseSeeder extends Seeder
         // php artisan migrate:refresh --seed
         $this->call(Unity::class);
         $this->call(Collaborator::class);
+        $this->call(States::class);
+        $this->call(City::class);
         // \App\Models\User::factory(10)->create();
     }
 }
