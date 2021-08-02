@@ -28,7 +28,7 @@
                             <tr class="table-row">
                                 <td><input type="checkbox" name="ids[]" value="{{ $item->id }}" class="selectbox"></td>
                                 <td> {{ $item->first_name }} </td>
-                                <td> {{ $item->cpf }} </td>
+                                <td class="cpf"> {{ $item->cpf }} </td>
                                 <td> {{ $item->email }} </td>
                                 <td> {{ $item->role }} </td>
                                 <td class="d-flex justify-content-center">

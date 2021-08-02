@@ -30,7 +30,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-cpf">CPF *</label>
-                                    <input type="text" id="input-cpf" class="form-control" name="cpf" required>
+                                    <input type="text" id="input-cpf" class="form-control cpf" name="cpf" required>
                                 </div>
                             </div>
 
