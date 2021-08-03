@@ -11,8 +11,7 @@ $(function () {
 		success: function (res) {
 			$.each(res, function (key, value) {
 				let foo = (city_id == value.id) ? "selected":"";
-
-				$("#city").append('<option value="' + value.id + '" '+ foo+'>' + value.name + '</option>');
+				$("#city").append('<option value="' + value.id + '" '+ foo +'>' + value.name + '</option>');
 			});
 		}
 	});

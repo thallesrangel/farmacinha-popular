@@ -44,8 +44,8 @@ class UnityRepositoryEloquent implements UnityRepositoryInterface
         $unity = new $this->unity;
         $unity->corporate_name = $data['corporate_name'];
         $unity->cnes = $data['cnes'];
-        $unity->state_id = $data['states'];
-        $unity->city_id = $data['city'];
+        $unity->state_id = $data['state_id'];
+        $unity->city_id = $data['city_id'];
 
         $unity->save();
 
@@ -55,14 +55,14 @@ class UnityRepositoryEloquent implements UnityRepositoryInterface
     public function update($idUnity, $request)
     {
         $unity = $this->getById($idUnity);
-        
         $unity->corporate_name = $request->corporate_name;
         $unity->cnes = $request->cnes;
-        $unity->state_id = $request->states;
-        $unity->city_id = $request->city;
-        $unity->save();
-        return $unity;
+        $unity->state_id = $request->state_id;
+        $unity->city_id = $request->city_id;
 
+        $unity->save();
+
+        return $unity->fresh();
     }
 
     public function disable($idUnity)
