@@ -1,19 +1,36 @@
-function selectCity(ob) {
-    var item = ob.value;
+$(function () {
+	var state = $('#input-states').val();
+	var city_id = $('#city-data').val();
 
-    $.ajax({
-		url: `/app/cidades/${item}`,
-		type:'GET',
-		data:{},
-		dataType:'json',
-		success:function(json) {
-			var html = '';
+	console.log(city);
+	$.ajax({
+		url: `/app/cidades/${state}`,
+		type: "GET",
+		data: {},
+		dataType: 'json',
+		success: function (res) {
+			$.each(res, function (key, value) {
+				let foo = (city_id == value.id) ? "selected":"";
 
-			for(var i in json) {
-                console.log(json);
-				html += '<option value="'+json[i].id+'">'+json[i].name+'</option>';
-			}
-            $("#city").html(html);
+				$("#city").append('<option value="' + value.id + '" '+ foo+'>' + value.name + '</option>');
+			});
 		}
 	});
-}
+	
+	$('#input-states').on('change', function () {
+		var idState = this.value;
+		$("#city").html('');
+		$.ajax({
+			url: `/app/cidades/${idState}`,
+			type: "GET",
+			data: {},
+			dataType: 'json',
+			success: function (res) {
+				$('#city').html('<option value="">Selecione uma cidade	</option>');
+				$.each(res, function (key, value) {
+					$("#city").append('<option value="' + value.id + '">' + value.name + '</option>');
+				});
+			}
+		});
+	});
+});

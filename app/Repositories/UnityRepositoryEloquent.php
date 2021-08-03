@@ -16,12 +16,12 @@ class UnityRepositoryEloquent implements UnityRepositoryInterface
 
     public function get()
     {
-        return $this->unity->where('flag_status', 'enabled')->get();
+        return $this->unity->where('flag_status', 'enabled')->orderBy('id', 'DESC')->get();
     }
 
     public function getPaginate()
     {   
-        return $this->unity->where('flag_status', 'enabled')->paginate(10);
+        return $this->unity->where('flag_status', 'enabled')->orderBy('id', 'DESC')->paginate(10);
     }
 
     public function getById($idUnity)
@@ -55,7 +55,14 @@ class UnityRepositoryEloquent implements UnityRepositoryInterface
     public function update($idUnity, $request)
     {
         $unity = $this->getById($idUnity);
-        return $unity->update($request->all());
+        
+        $unity->corporate_name = $request->corporate_name;
+        $unity->cnes = $request->cnes;
+        $unity->state_id = $request->states;
+        $unity->city_id = $request->city;
+        $unity->save();
+        return $unity;
+
     }
 
     public function disable($idUnity)

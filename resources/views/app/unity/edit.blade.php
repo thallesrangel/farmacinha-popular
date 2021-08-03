@@ -14,6 +14,8 @@
                     <div>
                         <div class="row">
 
+                            <input type="hidden" id="city-data" name="city_data" value="{{ $data->city_id }}">
+
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-corporate-name">Nome da Unidade *</label>
@@ -30,15 +32,24 @@
                                 </div>
                             </div>
                             
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-states">Estado *</label>
                                     <select class="form-control" id="input-states" name="states" required>
-                                        @foreach($states as $state)
-                                            <option value="{{ $state }}" @if ($data->states === $state) {{ 'selected';}} @endif >{{ $state }}</option>
+                                        <option value="">Selecione um estado</option>
+                                        @foreach($states as $item)
+                                            <option value="{{ $item['id'] }}" @if ($data->state_id === $item['id']) {{ 'selected';}} @endif>{{ $item['name'] }}</option>
                                         @endforeach
                                     </select>
-                                    <p class="text-red">{{ $errors->first('states') }}</p>
+                                    <p class="txt-red">{{ $errors->first('states') }}</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-city">Cidade *</label>
+                                    <select id="city" class="form-control" id="input-city" name="city" required></select>
+                                    <p class="txt-red">{{ $errors->first('city') }}</p>
                                 </div>
                             </div>
 
@@ -53,5 +64,5 @@
             </div>
         </div>
     </div>
-
+    <script src="{{ asset('/js/selectCity.js') }}"></script>
 @endsection

@@ -12,6 +12,8 @@ class Unity extends Model
 
     protected $fillable = [
         'corporate_name',
-        'cnes'
+        'cnes',
+        'state_id',
+        'city_id'
     ];
 }

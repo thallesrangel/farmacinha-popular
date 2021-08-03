@@ -85,7 +85,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-states">Estado *</label>
-                                    <select class="form-control" id="input-states" name="states" onchange="selectCity(this)" required>
+                                    <select class="form-control" id="input-states" name="states" required>
                                         <option value="">Selecione um estado</option>
                                         @foreach($states as $item)
                                             <option value="{{ $item['id'] }}">{{ $item['name'] }}</option>
@@ -98,7 +98,8 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-city">Cidade *</label>
-                                    <select id="city" class="form-control" id="input-city" name="city" required></select>
+                                    <select id="city" class="form-control" id="input-city" name="city" required>
+                                    </select>
                                     <p class="txt-red">{{ $errors->first('city') }}</p>
                                 </div>
                             </div>

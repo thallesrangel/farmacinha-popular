@@ -32,7 +32,7 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-states">Estado *</label>
-                                    <select class="form-control" id="input-states" name="states" onchange="selectCity(this)" required>
+                                    <select class="form-control" id="input-states" name="states" required>
                                         <option value="">Selecione um estado</option>
                                         @foreach($states as $item)
                                             <option value="{{ $item['id'] }}">{{ $item['name'] }}</option>
