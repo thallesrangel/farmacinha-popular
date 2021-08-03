@@ -82,25 +82,28 @@
                        
                         <div class="row">
 
-                            <div class="col-md-1">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-states">Estado *</label>
-                                    <select class="form-control" id="input-states" name="states" required>
-                                        @foreach($states as $state)
-                                            <option value="{{ $state }}">{{ $state }}</option>
+                                    <select class="form-control" id="input-states" name="states" onchange="selectCity(this)" required>
+                                        <option value="">Selecione um estado</option>
+                                        @foreach($states as $item)
+                                            <option value="{{ $item['id'] }}">{{ $item['name'] }}</option>
                                         @endforeach
                                     </select>
+                                    <p class="txt-red">{{ $errors->first('states') }}</p>
                                 </div>
                             </div>
 
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-city">Cidade *</label>
-                                    <input type="text" id="input-city" class="form-control" name="city" required>
+                                    <select id="city" class="form-control" id="input-city" name="city" required></select>
+                                    <p class="txt-red">{{ $errors->first('city') }}</p>
                                 </div>
                             </div>
 
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-district">Bairro</label>
                                     <input type="text" id="input-district" class="form-control" name="district">
@@ -114,9 +117,6 @@
                                 </div>
                             </div>
 
-                        </div>
-
-                        <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-complement">Complemento</label>
@@ -129,6 +129,7 @@
                                     <input type="text" id="input-number" class="form-control" name="number">
                                 </div>
                             </div>
+
                         </div>
 
                         <button class="btn btn-success" type="submit">Salvar</button>
@@ -140,4 +141,5 @@
     
     </div>
     </div>
+    <script src="{{ asset('/js/selectCity.js') }}"></script>
 @endsection

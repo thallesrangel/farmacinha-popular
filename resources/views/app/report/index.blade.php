@@ -4,7 +4,7 @@
 <div class="col-sm-12">
     @include('app.includes.header')
     <h2>Relatório</h2>
-    <div class="row">
+    <div class="row cards">
         <div class="col-md-3 mt-2">
             <a href="#" class="card card-link">
                 <div class="card-body">
