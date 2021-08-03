@@ -31,12 +31,14 @@
                 <thead class="table-head">
                 <tr>
                     <th>Unidades</th>
+                    <th>Localização</th>
                 </tr>
                 </thead>
                 <tbody class="table-body">
                     @foreach($data as $item)
                         <tr class="table-row">
                             <td>{{ $item['corporate_name'] }}</a></td>
+                            <td>{{ $item['city']['name'] }} - {{ $item['states']['abbreviation'] }}</a></td>
                             <td class="d-flex">
                                 <a class="text-green" title="Selecionar Unidade" href="{{ route('unity.selected', $item['id']) }}"><i class="bi bi-check-square-fill"></i></a>
                                 <a class="text-yellow" title="Detalhes" href="{{ route('unity.edit', $item['id']) }}"><i class="bi bi-exclamation-square-fill"></i></a>

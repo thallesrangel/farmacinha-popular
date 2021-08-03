@@ -16,4 +16,14 @@ class Unity extends Model
         'state_id',
         'city_id'
     ];
+
+    public function states()
+    {
+        return $this->belongsTo(State::class, 'state_id');
+    }
+
+    public function city()
+    {
+        return $this->belongsTo(City::class, 'city_id');
+    }
 }
