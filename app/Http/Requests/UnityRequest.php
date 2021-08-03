@@ -16,7 +16,8 @@ class UnityRequest extends FormRequest
         return [
             'corporate_name' => 'required|max:70|string',
             'cnes' => 'required|max:20|string',
-            'states' => 'required|max:2',
+            'states' => 'required|numeric',
+            'city' => 'required|numeric',
         ];
     }
     
@@ -24,6 +25,7 @@ class UnityRequest extends FormRequest
     {
         return [
             'required' => 'Campo obrigatório',
+            'numeric' => 'Precisa ser um número',
             'corporate_name.max' => 'Tamanho máximo de 70 caracteres',
             'cnes.max' => 'Tamanho máximo de 20 caracteres',
             'states.max' => 'Tamanho máximo de 2 caracteres'

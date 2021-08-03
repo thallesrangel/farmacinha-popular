@@ -17,6 +17,7 @@
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-corporate-name">Nome da Unidade *</label>
                                     <input type="text" id="input-corporate-name" class="form-control" name="corporate_name" placeholder="Ex: UBS Praia Grande" required>
+                                    <p class="txt-red">{{ $errors->first('corporate_name') }}</p>
                                 </div>
                             </div>
                             
@@ -24,6 +25,7 @@
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-cnes">CNES *</label>
                                     <input type="text" id="input-cnes" class="form-control" name="cnes" required>
+                                    <p class="txt-red">{{ $errors->first('cnes') }}</p>
                                 </div>
                             </div>
                             
@@ -36,6 +38,7 @@
                                             <option value="{{ $item['id'] }}">{{ $item['name'] }}</option>
                                         @endforeach
                                     </select>
+                                    <p class="txt-red">{{ $errors->first('states') }}</p>
                                 </div>
                             </div>
 
@@ -43,6 +46,7 @@
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-city">Cidade *</label>
                                     <select id="city" class="form-control" id="input-city" name="city" required></select>
+                                    <p class="txt-red">{{ $errors->first('city') }}</p>
                                 </div>
                             </div>
 
