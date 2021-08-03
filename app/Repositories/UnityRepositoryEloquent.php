@@ -31,12 +31,12 @@ class UnityRepositoryEloquent implements UnityRepositoryInterface
 
     public function getByStates($state)
     {
-        return $this->unity->where('states', $state)->where('flag_status', 'enabled')->get();
+        return $this->unity->where('state_id', $state)->where('flag_status', 'enabled')->get();
     }
 
     public function getByStatesPaginate($state)
     {
-        return $this->unity->where('states', $state)->where('flag_status', 'enabled')->paginate(10);
+        return $this->unity->where('state_id', $state)->where('flag_status', 'enabled')->paginate(10);
     }
 
     public function store($data)

@@ -16,7 +16,10 @@ class CollaboratorRequest extends FormRequest
         return [
             'first_name' => 'required|max:30|string',
             'last_name' => 'required|max:30|string',
+            'birth_date' => 'required|date',
             'cpf' => 'required',
+            'state_id' => 'required|numeric',
+            'city_id' => 'required|numeric',
             'email' => 'required',
         ];
     }
@@ -26,7 +29,7 @@ class CollaboratorRequest extends FormRequest
         return [
             'required' => 'Campo obrigatório',
             'first_name.max' => 'Tamanho máximo de 70 caracteres',
-            'states.max' => 'Tamanho máximo de 2 caracteres'
+            'numeric' => 'Campo deve ser numérico',
         ];
     }
 }

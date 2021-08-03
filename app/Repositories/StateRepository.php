@@ -21,7 +21,7 @@ class StateRepository
                 $data = $this->states->get();
                 break;
             default:
-                $data = [session('collaborator.states')];
+                $data = $this->states->where('id', session('collaborator.state_id'))->get();
                 break;
         }
 

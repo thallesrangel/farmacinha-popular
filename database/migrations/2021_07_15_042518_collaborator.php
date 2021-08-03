@@ -19,7 +19,9 @@ class Collaborator extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('cpf')->unique();
-            $table->string('states');
+            $table->date('birth_date');
+            $table->bigInteger('state_id')->unsigned();
+            $table->bigInteger('city_id')->unsigned();
             $table->string('role');
             $table->string('email')->unique();
             $table->string('password');
@@ -30,6 +32,8 @@ class Collaborator extends Migration
 
         Schema::table('collaborator', function($table) {
             $table->foreign('id_unity')->references('id')->on('unity');
+            $table->foreign('state_id')->references('id')->on('states');
+            $table->foreign('city_id')->references('id')->on('city');
         });
     }
 

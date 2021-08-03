@@ -36,7 +36,9 @@ class CollaboratorRepositoryEloquent implements CollaboratorRepositoryInterface
         $collaborator->first_name = $data->first_name;
         $collaborator->last_name = $data->last_name;
         $collaborator->cpf = $data->cpf;
-        $collaborator->states = $data->states;
+        $collaborator->birth_date = $data->birth_date;
+        $collaborator->state_id = $data->state_id;
+        $collaborator->city_id = $data->city_id;
         $collaborator->role = $data->role;
         $collaborator->email = $data->email;
         $collaborator->password = md5($data->password);

@@ -27,15 +27,14 @@ class UnityService
 
     public function getByStates()
     {
-        return $this->unityRepository->getByStates(session('collaborator.states'));
+        return $this->unityRepository->getByStates(session('collaborator.state_id'));
     }
 
     public function getByStatesPaginate()
     {
-        return $this->unityRepository->getByStatesPaginate(session('collaborator.states'));
+        return $this->unityRepository->getByStatesPaginate(session('collaborator.state_id'));
     }
     
-
     public function getById($id)
     {
         $info = $id ? $id : session('collaborator.id_unity');

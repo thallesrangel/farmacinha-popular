@@ -13,7 +13,6 @@
                     <h6 class="heading-small text-muted mt-3">Informações gerais</h6>
                     <div class="pl-lg-4">
                         <div class="row">
-    
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-first-name">Nome *</label>
@@ -35,18 +34,12 @@
                                 </div>
                             </div>
 
-                            @if (in_array(session('collaborator.role'), ['gestor_geral']))
-                                <div class="col-md-2">
-                                    <div class="form-group">
-                                        <label class="form-control-label" for="input-states">Estado *</label>
-                                        <select class="form-control" id="input-states" name="states" required>
-                                            <option value="ES">ES</option>
-                                            <option value="RJ">RJ</option>
-                                        </select>
-                                    </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-birth-date">Data de Nascimento *</label>
+                                    <input type="date" id="input-birth-date" class="form-control" name="birth_date" value="{{ $data->birth_date }}" required>
                                 </div>
-                            @endif
-  
+                            </div>
                         </div>
 
                         <div class="row">
@@ -63,6 +56,30 @@
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-professional-record">Registro Profissional</label>
                                     <input type="text" id="input-professional-record" class="form-control" name="professional_record" value="{{ $data->professional_record }}">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-states">Estado *</label>
+                                    <select class="form-control" id="input-states" name="state_id" required>
+                                        <option value="">Selecione um estado</option>
+                                        @foreach($states as $item)
+                                            <option value="{{ $item['id'] }}">{{ $item['name'] }}</option>
+                                        @endforeach
+                                    </select>
+                                    <p class="txt-red">{{ $errors->first('state_id') }}</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-city">Cidade *</label>
+                                    <select id="city" class="form-control" id="input-city" name="city_id" required>
+                                    </select>
+                                    <p class="txt-red">{{ $errors->first('city_id') }}</p>
                                 </div>
                             </div>
 
@@ -89,4 +106,5 @@
             </div>
         </div>
     </div>
+    <script src="{{ asset('/js/selectCity.js') }}"></script>
 @endsection

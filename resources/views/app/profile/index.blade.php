@@ -20,7 +20,7 @@
             </div>
             <div class="col-md-3">
                 <h6 class="fw-bold">Nascimento</h6>
-                <p>10/10/2010</p>
+                <p>{{ $collaborator->birth_date}}</p>
             </div>
         </div>
         <h6 class="heading-small text-muted m-3">Informações gerais</h6>

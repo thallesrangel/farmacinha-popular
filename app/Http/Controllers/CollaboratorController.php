@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Services\CollaboratorService; 
+use App\Services\CollaboratorService;
+use App\Services\StateService;
 use App\Models\Role;
 use App\Http\Requests\CollaboratorRequest;
 use App\Services\RoleService;
@@ -12,11 +13,13 @@ class CollaboratorController extends Controller
 {
     protected $collaboratorService;
     protected $roleService;
+    protected $stateService;
 
-    public function __construct(CollaboratorService $collaboratorService, RoleService $roleService)
+    public function __construct(CollaboratorService $collaboratorService, RoleService $roleService, StateService $stateService)
     {
         $this->collaboratorService = $collaboratorService;
         $this->roleService = $roleService;
+        $this->stateService = $stateService;
     }
 
     public function index()
@@ -29,11 +32,12 @@ class CollaboratorController extends Controller
     {
         $role = new Role();
         $data = $role->filterRole();
+        $states = $this->stateService->get();
 
-        return view('app.collaborator.create', [ 'roles' => $data]);
+        return view('app.collaborator.create', [ 'roles' => $data, 'states' => $states ]);
     }
 
-    public function store(Request $request)
+    public function store(CollaboratorRequest $request)
     {
         try {
             $this->collaboratorService->save($request);
