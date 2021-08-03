@@ -40,8 +40,8 @@ class PeopleRepositoryEloquent implements PeopleRepositoryInterface
         $people->birth_date = $data->birth_date;
         $people->cpf = $data->cpf;
         $people->sus = $data->sus;
-        $people->states = $data->states;
-        $people->city = $data->city;
+        $people->state_id = $data->state_id;
+        $people->city_id = $data->city_id;
         $people->district = $data->district;
         $people->address_place = $data->address_place;
         $people->complement = $data->complement;

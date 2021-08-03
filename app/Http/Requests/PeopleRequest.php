@@ -18,7 +18,8 @@ class PeopleRequest extends FormRequest
             'last_name' => 'required|max:30|string',
             'sus' => 'unique:people|max:30',
             'cpf' => 'required|unique:people',
-            'states' => 'required'
+            'state_id' => 'required|numeric',
+            'city_id' => 'required|numeric'
         ];
     }
     
@@ -26,11 +27,12 @@ class PeopleRequest extends FormRequest
     {
         return [
             'required' => 'Campo obrigatório',
+            'numeric' => 'Deve ser um númro',
             'first_name.max' => 'Tamanho máximo de 30 caracteres',
             'last_name.max' => 'Tamanho máximo de 30 caracteres',
-            'states.max' => 'Tamanho máximo de 2 caracteres',
             'cpf.unique' => 'CPF já registrado',
             'sus.unique' => 'SUS já registrado',
+            
         ];
     }
 }

@@ -23,8 +23,8 @@ class People extends Migration
             $table->date('birth_date');
             $table->string('cpf')->unique();
             $table->string('sus')->unique()->nullable();
-            $table->string('states');
-            $table->string('city');
+            $table->bigInteger('state_id')->unsigned();
+            $table->bigInteger('city_id')->unsigned();
             $table->string('district')->nullable();
             $table->string('address_place')->nullable();
             $table->string('complement')->nullable();
@@ -35,6 +35,8 @@ class People extends Migration
 
         Schema::table('people', function($table) {
             $table->foreign('id_unity')->references('id')->on('unity');
+            $table->foreign('state_id')->references('id')->on('states');
+            $table->foreign('city_id')->references('id')->on('city');
         });
     }
 

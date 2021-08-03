@@ -85,22 +85,22 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-states">Estado *</label>
-                                    <select class="form-control" id="input-states" name="states" required>
+                                    <select class="form-control" id="input-states" name="state_id" required>
                                         <option value="">Selecione um estado</option>
                                         @foreach($states as $item)
                                             <option value="{{ $item['id'] }}">{{ $item['name'] }}</option>
                                         @endforeach
                                     </select>
-                                    <p class="txt-red">{{ $errors->first('states') }}</p>
+                                    <p class="txt-red">{{ $errors->first('state_id') }}</p>
                                 </div>
                             </div>
 
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-city">Cidade *</label>
-                                    <select id="city" class="form-control" id="input-city" name="city" required>
+                                    <select id="city" class="form-control" id="input-city" name="city_id" required>
                                     </select>
-                                    <p class="txt-red">{{ $errors->first('city') }}</p>
+                                    <p class="txt-red">{{ $errors->first('city_id') }}</p>
                                 </div>
                             </div>
 
