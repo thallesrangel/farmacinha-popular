@@ -13,8 +13,18 @@ class StateRepository
         $this->states = $states;
     }
 
-    public function get()
+    public function filterState()
     {
-        return $this->states->filterStates();
+        $data = [];
+        switch (session('collaborator.role')) {
+            case 'gestor_geral':
+                $data = $this->states->get();
+                break;
+            default:
+                $data = [session('collaborator.states')];
+                break;
+        }
+
+        return $data->toArray();
     }
 }

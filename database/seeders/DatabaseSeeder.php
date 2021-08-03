@@ -14,10 +14,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // php artisan migrate:refresh --seed
-        $this->call(Unity::class);
-        $this->call(Collaborator::class);
         $this->call(States::class);
         $this->call(City::class);
+        $this->call(Unity::class);
+        $this->call(Collaborator::class);
         // \App\Models\User::factory(10)->create();
     }
 }

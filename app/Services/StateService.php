@@ -15,6 +15,6 @@ class StateService
 
     public function get()
     {
-        return $this->stateRepository->get();
+        return $this->stateRepository->filterState();
     }
 }

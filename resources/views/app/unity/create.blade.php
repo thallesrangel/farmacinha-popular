@@ -27,14 +27,22 @@
                                 </div>
                             </div>
                             
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-states">Estado *</label>
-                                    <select class="form-control" id="input-states" name="states" required>
-                                        @foreach($states as $state)
-                                            <option value="{{ $state }}">{{ $state }}</option>
+                                    <select class="form-control" id="input-states" name="states" onchange="selectCity(this)" required>
+                                        <option value="">Selecione um estado</option>
+                                        @foreach($states as $item)
+                                            <option value="{{ $item['id'] }}">{{ $item['name'] }}</option>
                                         @endforeach
                                     </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-city">Cidade *</label>
+                                    <select id="city" class="form-control" id="input-city" name="city" required></select>
                                 </div>
                             </div>
 
@@ -50,4 +58,5 @@
         </div>
     </div>
 
+    <script src="{{ asset('/js/selectCity.js') }}"></script>
 @endsection

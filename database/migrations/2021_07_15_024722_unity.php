@@ -17,9 +17,15 @@ class Unity extends Migration
             $table->id();
             $table->string('corporate_name');
             $table->string('cnes')->unique();
-            $table->string('states');
+            $table->bigInteger('state_id')->unsigned();
+            $table->bigInteger('city_id')->unsigned();
             $table->string('flag_status')->default('enabled');
             $table->timestamps();
+        });
+
+        Schema::table('unity', function($table) {
+            $table->foreign('state_id')->references('id')->on('states');
+            $table->foreign('city_id')->references('id')->on('city');
         });
     }
 

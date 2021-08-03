@@ -44,7 +44,8 @@ class UnityRepositoryEloquent implements UnityRepositoryInterface
         $unity = new $this->unity;
         $unity->corporate_name = $data['corporate_name'];
         $unity->cnes = $data['cnes'];
-        $unity->states = $data['states'];
+        $unity->state_id = $data['states'];
+        $unity->city_id = $data['city'];
 
         $unity->save();
 

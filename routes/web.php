@@ -9,6 +9,7 @@ use App\Http\Controllers\UnityController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CollaboratorController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\CityController;
 
 Route::get('/', function () {
     return view('public.index');
@@ -23,6 +24,8 @@ Route::prefix('login')->group(function () {
 Route::middleware([CollaboratorAutenticate::class])->group(function () {
     Route::prefix('app')->group(function () {
 
+        Route::get('/cidades/{id}', [CityController::class, 'getById']);
+        
         Route::prefix('unidade')->group(function () {
             Route::get('/', [UnityController::class, 'index'])->name('unity.list');
             Route::get('/registrar', [UnityController::class, 'create'])->name('unity.create');
