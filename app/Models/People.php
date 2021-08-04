@@ -26,4 +26,14 @@ class People extends Model
         'number',
         'flag_status'
     ];
+
+    public function states()
+    {
+        return $this->belongsTo(State::class, 'state_id');
+    }
+
+    public function city()
+    {
+        return $this->belongsTo(City::class, 'city_id');
+    }
 }

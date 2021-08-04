@@ -11,6 +11,10 @@ use App\Http\Controllers\CollaboratorController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\CityController;
 
+use App\Http\Controllers\Profile\CollaboratorProfileController;
+use App\Http\Controllers\Profile\PeopleProfileController;
+use App\Http\Controllers\Profile\UnityProfileController;
+
 Route::get('/', function () {
     return view('public.index');
 });
@@ -32,6 +36,7 @@ Route::middleware([CollaboratorAutenticate::class])->group(function () {
             Route::get('/{id}', [UnityController::class, 'selected'])->name('unity.selected');
             Route::delete('/{id}', [UnityController::class, 'disable'])->name('unity.disable');
             Route::post('/salvar', [UnityController::class, 'store'])->name('unity.store');
+            Route::get('/perfil/{id}', [UnityProfileController::class, 'profile'])->name('unity.profile');
             Route::get('/{id}/editar', [UnityController::class, 'edit'])->name('unity.edit');
             Route::put('/{id}/atualizar', [UnityController::class, 'update'])->name('unity.update');
         });
@@ -45,7 +50,7 @@ Route::middleware([CollaboratorAutenticate::class])->group(function () {
                 Route::post('/salvar', [CollaboratorController::class, 'store'])->name('collaborator.store');
                 Route::delete('/disable-selected', [CollaboratorController::class, 'disableSelected'])->name('collaborator.disable.selected');
                 Route::delete('/{id}', [CollaboratorController::class, 'disable'])->name('collaborator.disable');
-                Route::get('/perfil/{id}', [CollaboratorController::class, 'profile'])->name('collaborator.profile');
+                Route::get('/perfil/{id}', [CollaboratorProfileController::class, 'profile'])->name('collaborator.profile');
                 Route::get('/{id}/editar', [CollaboratorController::class, 'edit'])->name('collaborator.edit');
                 Route::put('/{id}/atualizar', [CollaboratorController::class, 'update'])->name('collaborator.update');
             });
@@ -56,7 +61,7 @@ Route::middleware([CollaboratorAutenticate::class])->group(function () {
                 Route::post('/salvar', [PeopleController::class, 'store'])->name('people.store');
                 Route::delete('/disable-selected', [PeopleController::class, 'disableSelected'])->name('people.disable.selected');
                 Route::delete('/{id}', [PeopleController::class, 'disable'])->name('people.disable');
-                Route::get('/perfil/{id}', [PeopleController::class, 'profile'])->name('people.profile');
+                Route::get('/perfil/{id}', [PeopleProfileController::class, 'profile'])->name('people.profile');
             });
 
             Route::prefix('relatorio')->group(function () {

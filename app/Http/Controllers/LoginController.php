@@ -22,7 +22,7 @@ class LoginController extends Controller
         $password = md5($request->password);
         
         $usuario = Collaborator::where('email', '=', $login)->where('password', '=', $password)->first();
-
+        
         return $this->logarUsuario($usuario);
     }
 

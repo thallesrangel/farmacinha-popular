@@ -23,7 +23,6 @@ class UnityController extends Controller
 
     public function index()
     {
-
         switch (session('collaborator.role')) {
             case 'gestor_geral':
                 $data = $this->unityService->getPaginate();

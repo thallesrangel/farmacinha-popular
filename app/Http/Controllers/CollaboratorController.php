@@ -79,17 +79,4 @@ class CollaboratorController extends Controller
         $this->collaboratorService->disableSelected($ids);
         return redirect()->route('collaborator.list')->with('success', 'Excluído com sucesso.');
     }
-
-    public function profile($id)
-    {
-        $response = $this->collaboratorService->getById($id);
-        
-        if (!$response) {
-            return redirect()->route('collaborator.list')->with('not_found', 'Registro não encontrado.');
-        }
-
-        $role = $this->roleService->roleByName($response->role);
-
-        return view('app.profile.index', [ 'collaborator' => $response, 'role' => $role ]);
-    }
 }

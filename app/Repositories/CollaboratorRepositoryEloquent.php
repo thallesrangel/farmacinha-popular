@@ -39,7 +39,7 @@ class CollaboratorRepositoryEloquent implements CollaboratorRepositoryInterface
     public function save($data)
     {
         $collaborator = new $this->collaborator;
-        $collaborator->id_unity = $data->id_unity;
+        $collaborator->id_unity = session('collaborator.id_unity');
         $collaborator->first_name = $data->first_name;
         $collaborator->last_name = $data->last_name;
         $collaborator->cpf = $data->cpf;

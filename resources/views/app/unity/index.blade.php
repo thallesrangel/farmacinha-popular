@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container div-local shadow-lg p-3 mb-5 bg-white rounded">
+    <div class="container bg-white rounded">
         <div class="d-flex justify-content-center">
             <img class="img-fluid logo" src="{{ asset('img/logo.png') }}">
         </div>
@@ -41,12 +41,13 @@
                             <td>{{ $item['city']['name'] }} - {{ $item['states']['abbreviation'] }}</a></td>
                             <td class="d-flex">
                                 <a class="text-green" title="Selecionar Unidade" href="{{ route('unity.selected', $item['id']) }}"><i class="bi bi-check-square-fill"></i></a>
-                                <a class="text-yellow" title="Detalhes" href="{{ route('unity.edit', $item['id']) }}"><i class="bi bi-exclamation-square-fill"></i></a>
+                                <a class="btn btn-sm btn-default table-info" href="{{ route('unity.profile', $item->id) }}"><i class="bi bi-info-circle"></i></a>
+                                <a class="text-yellow" title="Detalhes" href="{{ route('unity.edit', $item['id']) }}"><i class="bi bi-pencil"></i></a>
                                 
                                 <form action="{{ route('unity.disable', $item->id)  }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-sm btn-default table-trash" title="Desativar" type="submit"><i class="bi bi-stop-circle-fill"></i></button>
+                                    <button class="btn btn-sm btn-default table-trash" title="Desativar" type="submit"><i class="bi bi-trash2"></i></button>
                                 </form>
                             </td>
                         </tr>

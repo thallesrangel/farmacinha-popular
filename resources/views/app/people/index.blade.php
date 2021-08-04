@@ -28,7 +28,7 @@
                                 <td> {{ $item->first_name }} </td>
                                 <td class="cpf"> {{ $item->cpf }} </td>
                                 <td> {{ $item->sus   }} </td>
-                                <td> {{ $item->states }} - {{ $item->city }} </td>
+                                <td> {{ $item->states->abbreviation }} - {{ $item->city->name }} </td>
                                 <td class="d-flex justify-content-center">
                                     <a class="btn btn-sm btn-default table-info" href="{{ route('people.profile', $item->id) }}"><i class="bi bi-info-circle"></i></a>
                                     

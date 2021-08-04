@@ -20,7 +20,6 @@ class DashboardController extends Controller
     
     public function index()
     {
-
         $role = $this->roleService->roleName();
         $peopleCount = $this->peopleService->count();
         return view('app.dashboard', [ 'role' => $role, 'peopleCount' => $peopleCount ]);

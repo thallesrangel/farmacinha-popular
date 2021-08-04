@@ -12545,17 +12545,6 @@ h1,h2,h3,h4,h5,h6
     font-weight: 520;
 }
 
-.div-local 
-{
-    max-width: 700px;
-    height: auto;
-    background: #FFF;
-    padding: 2%;
-    margin-top: 6%;
-    border: 2px solid #ecf0f1; 
-    border-radius: 10px;
-}
-
 .nav-link
 {
     color: #2C3E50;
