@@ -103,3 +103,16 @@
     })
    </script>
 @endif
+
+
+@if (Session::has('not_found_id_unity'))
+    <script>
+        Swal.fire({
+            icon: 'warning',
+            title: 'Atenção',
+            text: '{{ session('not_found_id_unity') }}',
+            confirmButtonText: 'Entendido',
+            confirmButtonColor: '#e74c3c',
+    })
+   </script>
+@endif
