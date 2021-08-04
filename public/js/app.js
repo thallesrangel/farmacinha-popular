@@ -5486,9 +5486,7 @@ $jscomp.polyfill("Array.prototype.find", function (a) {
 
 $(function () {
   //$('.telefone').mask('(00) 00000-0000');
-  $('.data').mask("00/00/0000", {
-    placeholder: "__/__/____"
-  }); //$('.porcentagem').mask('##0,00%', {reverse: true});
+  $('.date').mask('00/00/0000'); //$('.porcentagem').mask('##0,00%', {reverse: true});
 
   $('.dose').mask('000.000,00', {
     reverse: true

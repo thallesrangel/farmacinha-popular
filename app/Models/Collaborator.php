@@ -26,4 +26,14 @@ class Collaborator extends Model
     protected $hidden = [
         'password'
     ];
+
+    public function states()
+    {
+        return $this->belongsTo(State::class, 'state_id');
+    }
+
+    public function city()
+    {
+        return $this->belongsTo(City::class, 'city_id');
+    }
 }

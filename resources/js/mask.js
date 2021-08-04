@@ -1,6 +1,6 @@
 $(function(){
     //$('.telefone').mask('(00) 00000-0000');
-    $('.data').mask("00/00/0000", {placeholder: "__/__/____"});
+    $('.date').mask('00/00/0000');
     //$('.porcentagem').mask('##0,00%', {reverse: true});
     $('.dose').mask('000.000,00', {reverse: true});
     //$('.valor-unitario').mask('000,00', {reverse: true});

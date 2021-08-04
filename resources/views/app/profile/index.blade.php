@@ -16,11 +16,15 @@
             </div>
             <div class="col-md-3">
                 <h6 class="fw-bold">Estado</h6>
-                <p>{{ $collaborator->states }}</p>
+                <p>{{ $collaborator->states->name }}</p>
+            </div>
+            <div class="col-md-3">
+                <h6 class="fw-bold">Cidade</h6>
+                <p>{{ $collaborator->city->name }}</p>
             </div>
             <div class="col-md-3">
                 <h6 class="fw-bold">Nascimento</h6>
-                <p>{{ $collaborator->birth_date}}</p>
+                <p class="date">{{ $collaborator->birth_date}}</p>
             </div>
         </div>
         <h6 class="heading-small text-muted m-3">Informações gerais</h6>
