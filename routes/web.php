@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\CollaboratorAutenticate;
 use App\Http\Middleware\UnitySelected;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\UnityController;
 use App\Http\Controllers\DashboardController;
@@ -22,7 +23,7 @@ Route::get('/', function () {
 Route::prefix('login')->group(function () {
     Route::get('/', [LoginController::class, 'index'])->name('login.signIn');
     Route::post('/logar', [LoginController::class, 'login'])->name('login.logar');
-    Route::get('/logout', [LoginController::class, 'logout'])->name('login.logout');
+    Route::get('/logout', [LogoutController::class, 'logout'])->name('login.logout');
 });
 
 Route::middleware([CollaboratorAutenticate::class])->group(function () {

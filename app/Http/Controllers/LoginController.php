@@ -26,12 +26,6 @@ class LoginController extends Controller
         return $this->logarUsuario($usuario);
     }
 
-    public function logout()
-    {
-        session()->flush();
-        return redirect()->route('login.signIn')->with('logout_success', 'Ótimo trabalho, até logo!');;
-    }
-
     private function logarUsuario($usuario)
     {
         if (!empty($usuario)) {
