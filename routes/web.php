@@ -12,6 +12,8 @@ use App\Http\Controllers\CollaboratorController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\CityController;
 
+use App\Http\Controllers\Drug\DrugInController;
+
 use App\Http\Controllers\Profile\CollaboratorProfileController;
 use App\Http\Controllers\Profile\PeopleProfileController;
 use App\Http\Controllers\Profile\UnityProfileController;
@@ -65,9 +67,14 @@ Route::middleware([CollaboratorAutenticate::class])->group(function () {
                 Route::get('/perfil/{id}', [PeopleProfileController::class, 'profile'])->name('people.profile');
             });
 
+            Route::prefix('medicamento')->group(function () {
+                Route::get('/registrar', [DrugInController::class, 'create'])->name('people.create');
+            });
+
             Route::prefix('relatorio')->group(function () {
                 Route::get('/', [ReportController::class, 'index'])->name('report.index');
             });
+            
         });
     });
 });

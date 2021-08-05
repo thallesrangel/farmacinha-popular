@@ -18,6 +18,9 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind('App\Repositories\Contracts\PeopleRepositoryInterface', 'App\Repositories\PeopleRepositoryEloquent');
         $this->app->bind('App\Repositories\Contracts\RoleRepositoryInterface', 'App\Repositories\RoleRepositoryEloquent');
         $this->app->bind('App\Repositories\Contracts\CityRepositoryInterface', 'App\Repositories\CityRepositoryEloquent');
+        $this->app->bind('App\Repositories\Contracts\LaboratoryRepositoryInterface', 'App\Repositories\LaboratoryRepositoryEloquent');
+        $this->app->bind('App\Repositories\Contracts\StripeRepositoryInterface', 'App\Repositories\StripeRepositoryEloquent');
+        $this->app->bind('App\Repositories\Contracts\MeasurementRepositoryInterface', 'App\Repositories\MeasurementRepositoryEloquent');
     }
 
     /**
