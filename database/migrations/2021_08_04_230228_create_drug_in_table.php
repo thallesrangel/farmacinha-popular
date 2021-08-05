@@ -15,6 +15,7 @@ class CreateDrugInTable extends Migration
             $table->bigInteger('id_people_donator')->unsigned();
             $table->bigInteger('id_laboratory')->unsigned();
             $table->bigInteger('id_stripe')->unsigned();
+            $table->bigInteger('id_drug_type')->unsigned();
             $table->string('name');
             $table->bigInteger('id_measurement')->unsigned();
             $table->double('amount', 10, 2);
@@ -28,6 +29,7 @@ class CreateDrugInTable extends Migration
             $table->foreign('id_laboratory')->references('id')->on('laboratory');
             $table->foreign('id_stripe')->references('id')->on('stripe');
             $table->foreign('id_measurement')->references('id')->on('measurement');
+            $table->foreign('id_drug_type')->references('id')->on('drug_type');
         });
     }
 
