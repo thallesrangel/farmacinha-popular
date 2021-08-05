@@ -68,6 +68,7 @@ Route::middleware([CollaboratorAutenticate::class])->group(function () {
             });
 
             Route::prefix('medicamento')->group(function () {
+                Route::get('/', [DrugInController::class, 'index'])->name('drugin.list');
                 Route::get('/registrar', [DrugInController::class, 'create'])->name('drugin.create');
                 Route::post('/salvar', [DrugInController::class, 'store'])->name('drugin.store');
             });

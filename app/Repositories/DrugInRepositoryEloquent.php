@@ -14,6 +14,17 @@ class DrugInRepositoryEloquent implements DrugInRepositoryInterface
         $this->drugIn = $drugIn;
     }
 
+    public function get()
+    {
+        return $this->drugIn->get();
+    }
+
+
+    public function getPaginate()
+    {   
+        return $this->drugIn->orderBy('id', 'DESC')->paginate(8);
+    }
+
     public function save($data)
     {
         $drugIn = new $this->drugIn;

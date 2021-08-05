@@ -10,7 +10,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link p-1" href="#">
+        <a class="nav-link p-1" href="{{ route('drugin.list') }}">
             <i class="bi bi-box-seam"></i>
             <span>Medicamentos</span>
         </a>

@@ -14,6 +14,16 @@ class DrugInService
         $this->drugInRepository = $drugInRepository;
     }
 
+    public function get()
+    {
+        return $this->drugInRepository->get();
+    }
+
+    public function getPaginate()
+    {
+        return $this->drugInRepository->getPaginate();
+    }
+
     public function save(DrugInRequest $request)
     {
         return $this->drugInRepository->save($request);

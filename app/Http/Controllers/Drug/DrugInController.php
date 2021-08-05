@@ -40,7 +40,9 @@ class DrugInController extends Controller
 
     public function index()
     {
-    
+        $data = $this->drugInService->getPaginate();
+        
+        return view('app.drug.drug_in.index', [ 'data' => $data ]);
     }
 
     public function create()

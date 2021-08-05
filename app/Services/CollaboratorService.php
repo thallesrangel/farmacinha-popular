@@ -26,7 +26,6 @@ class CollaboratorService
         return $this->collaboratorRepository->getPaginate();
     }
 
-
     public function getById($id)
     {
         return $this->collaboratorRepository->getById($id);
