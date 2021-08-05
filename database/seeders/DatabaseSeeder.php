@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
         $this->call(Unity::class);
         $this->call(Collaborator::class);
         $this->call(Stripe::class);
+        $this->call(DrugType::class);
         $this->call(Laboratory::class);
         $this->call(Measurement::class);
         // \App\Models\User::factory(10)->create();

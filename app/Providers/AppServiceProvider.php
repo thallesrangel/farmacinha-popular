@@ -21,6 +21,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind('App\Repositories\Contracts\LaboratoryRepositoryInterface', 'App\Repositories\LaboratoryRepositoryEloquent');
         $this->app->bind('App\Repositories\Contracts\StripeRepositoryInterface', 'App\Repositories\StripeRepositoryEloquent');
         $this->app->bind('App\Repositories\Contracts\MeasurementRepositoryInterface', 'App\Repositories\MeasurementRepositoryEloquent');
+        $this->app->bind('App\Repositories\Contracts\DrugTypeRepositoryInterface', 'App\Repositories\DrugTypeRepositoryEloquent');
     }
 
     /**

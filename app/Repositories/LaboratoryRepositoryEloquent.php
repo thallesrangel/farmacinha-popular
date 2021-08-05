@@ -19,4 +19,3 @@ class LaboratoryRepositoryEloquent implements LaboratoryRepositoryInterface
         return $this->laboratory->get();
     }
 }
-

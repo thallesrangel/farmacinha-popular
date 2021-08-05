@@ -56,6 +56,18 @@
 
                         <div class="row">
 
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-drug-type">Tipo de medicamento *</label>
+                                    <select class="form-control" id="input-drug-type" name="id_drug_type" required>
+                                        @foreach($drugType as $item)
+                                            <option value="{{ $item['id'] }}">{{ $item['name'] }}</option>
+                                        @endforeach
+                                    </select>
+                                    <p class="txt-red">{{ $errors->first('id_drug_type') }}</p>
+                                </div>
+                            </div>
+
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-measurement">Medição *</label>
