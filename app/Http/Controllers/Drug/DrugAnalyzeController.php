@@ -21,6 +21,13 @@ class DrugAnalyzeController extends Controller
         $this->durgInService = $durgInService;
     }
 
+    public function index() 
+    {
+        $drugAnalyze = $this->drugAnalyzeService->getPaginate();
+        
+        return view('app.drug.drug_analyze.index', [ 'data' => $drugAnalyze ]);  
+    }
+
     public function get()
     {
             
@@ -35,6 +42,11 @@ class DrugAnalyzeController extends Controller
 
     public function store(DrugAnalyzeRequest $request)
     {
-        $this->drugAnalyzeService->store($request);
+        try {
+            $this->drugAnalyzeService->store($request);
+        } catch (\Exception $e) {
+            return redirect()->route('druganalyze.list')->with('error', 'Ocorreu um erro. Verifique os campos.');
+        }
+        return redirect()->route('druganalyze.list')->with('success', 'Registrado com sucesso.');
     }
 }

@@ -33,6 +33,8 @@ class DrugAnalyzeRepositoryEloquent implements DrugAnalyzeRepositoryInterface
     public function getPaginate()
     {   
         return $this->drugAnalyze->orderBy('id', 'DESC')
+                            ->with('drugIn')
+                            ->with('collaborator')
                             ->paginate(8);
     }
 

@@ -12490,6 +12490,10 @@ h1,h2,h3,h4,h5,h6
     color: #3498db;
 }
 
+a {
+    text-decoration: none ;
+}
+
 .form-group
 {
     margin: 20px 0px;

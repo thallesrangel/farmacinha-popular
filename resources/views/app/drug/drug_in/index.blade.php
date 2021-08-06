@@ -49,6 +49,10 @@
                                     @if (in_array(session('collaborator.role'), ['gestor_geral', 'gestor_estadual', 'gestor_unidade', 'analista']) && $item->step == 'analyze')
                                         <a href="{{ route('druganalyze.create', $item->id) }}" class="btn btn-sm btn-default txt-yellow"><i class="bi bi-clipboard-check"></i></a>
                                     @endif
+
+                                    @if (in_array(session('collaborator.role'), ['gestor_geral', 'gestor_estadual', 'gestor_unidade', 'analista']) && $item->step != 'analyze')
+                                        <span class="btn btn-sm btn-default disabled"><i class="bi bi-clipboard-check"></i></span>
+                                    @endif
                                     <a class="btn btn-sm btn-default table-info" href="{{ route('people.profile', $item->id) }}"><i class="bi bi-info-circle"></i></a>
                                     
                                     @if (in_array(session('collaborator.role'), ['gestor_geral', 'gestor_estadual', 'gestor_unidade' ]))
