@@ -64,7 +64,13 @@ class DrugInController extends Controller
 
     public function store(DrugInRequest $request)
     {
-        $this->drugInService->save($request);
+        try {
+            $this->drugInService->save($request);
+        } catch (\Exception $e) {
+            return redirect()->route('drugin.list')->with('error', 'Ocorreu um erro. Verifique os campos.');
+        }
+
+        return redirect()->route('drugin.list')->with('success', 'Registrado com sucesso.');
     }
 
     public function edit(Request $request)
