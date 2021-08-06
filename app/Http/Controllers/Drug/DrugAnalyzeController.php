@@ -1,38 +1,29 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Drug;
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class DrugAnalyzeController extends Controller
 {
-    public function index()
+    public function construct()
     {
     
     }
 
-    public function create()
+    public function get($idDrugIn)
     {
+        dd($idDrugIn);
+    }
     
+    public function create($idDrugIn)
+    {
+        
     }
 
     public function store(Request $request)
     {
     
-    }
-
-    public function edit(Request $request)
-    {
-    
-    }
-
-    public function update(Request $request)
-    {
-    
-    }
-
-    public function disabled($id)
-    {
-
     }
 }
