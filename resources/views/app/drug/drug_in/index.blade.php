@@ -24,10 +24,11 @@
                             <tr class="table-row">
                                 <td> {{ $item->name }} </td>
                                 <td> {{ $item->laboratory->name }}</td>
-                                <td> {{ $item->people->first_name }} </td>
+                                <td> <a href="{{ route('people.profile', $item->people->id) }}">{{ $item->people->first_name }} </a></td>
                                 <td> {{ $item->amount }} - {{ $item->measurement->abbreviation }} </td>
                                 <td> {{ $item->expiration_date }} </td>
                                 <td class="d-flex justify-content-center">
+                                    <a href="" class="btn btn-warning"> Analisar</a>
                                     <a class="btn btn-sm btn-default table-info" href="{{ route('people.profile', $item->id) }}"><i class="bi bi-info-circle"></i></a>
                                     
                                     @if (in_array(session('collaborator.role'), ['gestor_geral', 'gestor_estadual', 'gestor_unidade' ]))
