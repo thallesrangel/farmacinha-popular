@@ -22,7 +22,11 @@ class DrugInRepositoryEloquent implements DrugInRepositoryInterface
 
     public function getPaginate()
     {   
-        return $this->drugIn->orderBy('id', 'DESC')->paginate(8);
+        return $this->drugIn->with('people')
+                            ->with('laboratory')
+                            ->with('measurement')
+                            ->orderBy('id', 'DESC')
+                            ->paginate(8);
     }
 
     public function save($data)

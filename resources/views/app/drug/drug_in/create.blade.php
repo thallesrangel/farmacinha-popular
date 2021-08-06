@@ -24,7 +24,7 @@
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-drug-type">Tipo de medicamento *</label>
                                     <select class="form-control" id="input-drug-type" name="id_drug_type" required>
-                                        <option value="">Selecione um laboratório</option>
+                                        <option value="">Selecione um tipo</option>
                                         @foreach($drugType as $item)
                                             <option value="{{ $item['id'] }}">{{ $item['name'] }}</option>
                                         @endforeach
@@ -108,7 +108,7 @@
 
                     <div class="pl-lg-4">
                         <button class="btn btn-success" type="submit">Salvar</button>
-                        <a class="btn btn-outline-danger" href="">Voltar</a>
+                        <a class="btn btn-outline-danger" href="{{ route('drugin.list') }}">Voltar</a>
                     </div>  
                 </form>
             </div>
