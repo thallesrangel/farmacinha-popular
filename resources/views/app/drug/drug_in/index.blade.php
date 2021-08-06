@@ -4,7 +4,7 @@
     <div class="col-sm-12">
         @include('app.includes.header')
         <h2>Medicamentos Recebidos</h2>
-
+        <h5 class="mt-2">Analise um medicamento clicando em <i class="bi bi-clipboard-check txt-yellow"></i></h5>
         <div class="d-grid gap-2 d-md-block">
           
             <a href="{{ route('drugin.create') }}" class="btn btn-success">Registrar</a>
@@ -28,7 +28,7 @@
                                 <td> {{ $item->amount }} - {{ $item->measurement->abbreviation }} </td>
                                 <td> {{ $item->expiration_date }} </td>
                                 <td class="d-flex justify-content-center">
-                                    <a href="" class="btn btn-warning"> Analisar</a>
+                                    <a href="#" class="btn btn-sm btn-default txt-yellow"><i class="bi bi-clipboard-check"></i></a>
                                     <a class="btn btn-sm btn-default table-info" href="{{ route('people.profile', $item->id) }}"><i class="bi bi-info-circle"></i></a>
                                     
                                     @if (in_array(session('collaborator.role'), ['gestor_geral', 'gestor_estadual', 'gestor_unidade' ]))
