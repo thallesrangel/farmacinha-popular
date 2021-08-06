@@ -12,6 +12,8 @@ class CreateDrugAnalyzeTable extends Migration
             $table->id();
             $table->bigInteger('id_unity')->unsigned();
             $table->bigInteger('id_collaborator')->unsigned();
+            $table->string('analyze_conservation');
+            $table->string('analyze_result');
             $table->timestamps();
         });
 

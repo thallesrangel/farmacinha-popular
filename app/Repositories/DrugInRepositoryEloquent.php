@@ -54,6 +54,7 @@ class DrugInRepositoryEloquent implements DrugInRepositoryInterface
         $drugIn->expiration_date = $data->expiration_date;
         $drugIn->id_measurement = $data->id_measurement;
         $drugIn->amount = $data->amount;
+        $drugIn->step = $this->drugIn::STEP_ANALYZE;
 
         $drugIn->save();
 

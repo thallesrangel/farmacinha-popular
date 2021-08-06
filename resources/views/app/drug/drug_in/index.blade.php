@@ -19,6 +19,7 @@
                         <th>Doador</th>
                         <th>Quantidade</th>
                         <th>Validade</th>
+                        <th>Status</th>
                     </tr>
                     </thead>
                     <tbody class="table-body">
@@ -29,6 +30,24 @@
                                 <td> <a href="{{ route('people.profile', $item->people->id) }}">{{ $item->people->first_name }} </a></td>
                                 <td> {{ $item->amount }} - {{ $item->measurement->abbreviation }} </td>
                                 <td> {{ $item->expiration_date }} </td>
+                                
+                                @switch($item->step)
+                                    @case('analyze')
+                                        <td class="text-yellow">Analisar</td>
+                                        @break
+                                    @case('analyzed')
+                                        <td>Analisado</td>
+                                        @break
+
+                                    @case('available')
+                                        <td>Disponível</td>
+                                        @break
+                                    @case('distributed')
+                                        <td>Distribuído</td>
+                                        @break
+             
+                                @endswitch
+
                                 <td class="d-flex justify-content-center">
                                     @if (in_array(session('collaborator.role'), ['gestor_geral', 'gestor_estadual', 'gestor_unidade', 'analista']))
                                         <a href="{{ route('druganalyze.create', $item->id) }}" class="btn btn-sm btn-default txt-yellow"><i class="bi bi-clipboard-check"></i></a>
@@ -53,6 +72,7 @@
                             <th>Doador</th>
                             <th>Quantidade</th>
                             <th>Validade</th>
+                            <th>Status</th>
                             <th></th>
                         </tr>
                     </tfoot>

@@ -20,6 +20,7 @@ class CreateDrugInTable extends Migration
             $table->bigInteger('id_measurement')->unsigned();
             $table->double('amount', 10, 2);
             $table->date('expiration_date');
+            $table->string('step');
             $table->timestamps();
         });
 
