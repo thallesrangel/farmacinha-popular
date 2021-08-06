@@ -10,7 +10,14 @@ class CreateDrugAnalyzeTable extends Migration
     {
         Schema::create('drug_analyze', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('id_unity')->unsigned();
+            $table->bigInteger('id_collaborator')->unsigned();
             $table->timestamps();
+        });
+
+        Schema::table('drug_analyze', function($table) {
+            $table->foreign('id_unity')->references('id')->on('unity');
+            $table->foreign('id_collaborator')->references('id')->on('collaborator');
         });
     }
 

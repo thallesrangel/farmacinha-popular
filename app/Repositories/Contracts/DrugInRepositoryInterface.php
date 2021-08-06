@@ -7,5 +7,7 @@ use App\Http\Requests\DrugInRequest;
 interface DrugInRepositoryInterface
 {
     public function get();
+    public function getById($id);
     public function save(DrugInRequest $id);
+    public function getPaginate();
 }

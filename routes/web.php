@@ -72,7 +72,7 @@ Route::middleware([CollaboratorAutenticate::class])->group(function () {
                 Route::get('/', [DrugInController::class, 'index'])->name('drugin.list');
                 Route::get('/registrar', [DrugInController::class, 'create'])->name('drugin.create');
                 Route::post('/salvar', [DrugInController::class, 'store'])->name('drugin.store');
-                Route::get('{idDrugIn}/analisar', [DrugAnalyzeController::class, 'get'])->name('druganalyze.get');
+                Route::get('{idDrugIn}/analisar', [DrugAnalyzeController::class, 'create'])->name('druganalyze.create');
                 Route::post('analise-finalizada', [DrugAnalyzeController::class, 'store'])->name('druganalyze.store');
             });
 

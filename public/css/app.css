@@ -12466,6 +12466,7 @@ h1,h2,h3,h4,h5,h6
     border: 1px solid #00BC54;
     color: #00BC54;
 }
+
 .btn.btn-outline-success:hover
 {
     background: #00BC54;
@@ -12484,6 +12485,10 @@ h1,h2,h3,h4,h5,h6
     color: #00BC54;
 }
 
+.txt-blue
+{
+    color: #3498db;
+}
 
 .form-group
 {

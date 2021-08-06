@@ -31,7 +31,7 @@
                                 <td> {{ $item->expiration_date }} </td>
                                 <td class="d-flex justify-content-center">
                                     @if (in_array(session('collaborator.role'), ['gestor_geral', 'gestor_estadual', 'gestor_unidade', 'analista']))
-                                        <a href="{{ route('druganalyze.get', $item->id) }}" class="btn btn-sm btn-default txt-yellow"><i class="bi bi-clipboard-check"></i></a>
+                                        <a href="{{ route('druganalyze.create', $item->id) }}" class="btn btn-sm btn-default txt-yellow"><i class="bi bi-clipboard-check"></i></a>
                                     @endif
                                     <a class="btn btn-sm btn-default table-info" href="{{ route('people.profile', $item->id) }}"><i class="bi bi-info-circle"></i></a>
                                     

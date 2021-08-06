@@ -19,6 +19,11 @@ class DrugInService
         return $this->drugInRepository->get();
     }
 
+    public function getById($id)
+    {
+        return $this->drugInRepository->getById($id);
+    }
+
     public function getPaginate()
     {
         return $this->drugInRepository->getPaginate();

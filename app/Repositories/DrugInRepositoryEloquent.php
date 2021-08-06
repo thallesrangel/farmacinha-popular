@@ -19,6 +19,18 @@ class DrugInRepositoryEloquent implements DrugInRepositoryInterface
         return $this->drugIn->get();
     }
 
+    public function getById($id)
+    {
+        return $this->drugIn->whereId($id)
+                            ->with('stripe')
+                            ->with('drugType')
+                            ->with('people')
+                            ->with('collaborator')
+                            ->with('laboratory')
+                            ->with('measurement')
+                            ->orderBy('id', 'DESC')
+                            ->first();
+    }
 
     public function getPaginate()
     {   
