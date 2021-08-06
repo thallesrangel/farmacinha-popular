@@ -73,7 +73,7 @@ Route::middleware([CollaboratorAutenticate::class])->group(function () {
                 Route::get('/registrar', [DrugInController::class, 'create'])->name('drugin.create');
                 Route::post('/salvar', [DrugInController::class, 'store'])->name('drugin.store');
                 Route::get('{idDrugIn}/analisar', [DrugAnalyzeController::class, 'create'])->name('druganalyze.create');
-                Route::post('analise-finalizada', [DrugAnalyzeController::class, 'store'])->name('druganalyze.store');
+                Route::post('/analise-finalizada', [DrugAnalyzeController::class, 'store'])->name('druganalyze.store');
             });
 
             Route::prefix('relatorio')->group(function () {

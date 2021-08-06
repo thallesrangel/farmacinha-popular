@@ -10,6 +10,7 @@ class CreateDrugAnalyzeTable extends Migration
     {
         Schema::create('drug_analyze', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('id_drug_in')->unsigned();
             $table->bigInteger('id_unity')->unsigned();
             $table->bigInteger('id_collaborator')->unsigned();
             $table->string('analyze_conservation');
@@ -18,6 +19,7 @@ class CreateDrugAnalyzeTable extends Migration
         });
 
         Schema::table('drug_analyze', function($table) {
+            $table->foreign('id_drug_in')->references('id')->on('drug_in');
             $table->foreign('id_unity')->references('id')->on('unity');
             $table->foreign('id_collaborator')->references('id')->on('collaborator');
         });

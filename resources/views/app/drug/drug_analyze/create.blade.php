@@ -7,7 +7,8 @@
             <div class="card-body m-0 p-0">
                 @include('app.includes.header')
                 <h1>Análise do Medicamento</h1>
-                <form action="#" method="POST" autocomplete="off">
+                <form action="{{ route('druganalyze.store') }}" method="POST" autocomplete="off">
+                    <input type="hidden"  name="id_drug_in" value="{{ $data->id }}">
                     @csrf
                     <h6 class="heading-small text-muted mt-3">Informações gerais</h6>
                     <div class="pl-lg-4">

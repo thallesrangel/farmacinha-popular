@@ -9,7 +9,6 @@ class DrugIn extends Model
     protected $table = 'drug_in';
 
     const STEP_ANALYZE = 'analyze';
-    const STEP_ANALYZED = 'analyzed';
     const STEP_AVAILABLE = 'available';
     const STEP_DISTRIBUTED = 'distributed';
 

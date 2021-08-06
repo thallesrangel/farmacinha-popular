@@ -23,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind('App\Repositories\Contracts\MeasurementRepositoryInterface', 'App\Repositories\MeasurementRepositoryEloquent');
         $this->app->bind('App\Repositories\Contracts\DrugTypeRepositoryInterface', 'App\Repositories\DrugTypeRepositoryEloquent');
         $this->app->bind('App\Repositories\Contracts\DrugInRepositoryInterface', 'App\Repositories\DrugInRepositoryEloquent');
+        $this->app->bind('App\Repositories\Contracts\DrugAnalyzeRepositoryInterface', 'App\Repositories\DrugAnalyzeRepositoryEloquent');
     }
 
     /**

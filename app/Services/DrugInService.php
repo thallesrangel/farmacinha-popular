@@ -28,7 +28,7 @@ class DrugInService
     {
         return $this->drugInRepository->getPaginate();
     }
-
+    
     public function save(DrugInRequest $request)
     {
         return $this->drugInRepository->save($request);

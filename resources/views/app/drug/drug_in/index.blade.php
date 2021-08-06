@@ -19,7 +19,7 @@
                         <th>Doador</th>
                         <th>Quantidade</th>
                         <th>Validade</th>
-                        <th>Status</th>
+                        <th>Etapa</th>
                     </tr>
                     </thead>
                     <tbody class="table-body">
@@ -35,12 +35,9 @@
                                     @case('analyze')
                                         <td class="text-yellow">Analisar</td>
                                         @break
-                                    @case('analyzed')
-                                        <td>Analisado</td>
-                                        @break
 
                                     @case('available')
-                                        <td>Disponível</td>
+                                        <td class="txt-green">Disponível</td>
                                         @break
                                     @case('distributed')
                                         <td>Distribuído</td>
@@ -49,7 +46,7 @@
                                 @endswitch
 
                                 <td class="d-flex justify-content-center">
-                                    @if (in_array(session('collaborator.role'), ['gestor_geral', 'gestor_estadual', 'gestor_unidade', 'analista']))
+                                    @if (in_array(session('collaborator.role'), ['gestor_geral', 'gestor_estadual', 'gestor_unidade', 'analista']) && $item->step == 'analyze')
                                         <a href="{{ route('druganalyze.create', $item->id) }}" class="btn btn-sm btn-default txt-yellow"><i class="bi bi-clipboard-check"></i></a>
                                     @endif
                                     <a class="btn btn-sm btn-default table-info" href="{{ route('people.profile', $item->id) }}"><i class="bi bi-info-circle"></i></a>
@@ -72,7 +69,7 @@
                             <th>Doador</th>
                             <th>Quantidade</th>
                             <th>Validade</th>
-                            <th>Status</th>
+                            <th>Etapa</th>
                             <th></th>
                         </tr>
                     </tfoot>
