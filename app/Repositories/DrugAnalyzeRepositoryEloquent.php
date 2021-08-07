@@ -26,8 +26,19 @@ class DrugAnalyzeRepositoryEloquent implements DrugAnalyzeRepositoryInterface
     public function getById($id)
     {
         return $this->drugAnalyze->whereId($id)
-                            ->orderBy('id', 'DESC')
-                            ->first();
+                                ->with('drugIn')
+                                ->with('collaborator')
+                                ->orderBy('id', 'DESC')
+                                ->first();
+    }
+
+    public function getByIdDrugIn($id)
+    {
+        return $this->drugAnalyze->where('id_drug_in', $id)
+                                ->with('drugIn')
+                                ->with('collaborator')
+                                ->orderBy('id', 'DESC')
+                                ->first();
     }
 
     public function getPaginate()

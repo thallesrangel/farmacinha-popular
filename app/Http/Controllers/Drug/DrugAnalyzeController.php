@@ -20,23 +20,11 @@ class DrugAnalyzeController extends Controller
         $this->drugAnalyzeService = $drugAnalyzeService;
         $this->durgInService = $durgInService;
     }
-
-    public function index() 
-    {
-        $drugAnalyze = $this->drugAnalyzeService->getPaginate();
-        
-        return view('app.drug.drug_analyze.index', [ 'data' => $drugAnalyze ]);  
-    }
-
-    public function get()
-    {
-            
-    }
     
     public function create($idDrugIn)
     {
         $drugIn = $this->durgInService->getById($idDrugIn);
-        
+       
         return view('app.drug.drug_analyze.create', [ 'data' => $drugIn ]);
     }
 

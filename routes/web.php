@@ -14,6 +14,7 @@ use App\Http\Controllers\CityController;
 
 use App\Http\Controllers\Drug\DrugInController;
 use App\Http\Controllers\Drug\DrugAnalyzeController;
+use App\Http\Controllers\Profile\DrugProfileController;
 
 use App\Http\Controllers\Profile\CollaboratorProfileController;
 use App\Http\Controllers\Profile\PeopleProfileController;
@@ -73,9 +74,9 @@ Route::middleware([CollaboratorAutenticate::class])->group(function () {
                 Route::get('/registrar', [DrugInController::class, 'create'])->name('drugin.create');
                 Route::post('/salvar', [DrugInController::class, 'store'])->name('drugin.store');
 
-                Route::get('/analisado', [DrugAnalyzeController::class, 'index'])->name('druganalyze.list');
                 Route::get('{idDrugIn}/analisar', [DrugAnalyzeController::class, 'create'])->name('druganalyze.create');
-                Route::post('/analise-finalizada', [DrugAnalyzeController::class, 'store'])->name('druganalyze.store');        
+                Route::post('/analise-finalizada', [DrugAnalyzeController::class, 'store'])->name('druganalyze.store');  
+                Route::get('/perfil/{id}', [DrugProfileController::class, 'profile'])->name('drug.profile');      
             });
 
             Route::prefix('relatorio')->group(function () {

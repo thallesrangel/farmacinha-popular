@@ -10,7 +10,7 @@
 
         <div class="d-grid gap-2 d-md-block">
             <a href="{{ route('drugin.create') }}" class="btn btn-outline-success">Receber</a>
-            <button type="button" class="btn btn-outline-warning">Analisar</button>
+            <a href="{{ route('drugin.list') }}" class="btn btn-outline-warning">Analisar</a>
             <button type="button" class="btn btn-outline-primary">Distribuir</button>
         </div>
 

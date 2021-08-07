@@ -23,6 +23,11 @@ class DrugAnalyzeService
     {
         return $this->drugAnalyzeRepository->getById($id);
     }
+    
+    public function getByIdDrugIn($id)
+    {
+        return $this->drugAnalyzeRepository->getByIdDrugIn($id);
+    }
 
     public function getPaginate()
     {

@@ -17,13 +17,6 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link p-1" href="{{ route('druganalyze.list') }}">
-            <i class="bi bi-clipboard-check"></i>
-            <span>Analisados</span>
-        </a>
-    </li>
-
-    <li class="nav-item">
         <a class="nav-link p-1" href="#">
             <i class="bi bi-archive"></i>
             <span>Estoque</span> 
