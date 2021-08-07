@@ -88,7 +88,7 @@
                 <div class="pl-lg-4">
                     <div class="row">
 
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                             <h6 class="fw-bold">Nome Completo</h6>
                             <p>{{ $drugIn->people->first_name }} {{ $drugIn->people->last_name }}</p>
                         </div>
@@ -106,22 +106,28 @@
                 </div>
 
                 <hr>
-
-                <h6 class="heading-small text-muted mt-3">Informações do Analista</h6>
-                <div class="pl-lg-4">
-                    <div class="row">
-                        
-                    </div>
-                </div>
-
-                <hr>
                 
                 <h6 class="heading-small text-muted mt-3">Resultado da Análise</h6>
                 <div class="pl-lg-4">
                     <div class="row">
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                             <h6 class="fw-bold">Analista</h6>
-                            <p>{{ $drugAnalyze->collaborator->first_name }}</p>
+                            <p>{{ $drugAnalyze->collaborator->first_name }} {{ $drugAnalyze->collaborator->last_name }}</p>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <h6 class="fw-bold">Estado de Conservação</h6>
+                            <p>@if($drugAnalyze->analyze_conservation == 'approved') Aprovado @else Reprovado @endif</p>
+                        </div>
+
+                        <div class="col-md-3">
+                            <h6 class="fw-bold">Resultado da Análise</h6>
+                            <p>@if($drugAnalyze->analyze_result == 'approved') Aprovado @else Reprovado @endif</p>
+                        </div>
+
+                        <div class="col-md-3">
+                            <h6 class="fw-bold">Data da Análise</h6>
+                            <p>{{ $drugAnalyze->created_at }}</p>
                         </div>
 
                     </div>
