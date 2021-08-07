@@ -19,5 +19,4 @@ class CityController extends Controller
     {
         return $this->cityService->getById($request->id);
     }
-
 }
