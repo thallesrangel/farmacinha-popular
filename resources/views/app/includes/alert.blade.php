@@ -104,7 +104,6 @@
    </script>
 @endif
 
-
 @if (Session::has('not_found_id_unity'))
     <script>
         Swal.fire({
@@ -113,6 +112,18 @@
             text: '{{ session('not_found_id_unity') }}',
             confirmButtonText: 'Entendido',
             confirmButtonColor: '#e74c3c',
+    })
+   </script>
+@endif
+
+@if (Session::has('success_analyze'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Analisado',
+            text: '{{ session('success_analyze') }}',
+            showConfirmButton: false,
+            timer: 2000
     })
    </script>
 @endif

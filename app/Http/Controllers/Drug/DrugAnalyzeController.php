@@ -33,8 +33,9 @@ class DrugAnalyzeController extends Controller
         try {
             $this->drugAnalyzeService->store($request);
         } catch (\Exception $e) {
-            return redirect()->route('druganalyze.list')->with('error', 'Ocorreu um erro. Verifique os campos.');
+            return redirect()->route('drugin.list')->with('error', 'Ocorreu um erro. Tente novamente.');
         }
-        return redirect()->route('druganalyze.list')->with('success', 'Registrado com sucesso.');
+        
+        return redirect()->route('drugin.list')->with('success_analyze', 'Medicamento analisado e disponível.');
     }
 }

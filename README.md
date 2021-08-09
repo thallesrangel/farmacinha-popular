@@ -47,3 +47,12 @@ Deve apenas registrar unidades em seu Estado.
 
 
 Gestor Geral e Gestor de Estado -> não pode ter id_unity no registro(DB)
+
+
+# Fluxo de medicamento
+
+## Registrar
+Clicar no menu lateral > Medicamentos > Registrar
+
+## Analisar
+Após o registro anterior, em Medicamentos, clicar no ícone "formulário" amarelo, como assinalado na tela e será iniciado o processo de análise
