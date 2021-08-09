@@ -51,19 +51,12 @@ class CollaboratorService
 
     public function disable($id)
     {
-        DB::beginTransaction();
-
-        try {
-            $collaborator = $this->collaboratorRepository->disable($id);
-
-        } catch (\Exception $e) {
-            DB::rollBack();
-
+        try{
+            $this->collaboratorRepository->disable($id);
+        } catch(\Exception $e) {
             throw new InvalidArgumentException('Não foi possível deletar o registro');
         }
-
-        DB::commit();
-
+        
         return redirect()->route('unity.list')->with("success_destroy", "Registro excluído com sucesso");
     }
 
