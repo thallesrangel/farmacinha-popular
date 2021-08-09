@@ -64,7 +64,7 @@ class CollaboratorService
 
         DB::commit();
 
-        return $collaborator;
+        return redirect()->route('unity.list')->with("success_destroy", "Registro excluído com sucesso");
     }
 
     public function disableSelected(array $ids)
