@@ -24,6 +24,11 @@ class DrugInService
         return $this->drugInRepository->getById($id);
     }
 
+    public function count()
+    {
+        return $this->drugInRepository->count();   
+    }
+
     public function getPaginate()
     {
         return $this->drugInRepository->getPaginate();

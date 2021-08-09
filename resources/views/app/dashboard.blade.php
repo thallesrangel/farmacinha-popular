@@ -20,7 +20,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5>Recebidos</h5>
-                        <h4 class="card-title txt-green">0</h4>
+                        <h4 class="card-title txt-green">{{ $drugInCount }}</h4>
                     </div>
                 </div>
             </div>

@@ -8,6 +8,7 @@ interface DrugInRepositoryInterface
 {
     public function get();
     public function getById($id);
+    public function count();
     public function save(DrugInRequest $id);
     public function getPaginate();
 }

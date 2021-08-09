@@ -41,6 +41,11 @@ class DrugInRepositoryEloquent implements DrugInRepositoryInterface
                             ->paginate(8);
     }
 
+    public function count()
+    {
+        return $this->drugIn->count();
+    }
+
     public function save($data)
     {
         $drugIn = new $this->drugIn;
