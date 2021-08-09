@@ -7,6 +7,7 @@
     </div>
     <div class="col-sm-12 card">
         <h3 class="mt-3 text-center">{{ $people->first_name }} {{ $people->last_name }}</h3>
+        
         <h6 class="heading-small text-muted m-3">Informações pessoais</h6>
         <div class="row p-3">
             <div class="col-sm-12 col-md-3">
@@ -30,6 +31,16 @@
                 <h6 class="fw-bold">SUS</h6>
                 <p class="cpf">{{ $people->sus }}</p>
             </div>
+
+            <div class="col-sm-12 col-md-3">
+                <h6 class="fw-bold">Status do Usuário</h6>
+                @if($people->flag_status == 'disabled')
+                    <p class="txt-red">@if($people->flag_status == 'disabled') Desativado @endif</p>
+                @else
+                    <p class="txt-green">@if($people->flag_status == 'enabled') Ativo @endif</p>
+                @endif
+            </div>
+
         </div>
         <h6 class="heading-small text-muted m-3">Informações de Localização</h6>
         <div class="row p-3">
