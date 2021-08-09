@@ -45,7 +45,9 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-city">Cidade *</label>
-                                    <select id="city" class="form-control" id="input-city" name="city_id" required></select>
+                                    <select id="city" class="form-control" id="input-city" name="city_id" required>
+                                        <option value="">Selecione um estado</option>
+                                    </select>
                                     <p class="txt-red">{{ $errors->first('city') }}</p>
                                 </div>
                             </div>
