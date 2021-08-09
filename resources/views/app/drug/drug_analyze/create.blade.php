@@ -81,7 +81,7 @@
                     <h4 class="mb-2 mt-3">Formulário de Análise</h4>
                     <div class="pl-lg-4">
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <div class="form-check mt-3">
                                     <input class="form-check-input" type="checkbox" value="approved" name="confirm_laboratory" id="confirm-laboratory">
                                     <label class="form-check-label" for="confirm-laboratory">Laboratório confere com o indicado</label>
