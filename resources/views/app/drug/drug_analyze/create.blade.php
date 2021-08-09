@@ -78,17 +78,17 @@
                         
                     </div>
 
-                    <h6 class="heading-small text-muted mb-2 mt-3">Análise</h6>
+                    <h4 class="mb-2 mt-3">Formulário de Análise</h4>
                     <div class="pl-lg-4">
                         <div class="row">
-
                             <div class="col-md-3">
-                                <div class="form-group">
-                                    <label class="form-control-label" for="input-conservation">Conservação *</label>
-                                    <select class="form-control" id="input-conservation" name="analyze_conservation" required>
-                                        <option value="approved">Aprovado</option>
-                                        <option value="failed">Reprovado</option>
-                                    </select>
+                                <div class="form-check mt-3">
+                                    <input class="form-check-input" type="checkbox" value="approved" name="analyze_conservation" id="conservation">
+                                    <label class="form-check-label" for="conservation">Estado de Conservação</label>
+                                </div>
+                                <div class="form-check mt-3">
+                                    <input class="form-check-input" type="checkbox" value="approved" id="expiration-date" name="expiration_date" checked>
+                                    <label class="form-check-label" for="expiration-date">Data de validade</label>
                                 </div>
                             </div>
 
