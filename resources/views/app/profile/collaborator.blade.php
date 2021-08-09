@@ -26,6 +26,16 @@
                 <h6 class="fw-bold">Nascimento</h6>
                 <p class="date">{{ $collaborator->birth_date}}</p>
             </div>
+
+            <div class="col-sm-12 col-md-3">
+                <h6 class="fw-bold">Status do Perfil</h6>
+                @if($collaborator->flag_status == 'disabled')
+                    <p class="txt-red">@if($collaborator->flag_status == 'disabled') Desativado @endif</p>
+                @else
+                    <p class="txt-green">@if($collaborator->flag_status == 'enabled') Ativo @endif</p>
+                @endif
+            </div>
+
         </div>
         <h6 class="heading-small text-muted m-3">Informações gerais</h6>
         <div class="row p-3">

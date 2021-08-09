@@ -33,7 +33,7 @@
             </div>
 
             <div class="col-sm-12 col-md-3">
-                <h6 class="fw-bold">Status do Usuário</h6>
+                <h6 class="fw-bold">Status do Perfil</h6>
                 @if($people->flag_status == 'disabled')
                     <p class="txt-red">@if($people->flag_status == 'disabled') Desativado @endif</p>
                 @else

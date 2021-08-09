@@ -6,6 +6,7 @@ use App\Http\Requests\PeopleRequest;
 use App\Services\PeopleService;
 use App\Services\StateService;
 use Illuminate\Http\Request;
+use InvalidArgumentException;
 
 class PeopleController extends Controller
 {
@@ -57,8 +58,14 @@ class PeopleController extends Controller
 
     public function disable($id)
     {
-        $this->peopleService->disable($id);
-        return redirect()->route('people.list');
+
+        try{
+            $this->peopleService->disable($id);
+        } catch(\Exception $e) {
+            throw new InvalidArgumentException('Não foi possível deletar o registro');
+        }
+        
+        return redirect()->route('people.list')->with("success_destroy", "Registro excluído com sucesso");
     }
 
     public function disableSelected(Request $request)
