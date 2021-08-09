@@ -83,12 +83,14 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="form-check mt-3">
-                                    <input class="form-check-input" type="checkbox" value="approved" name="analyze_conservation" id="conservation">
+                                    <input class="form-check-input" type="checkbox" value="approved" name="conservation" id="conservation">
                                     <label class="form-check-label" for="conservation">Estado de Conservação</label>
+                                    <p class="txt-red">{{ $errors->first('conservation') }}</p>
                                 </div>
                                 <div class="form-check mt-3">
                                     <input class="form-check-input" type="checkbox" value="approved" id="expiration-date" name="expiration_date" checked>
                                     <label class="form-check-label" for="expiration-date">Data de validade</label>
+                                    <p class="txt-red">{{ $errors->first('expiration_date') }}</p>
                                 </div>
                             </div>
 

@@ -14,7 +14,8 @@ class DrugAnalyzeRequest extends FormRequest
     public function rules()
     {
         return [
-            'analyze_conservation' => 'required|string',
+            'conservation' => 'required',
+            'expiration_date' => 'required',
             'analyze_result' => 'required|string',
         ];
     }
