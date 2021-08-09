@@ -39,7 +39,13 @@ class CollaboratorRepositoryEloquent implements CollaboratorRepositoryInterface
     public function save($data)
     {
         $collaborator = new $this->collaborator;
-        $collaborator->id_unity = session('collaborator.id_unity');
+        
+        if ($data->role == "gestor_geral" OR $data->role == "gestor_estadual") {
+            $collaborator->id_unity = null;
+        } else {
+            $collaborator->id_unity = session('collaborator.id_unity');
+        }
+
         $collaborator->first_name = $data->first_name;
         $collaborator->last_name = $data->last_name;
         $collaborator->cpf = $data->cpf;
@@ -50,7 +56,7 @@ class CollaboratorRepositoryEloquent implements CollaboratorRepositoryInterface
         $collaborator->email = $data->email;
         $collaborator->password = md5($data->password);
         $collaborator->professional_record = $data->professional_record;
-
+        
         $collaborator->save();
 
         return $collaborator->fresh();
