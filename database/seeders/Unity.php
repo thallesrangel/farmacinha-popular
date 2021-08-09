@@ -106,8 +106,16 @@ class Unity extends Seeder
             [
                 'corporate_name' => 'UBS Brumadinho',
                 'cnes' => '00041529',
-                'state_id' => 19,
+                'state_id' => 13,
                 'city_id' => 1661,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ],
+            [
+                'corporate_name' => 'UBS Ouro Preto',
+                'cnes' => '00415229',
+                'state_id' => 13,
+                'city_id' => 2104,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]
