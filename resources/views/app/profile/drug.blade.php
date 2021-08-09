@@ -99,6 +99,8 @@
                     </div>
                 </div>
             </div>
+
+            @if(isset($$drugAnalyze))
             <hr>
             <h6 class="heading-small text-muted mt-3">Resultado da Análise</h6>
             <div class="pl-lg-4">
@@ -122,10 +124,9 @@
                         <h6 class="fw-bold">Data da Análise</h6>
                         <p>{{ $drugAnalyze->created_at }}</p>
                     </div>
-
                 </div>
             </div>
-           
+            @endisset
         </div>
     </div>
 @endsection

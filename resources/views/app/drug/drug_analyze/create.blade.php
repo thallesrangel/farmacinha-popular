@@ -83,12 +83,27 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="form-check mt-3">
+                                    <input class="form-check-input" type="checkbox" value="approved" name="confirm_laboratory" id="confirm-laboratory">
+                                    <label class="form-check-label" for="confirm-laboratory">Laboratório confere com o indicado</label>
+                                    <p class="txt-red">{{ $errors->first('confirm_laboratory') }}</p>
+                                </div>
+                                <div class="form-check mt-3">
+                                    <input class="form-check-input" type="checkbox" value="approved" name="confirm_originality" id="confirm-originality">
+                                    <label class="form-check-label" for="confirm-originality">Estado de Originalidade</label>
+                                    <p class="txt-red">{{ $errors->first('confirm_originality') }}</p>
+                                </div>
+                                <div class="form-check mt-3">
+                                    <input class="form-check-input" type="checkbox" value="approved" name="legality" id="legality">
+                                    <label class="form-check-label" for="legality">Estado de Legalidade</label>
+                                    <p class="txt-red">{{ $errors->first('legality') }}</p>
+                                </div>
+                                <div class="form-check mt-3">
                                     <input class="form-check-input" type="checkbox" value="approved" name="conservation" id="conservation">
                                     <label class="form-check-label" for="conservation">Estado de Conservação</label>
                                     <p class="txt-red">{{ $errors->first('conservation') }}</p>
                                 </div>
                                 <div class="form-check mt-3">
-                                    <input class="form-check-input" type="checkbox" value="approved" id="expiration-date" name="expiration_date" checked>
+                                    <input class="form-check-input" type="checkbox" value="approved" id="expiration-date" name="expiration_date">
                                     <label class="form-check-label" for="expiration-date">Data de validade</label>
                                     <p class="txt-red">{{ $errors->first('expiration_date') }}</p>
                                 </div>

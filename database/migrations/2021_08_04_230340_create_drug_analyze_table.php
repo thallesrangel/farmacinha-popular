@@ -13,6 +13,8 @@ class CreateDrugAnalyzeTable extends Migration
             $table->bigInteger('id_drug_in')->unsigned();
             $table->bigInteger('id_unity')->unsigned();
             $table->bigInteger('id_collaborator')->unsigned();
+            $table->string('confirm_laboratory');
+            $table->string('confirm_originality');
             $table->string('conservation');
             $table->string('expiration_date');
             $table->string('analyze_result');

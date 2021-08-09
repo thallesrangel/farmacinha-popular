@@ -58,6 +58,8 @@ class DrugAnalyzeRepositoryEloquent implements DrugAnalyzeRepositoryInterface
             $drugAnalyze->id_drug_in = (int) $data->id_drug_in; 
             $drugAnalyze->id_unity = session('collaborator.id_unity');
             $drugAnalyze->id_collaborator = session('collaborator.id');
+            $drugAnalyze->confirm_laboratory = $data->confirm_laboratory;
+            $drugAnalyze->confirm_originality = $data->confirm_originality;
             $drugAnalyze->conservation = $data->conservation;
             $drugAnalyze->expiration_date = $data->expiration_date;
             $drugAnalyze->analyze_result = $data->analyze_result;

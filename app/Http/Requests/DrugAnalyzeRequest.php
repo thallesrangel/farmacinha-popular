@@ -14,8 +14,10 @@ class DrugAnalyzeRequest extends FormRequest
     public function rules()
     {
         return [
-            'conservation' => 'required',
-            'expiration_date' => 'required',
+            'confirm_laboratory' => 'required|string',
+            'confirm_originality' => 'required|string',
+            'conservation' => 'required|string',
+            'expiration_date' => 'required|string',
             'analyze_result' => 'required|string',
         ];
     }
@@ -24,6 +26,7 @@ class DrugAnalyzeRequest extends FormRequest
     {
         return [
             'required' => 'Campo obrigatório',
+            'string' => 'Campo deve conter palavras',
         ];
     }
 }
