@@ -27,7 +27,7 @@ class UnityRepositoryEloquent implements UnityRepositoryInterface
         return $this->unity->where('flag_status', 'enabled')
                             ->with('states')
                             ->with('city')
-                            ->orderBy('id', 'DESC')
+                            ->orderBy('state_id', 'DESC')
                             ->paginate(10);
     }
 
