@@ -13,6 +13,7 @@ class Collaborator extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('collaborator');
         Schema::create('collaborator', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('id_unity')->unsigned()->nullable();

@@ -8,6 +8,7 @@ class CreateMeasurement extends Migration
 {
     public function up()
     {
+        Schema::dropIfExists('measurement');
         Schema::create('measurement', function (Blueprint $table) {
             $table->id();
             $table->string('name');

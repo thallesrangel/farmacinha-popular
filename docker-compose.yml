@@ -23,4 +23,4 @@ services:
         - ./.docker/logs/mysql:/var/log/mysql
       environment:
         - MYSQL_ROOT_PASSWORD=root
-        - MYSQL_DATABASE=pharmacia
+        - MYSQL_DATABASE=.docker

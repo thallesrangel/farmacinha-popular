@@ -13,6 +13,7 @@ class People extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('people');
         Schema::create('people', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('id_unity')->unsigned();

@@ -13,6 +13,7 @@ class Unity extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('unity');
         Schema::create('unity', function (Blueprint $table) {
             $table->id();
             $table->string('corporate_name');

@@ -13,6 +13,7 @@ class CreateCity extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('city');
         Schema::create('city', function (Blueprint $table) {
             $table->id();
             $table->string('name');

@@ -8,6 +8,7 @@ class CreateDrugAnalyzeTable extends Migration
 {
     public function up()
     {
+        Schema::dropIfExists('drug_analyze');
         Schema::create('drug_analyze', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('id_drug_in')->unsigned();
