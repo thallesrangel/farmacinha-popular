@@ -4,11 +4,11 @@ services:
         dockerfile: .docker/Dockerfile
         context: .
       container_name: pharmacia-php
-      command: php app/artisan serve --host=0.0.0.0 --port=8000
+      command: php app/artisan serve --host=0.0.0.0 --port=80
       ports:
-        - '8000:80'
+        - '80:80'
       volumes:
-        - ./:/var/www
+        - ./:/app
       depends_on:
         - mysqldb
       links:
