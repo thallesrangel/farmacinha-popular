@@ -1,7 +1,7 @@
 services:
     apache:
       build:
-        dockerfile: .docker/Dockerfile
+        dockerfile: Dockerfile
         context: .
       container_name: pharmacia-php
       command: php app/artisan serve --host=0.0.0.0 --port=80

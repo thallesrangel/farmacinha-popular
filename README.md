@@ -1,5 +1,20 @@
 # TCC - Bacharel em Sistemas de Informação
 
+## Docker Install
+[Link do Docker](https://docs.docker.com/engine/install/)
+
+## Setup
+
+```
+    docker-compose up -d --build
+```
+
+## Migration
+
+```
+    php artisan migrate
+```
+
 ## Contexto do problema
 Medicamentos tem a finalidade de diagnosticar, prevenir, curar doenças ou então aliviar os seus sintomas, em nosso pais, o acesso a medicamentos se dá por aquisição ou por meio das Farmácias Básica de Saúde - UBS, como complemento, o sistema visa ser uma alternativa, para contornar o desperdício, tanto por data de validade de validade ou finalização de tratamento.
 
