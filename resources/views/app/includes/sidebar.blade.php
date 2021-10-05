@@ -17,7 +17,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link p-1" href="#">
+        <a class="nav-link p-1" href="{{ route('drugavailable.list') }}">
             <i class="bi bi-archive"></i>
             <span>Estoque</span> 
         </a>
