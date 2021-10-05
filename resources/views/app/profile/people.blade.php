@@ -12,7 +12,7 @@
         <div class="row p-3">
             <div class="col-sm-12 col-md-3">
                 <h6 class="fw-bold">Nome Social</h6>
-                <p class="date">{{ $people->social_name}}</p>
+                <p>{{ $people->social_name}}</p>
             </div>
             
             <div class="col-sm-12 col-md-3">
@@ -21,7 +21,7 @@
             </div>
             <div class="col-sm-12 col-md-3">
                 <h6 class="fw-bold">Sexo</h6>
-                <p class="date">{{ $people->sex}}</p>
+                <p>{{ $people->sex}}</p>
             </div>
             <div class="col-sm-12 col-md-3">
                 <h6 class="fw-bold">CPF</h6>
@@ -29,7 +29,7 @@
             </div>
             <div class="col-sm-12 col-md-3">
                 <h6 class="fw-bold">SUS</h6>
-                <p class="cpf">{{ $people->sus }}</p>
+                <p>{{ $people->sus }}</p>
             </div>
 
             <div class="col-sm-12 col-md-3">
