@@ -55,7 +55,7 @@ class Collaborator extends Seeder
                 'city_id' => 1,
                 'role' => 'gestor_unidade',
                 'email' => 'bruna@gmail.com',
-                'password' => '21232f297a57a5a743894a0e4a801fc3',
+                'password' => '202cb962ac59075b964b07152d234b70',
                 'professional_record' => '103001',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
