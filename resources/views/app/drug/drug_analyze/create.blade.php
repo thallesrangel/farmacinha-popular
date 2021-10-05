@@ -13,48 +13,37 @@
                     <h6 class="heading-small text-muted mt-3">Informações gerais</h6>
                     <div class="pl-lg-4">
                         <div class="row">
-                            <div class="col-2">
-                                <h6 class="fw-bold">ID Medicamento</h6>
-                                <p>{{ $data->id }}</p>
-                            </div>
-
                             <div class="col-md-3">
                                 <h6 class="fw-bold">Medicamento</h6>
                                 <p>{{ $data->name }}</p>
                             </div>
 
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                                 <h6 class="fw-bold">Tarja</h6>
                                 <p>{{ $data->stripe->name }}</p>
                             </div>
-
+                            
+                            <div class="col-md-2">
+                                <h6 class="fw-bold">Quantidade</h6>
+                                <p> <span class="amount">{{ $data->amount }}</span> - {{ $data->measurement->abbreviation }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-3">
                                 <h6 class="fw-bold">Laboratório</h6>
                                 <p>{{ $data->laboratory->name }}</p>
                             </div>
 
-                            <div class="col-md-2">
-                                <h6 class="fw-bold">Quantidade</h6>
-                                <p>{{ $data->amount }} - {{ $data->measurement->abbreviation }}</p>
+                            <div class="col-md-3">
+                                <h6 class="fw-bold">Colaborador Receptor</h6>
+                                <p>{{ $data->collaborator->first_name }} {{ $data->collaborator->last_name }}</p>
                             </div>
 
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <h6 class="fw-bold">Colaborador Receptor</h6>
-                                    <p>{{ $data->collaborator->first_name }} {{ $data->collaborator->last_name }}</p>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <h6 class="fw-bold">Tipo de Medicamento</h6>
-                                    <p>{{ $data->drugType->name }}</p>
-                                </div>
+                            <div class="col-md-3">
+                                <h6 class="fw-bold">Tipo de Medicamento</h6>
+                                <p>{{ $data->drugType->name }}</p>
                             </div>
                         </div>
-
-                        <div class="">
-                        </div>
-
-                        
                     </div>
                     
                     <h6 class="heading-small text-muted mb-2 mt-3">Informações do Doador</h6>
@@ -109,7 +98,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-2">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label class="form-control-label" for="input-result">Resultado da Análise *</label>
                                     <select class="form-control" id="input-result" name="analyze_result" required>
@@ -123,7 +112,7 @@
                     </div>
                     
                     <button class="btn btn-success" type="submit">Salvar</button>
-                    <a class="btn btn-outline-danger" href="#">Voltar</a>
+                    <a class="btn btn-outline-danger" href="{{ route('drugin.list') }}">Voltar</a>
                     
                 </form>
             </div>
