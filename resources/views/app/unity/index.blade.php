@@ -7,6 +7,7 @@
             <img class="img-fluid logo" src="{{ asset('img/logo.png') }}">
         </div>
         <p class="text-center mt-2 p-0">Olá, <b>{{ session('collaborator')->first_name}}</b></p>
+        <h6 class="text-muted text-center">{{ $role }}</h6>
         
             <div class="d-flex justify-content-center">
                 @if($permission)

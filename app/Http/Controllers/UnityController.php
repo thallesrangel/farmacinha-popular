@@ -6,18 +6,21 @@ use App\Services\StateService;
 use Exception;
 use App\Services\UnityService; 
 use App\Http\Requests\UnityRequest;
+use App\Services\RoleService;
 
 class UnityController extends Controller
 {
     protected $unityService;
     protected $stateService;
+    protected $roleService;
 
-    public function __construct(UnityService $unityService, StateService $stateService)
+    public function __construct(UnityService $unityService, StateService $stateService, RoleService $roleService)
     {
         $this->middleware('roleslower');
 
         $this->unityService = $unityService;
         $this->stateService = $stateService;
+        $this->roleService = $roleService;
     }
 
     public function index()
@@ -31,9 +34,11 @@ class UnityController extends Controller
                 break;
         }
 
+        $role = $this->roleService->roleByName(session('collaborator.role'));
+        
         $permission = in_array(session('collaborator.role'), ['gestor_geral','gestor_estadual'], true );
 
-        return view('app.unity.index', [ 'data' => $data, 'permission'  => $permission ]);
+        return view('app.unity.index', [ 'data' => $data, 'permission'  => $permission, 'role' => $role ]);
     }
 
     public function create()
