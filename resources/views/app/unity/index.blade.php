@@ -31,6 +31,7 @@
                 <thead class="table-head">
                 <tr>
                     <th>Unidades</th>
+                    <th>CNES</th>
                     <th>Localização</th>
                 </tr>
                 </thead>
@@ -38,6 +39,7 @@
                     @foreach($data as $item)
                         <tr class="table-row">
                             <td>{{ $item['corporate_name'] }}</a></td>
+                            <td>{{ $item['cnes'] }}</a></td>
                             <td>{{ $item['states']['abbreviation'] }} - {{ $item['city']['name'] }}</a></td>
                             <td class="d-flex">
                                 <a class="text-green" title="Selecionar Unidade" href="{{ route('unity.selected', $item['id']) }}"><i class="bi bi-check-square-fill"></i></a>
