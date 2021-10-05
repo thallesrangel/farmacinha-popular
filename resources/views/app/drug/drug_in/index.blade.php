@@ -28,7 +28,7 @@
                                 <td> {{ $item->name }} </td>
                                 <td> {{ $item->laboratory->name }}</td>
                                 <td> <a href="{{ route('people.profile', $item->people->id) }}">{{ $item->people->first_name }} </a></td>
-                                <td> {{ $item->amount }} - {{ $item->measurement->abbreviation }} </td>
+                                <td> <span class="amount">{{ $item->amount }}</span> - {{ $item->measurement->abbreviation }} </td>
                                 <td> {{ $item->expiration_date }} </td>
                                 
                                 @switch($item->step)
