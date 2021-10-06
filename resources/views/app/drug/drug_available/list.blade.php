@@ -10,18 +10,21 @@
                     <thead class="table-head">
                     <tr>
                         <th>Medicamento</th>
+                        <th>Disponível</th>
                     </tr>
                     </thead>
                     <tbody class="table-body">
                         @foreach($data as $item)
                             <tr class="table-row">
-                                <td> {{ $item->created_at }} </td>              
+                                <td> {{ $item->drugIn->name }} </td>
+                                <td> <span class="amount"> {{ $item->drugIn->amount }} </span> {{ $item->drugIn->measurement->abbreviation }} </td>      
                             </tr>
                         @endforeach
                     </tbody>
                     <tfoot class="table-head">
                         <tr>
                             <th>Medicamento</th>
+                            <th>Disponível</th>
                             <th></th>
                         </tr>
                     </tfoot>

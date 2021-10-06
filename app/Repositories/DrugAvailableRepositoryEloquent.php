@@ -23,6 +23,7 @@ class DrugAvailableRepositoryEloquent implements DrugAvailableRepositoryInterfac
     {   
         return $this->drugAnalyze->where('analyze_result', 'approved')
                                 ->with('drugIn')
+                                ->with('drugIn.measurement')
                                 ->orderBy('id', 'DESC')
                                 ->paginate(8);
     }

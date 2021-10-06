@@ -90,7 +90,7 @@
 
                     <div class="col-md-2">
                         <h6 class="fw-bold">CPF</h6>
-                        <p>{{ $drugIn->people->cpf }}</p>
+                        <p class="cpf">{{ $drugIn->people->cpf }}</p>
                     </div>
 
                     <div class="col-md-2">

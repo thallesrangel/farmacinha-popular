@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use SebastianBergmann\CodeCoverage\Report\Xml\Unit;
 
 class DrugAnalyze extends Model
 {
@@ -14,10 +15,5 @@ class DrugAnalyze extends Model
     public function drugIn()
     {
         return $this->belongsTo(DrugIn::class, 'id_drug_in');
-    }
-    
-    public function collaborator()
-    {
-        return $this->belongsTo(Collaborator::class, 'id_collaborator');
     }
 }
