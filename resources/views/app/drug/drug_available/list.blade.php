@@ -24,7 +24,7 @@
                                 <td class="amount"> {{ $item->drugIn->amount }} </td>     
                                 <td> {{ $item->drugIn->measurement->name }} </td> 
                                 <td class="d-flex justify-content-center">
-                                    <a class="btn btn-sm btn-success" href="{{ route('drug.profile', $item->id) }}">DOAR</a>
+                                    <a class="btn btn-sm btn-success" href="{{ route('drugout.create', $item->drugIn->id ) }}">DOAR</a>
                                 </td>
                             </tr>
                         @endforeach

@@ -17,6 +17,7 @@ use App\Http\Controllers\Drug\DrugAnalyzeController;
 use App\Http\Controllers\Profile\DrugProfileController;
 
 use App\Http\Controllers\Drug\DrugAvailableController;
+use App\Http\Controllers\Drug\DrugOutController;
 
 use App\Http\Controllers\Profile\CollaboratorProfileController;
 use App\Http\Controllers\Profile\PeopleProfileController;
@@ -81,6 +82,9 @@ Route::middleware([CollaboratorAutenticate::class])->group(function () {
                 Route::get('/perfil/{id}', [DrugProfileController::class, 'profile'])->name('drug.profile');
 
                 Route::get('/estoque', [DrugAvailableController::class, 'index'])->name('drugavailable.list');
+
+                Route::get('{id}/distribuir', [DrugOutController::class, 'create'])->name('drugout.create');
+                Route::post('/distribuir/salvar', [DrugOutController::class, 'store'])->name('drugout.store');
             });
 
             Route::prefix('relatorio')->group(function () {
