@@ -4,6 +4,7 @@
     <div class="col-sm-12">
         @include('app.includes.header')
         <h2>Medicamentos Disponíveis</h2>
+        <h5 class="mt-2">O histórico de doação do medicamento está em seu perfil</h5>
         <div class="d-grid gap-2 d-md-block">
             <div class="div-table">
                 <table class="table table-responsive">
