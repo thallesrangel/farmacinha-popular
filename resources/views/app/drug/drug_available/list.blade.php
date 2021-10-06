@@ -11,13 +11,18 @@
                     <tr>
                         <th>Medicamento</th>
                         <th>Disponível</th>
+                        <th>Métrica</th>
                     </tr>
                     </thead>
                     <tbody class="table-body">
                         @foreach($data as $item)
                             <tr class="table-row">
                                 <td> {{ $item->drugIn->name }} </td>
-                                <td> <span class="amount"> {{ $item->drugIn->amount }} </span> {{ $item->drugIn->measurement->abbreviation }} </td>      
+                                <td class="amount"> {{ $item->drugIn->amount }} </td>     
+                                <td> {{ $item->drugIn->measurement->name }} </td> 
+                                <td class="d-flex justify-content-center">
+                                    <a class="btn btn-sm btn-default table-info" href="{{ route('drug.profile', $item->id) }}"><i class="bi bi-box"></i></a>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -25,6 +30,7 @@
                         <tr>
                             <th>Medicamento</th>
                             <th>Disponível</th>
+                            <th>Métrica</th>
                             <th></th>
                         </tr>
                     </tfoot>
