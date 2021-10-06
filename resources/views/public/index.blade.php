@@ -81,16 +81,18 @@
         <div class="row d-flex justify-content-center">
             <div class="col-md-8 col-sm-12">
                 <div class="accordion accordion-flush" id="accordionFlushExample">
-                    <div class="accordion-item">
+                        
+                        <div class="accordion-item">
                             <h2 class="accordion-header" id="flush-headingOne">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                Os remédios sao gratuitos?
+                                Os remédios são gratuitos?
                                 </button>
                             </h2>
                             <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">Todos medicamentos são gratuitos.</div>
+                                <div class="accordion-body">Sim.</div>
                             </div>
                         </div>
+                        
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="flush-headingTwo">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
@@ -98,7 +100,7 @@
                                 </button>
                             </h2>
                             <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                                <div class="accordion-body">Somente para medicamentos específicos. O ideal é que em todas as solicitações esteja acompanhado do receituário.</div>
                             </div>
                         </div>
                     </div>
