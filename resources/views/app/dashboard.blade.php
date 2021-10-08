@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="col-sm-12">
-        <h6 class="text-muted">Olá, {{ session('collaborator.first_name')}} </h6>
+        <h6 class="text-muted">Olá, {{ session('collaborator.first_name')}} - {{ session('collaborator.id_unity') }} </h6>
         <h6 class="text-muted">{{ $role }}</h6>
         @include('app.includes.header')
         <h2>Dashboard<h2>
