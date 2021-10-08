@@ -15,28 +15,28 @@
             <span>Medicamentos</span>
         </a>
     </li>
-    <!-- 
+
     <li class="nav-item">
         <a class="nav-link p-1" href="{{ route('drugavailable.list') }}">
             <i class="bi bi-archive"></i>
             <span>Estoque</span> 
         </a>
     </li>
-    -->
+    
     <li class="nav-item">
         <a class="nav-link p-1" href="{{ route('people.list') }}">
             <i class="bi bi-people"></i>
             <span>Pessoas</span> 
         </a>
     </li>
-
+    <!--
     <li class="nav-item">
         <a class="nav-link p-1" href="{{ route('report.index') }}">
             <i class="bi bi-clipboard"></i>
             <span>Relatórios</span> 
         </a>
     </li>
-
+    -->
     <li class="nav-item">
         <a class="nav-link p-1" href="{{ route('collaborator.list') }}">
             <i class="bi bi-briefcase"></i>
