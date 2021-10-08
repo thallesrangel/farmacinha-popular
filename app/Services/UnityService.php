@@ -40,6 +40,11 @@ class UnityService
         $info = $id ? $id : session('collaborator.id_unity');
         return $this->unityRepository->getById($info);
     }
+    
+    public function getByLocation($data)
+    {
+        return $this->unityRepository->getByLocation($data);
+    }
 
     public function store($data)
     {

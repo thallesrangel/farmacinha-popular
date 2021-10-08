@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Middleware\CollaboratorAutenticate;
 use App\Http\Middleware\UnitySelected;
 use App\Http\Controllers\LoginController;
@@ -22,9 +23,13 @@ use App\Http\Controllers\Drug\DrugOutController;
 use App\Http\Controllers\Profile\CollaboratorProfileController;
 use App\Http\Controllers\Profile\PeopleProfileController;
 use App\Http\Controllers\Profile\UnityProfileController;
+use App\Http\Controllers\UnitySearchController;
 
-Route::get('/', function () {
-    return view('public.index');
+Route::get('/', [ HomeController::class, 'index' ])->name('public');
+
+Route::prefix('buscar-unidades')->group(function () {
+    Route::get('/', [UnitySearchController::class, 'index'])->name('unity.location');
+    Route::post('/filtrar', [UnitySearchController::class, 'show'])->name('unity.search');
 });
 
 Route::prefix('login')->group(function () {
@@ -90,7 +95,6 @@ Route::middleware([CollaboratorAutenticate::class])->group(function () {
             Route::prefix('relatorio')->group(function () {
                 Route::get('/', [ReportController::class, 'index'])->name('report.index');
             });
-            
         });
     });
 });

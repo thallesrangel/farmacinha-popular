@@ -8,8 +8,8 @@
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <h1 class="fw-bold"><span id="salve-vidas">Salve vidas.</span> <br> Doe e receber medicamentos<br> gratuitamente com qualidade</h1>
-                <a class="btn btn-success m-2 fw-bold" href="#">Doar</a>
-                <a class="btn btn-outline-success m-2 fw-bold" href="#">Receber</a>
+                <a class="btn btn-success m-2 fw-bold" href="{{ route('unity.location') }}">Doar</a>
+                <a class="btn btn-outline-success m-2 fw-bold" href="{{ route('unity.location') }}">Receber</a>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <img class="img-fluid" src="{{ asset('img/medical.png')}}">
@@ -51,17 +51,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="container mb-5">
-        <h4 class="fw-bold">Consultar unidade mais próxima</h4>
-        <h5>Saiba quais medicamentos a unidade disponibiliza</h5>
-        <div class="d-flex justify-content-center bg-gray-search">
-            <form class="d-flex col-md-4 col-sm-10">
-                <input class="form-control me-2" type="search" placeholder="Localização">
-                <button class="btn btn btn-default" type="submit"><i class="bi bi-search"></i></button>
-            </form>
         </div>
     </div>
 

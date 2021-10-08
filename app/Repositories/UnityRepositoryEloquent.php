@@ -46,6 +46,16 @@ class UnityRepositoryEloquent implements UnityRepositoryInterface
         return $this->unity->where('state_id', $state)->where('flag_status', 'enabled')->paginate(10);
     }
 
+    public function getByLocation($data)
+    {
+        return $this->unity->where('state_id', $data->state_id)
+                            ->where('city_id', $data->city_id)
+                            ->where('flag_status', 'enabled')
+                            ->with('states')
+                            ->with('city')
+                            ->get();
+    }
+
     public function store($data)
     {
         $unity = new $this->unity;
