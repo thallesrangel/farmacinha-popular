@@ -8,6 +8,7 @@
             <div class="card-body">
                 <img class="img-fluid logo-dashboard" src="{{ asset('img/logo.png')}}">
                 <h4 class="mt-3 mb-2">Cadastro de Unidade</h4>
+                <a href="http://cnes.datasus.gov.br/pages/estabelecimentos/consulta.jsp" target="_blank">Consultar CNES - Cadastro Nacional de Estabelecimentos de Saúde</a>
                 <form action="{{ route('unity.store') }}" method="POST" autocomplete="off">
                     @csrf
                     <div>
