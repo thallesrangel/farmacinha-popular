@@ -22,6 +22,7 @@ class PeopleController extends Controller
     public function index()
     {
         $people = $this->peopleService->getPaginate();
+        
         return view('app.people.index', [ 'data' => $people ]);
     }
 
@@ -38,6 +39,7 @@ class PeopleController extends Controller
         } catch (\Exception $e) {
             return redirect()->route('people.create')->with('error', 'Ocorreu um erro. Verifique os campos.');
         }
+        
         return redirect()->route('people.list')->with('success', 'Registrado com sucesso.');
     }
 
