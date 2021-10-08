@@ -20,6 +20,7 @@
                         <th>Nome</th>
                         <th>CPF</th>
                         <th>Email</th>
+                        <th>Permissão</th>
                     </tr>
                     </thead>
                     <tbody class="table-body">
@@ -29,6 +30,7 @@
                                 <td> {{ $item->first_name }} </td>
                                 <td class="cpf"> {{ $item->cpf }} </td>
                                 <td> {{ $item->email }} </td>
+                                <td> {{ $item->role }} </td>
                                 <td class="d-flex justify-content-center">
                                     <a class="btn btn-sm btn-default table-info" href="{{ route('collaborator.profile', $item->id) }}"><i class="bi bi-info-circle"></i></a>
                                     
@@ -51,6 +53,7 @@
                             <th>Nome</th>
                             <th>CPF</th>
                             <th>E-mail</th>
+                            <th>Permissão</th>
                             <th></th>
                         </tr>
                     </tfoot>
