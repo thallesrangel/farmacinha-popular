@@ -1,5 +1,5 @@
 <div class="div-logo mt-2">
-    <img class="img-fluid logo-dashboard" src="{{ asset('img/logo.png')}}">
+    <a href="{{ route('dashboard') }}"><img class="img-fluid logo-dashboard" src="{{ asset('img/logo.png')}}"></a>
 </div>
 <ul class="flex-column nav pl-4">
     <li class="nav-item">

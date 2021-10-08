@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-        <img class="img-fluid logo" src="{{ asset('img/logo.png')}}">
+        <a href="{{ route('public') }}"> <img class="img-fluid logo" src="{{ asset('img/logo.png')}}"> </a>
 
         <div class="navbar-nav">
             <a class="nav-link" href="{{ route('unity.location') }}">DOAR</a>
