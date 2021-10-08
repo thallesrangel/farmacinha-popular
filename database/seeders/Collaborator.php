@@ -7,11 +7,6 @@ use Illuminate\Support\Facades\DB;
 
 class Collaborator extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         DB::table('collaborator')->insert([
@@ -52,7 +47,7 @@ class Collaborator extends Seeder
                 'cpf' => '0012312310',
                 'birth_date' => "1998-10-10",
                 'state_id' => 8,
-                'city_id' => 1,
+                'city_id' => 813,
                 'role' => 'gestor_unidade',
                 'email' => 'bruna@gmail.com',
                 'password' => '202cb962ac59075b964b07152d234b70',
@@ -82,7 +77,7 @@ class Collaborator extends Seeder
                 'cpf' => '12212399900',
                 'birth_date' => "1998-10-10",
                 'state_id' => 19,
-                'city_id' => 1,
+                'city_id' => 3659,
                 'role' => 'gestor_estadual',
                 'email' => 'micaelly@gmail.com',
                 'password' => '202cb962ac59075b964b07152d234b70',
@@ -97,7 +92,7 @@ class Collaborator extends Seeder
                 'cpf' => '0012312210',
                 'birth_date' => "1998-10-10",
                 'state_id' => 19,
-                'city_id' => 1,
+                'city_id' => 3659,
                 'role' => 'gestor_unidade',
                 'email' => 'penha@gmail.com',
                 'password' => '202cb962ac59075b964b07152d234b70',
@@ -106,13 +101,13 @@ class Collaborator extends Seeder
                 'updated_at' => date('Y-m-d H:i:s'),
             ],
             [
-                'id_unity' => 3,
+                'id_unity' => 15,
                 'first_name' => 'Amanda',
                 'last_name' => 'Petral',
                 'cpf' => '92312312300',
                 'birth_date' => "1998-10-10",
                 'state_id' => 19,
-                'city_id' => 1,
+                'city_id' => 3659,
                 'role' => 'analista',
                 'email' => 'amanada@gmail.com',
                 'password' => '202cb962ac59075b964b07152d234b70',
@@ -121,13 +116,13 @@ class Collaborator extends Seeder
                 'updated_at' => date('Y-m-d H:i:s'),
             ],
             [
-                'id_unity' => 3,
+                'id_unity' => 15,
                 'first_name' => 'Hugo',
                 'last_name' => 'Pablo',
                 'cpf' => '92312312301',
                 'birth_date' => "1998-10-10",
                 'state_id' => 19,
-                'city_id' => 1,
+                'city_id' => 3659,
                 'role' => 'assistente',
                 'email' => 'hugo@gmail.com',
                 'password' => '202cb962ac59075b964b07152d234b70',
